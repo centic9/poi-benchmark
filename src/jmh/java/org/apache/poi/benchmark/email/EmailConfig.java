@@ -1,11 +1,11 @@
 package org.apache.poi.benchmark.email;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.dstadler.commons.logging.jdk.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 
 /**
@@ -18,7 +18,7 @@ import java.util.List;
 *
 */
 public class EmailConfig {
-	private static final Log logger = LogFactory.getLog(EmailConfig.class);
+	private static final Logger logger = LoggerFactory.make();
 
 	private String subject = "";
 
@@ -112,7 +112,7 @@ public class EmailConfig {
 		StringBuilder email = new StringBuilder();
 		for(String address : list) {
 			if(address == null || address.length() == 0) {
-				logger.warn("Trying to use email recipient without email address: " + address + " cannot send email to this recipient.");
+				logger.warning("Trying to use email recipient without email address: " + address + " cannot send email to this recipient.");
 			} else {
 				email.append(address).append(',');
 			}

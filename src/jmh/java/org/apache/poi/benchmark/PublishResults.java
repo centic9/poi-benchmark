@@ -2,6 +2,7 @@ package org.apache.poi.benchmark;
 
 import com.google.common.base.Preconditions;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.time.FastDateFormat;
 import org.apache.poi.benchmark.email.EmailConfig;
 import org.apache.poi.benchmark.email.EmailSender;
 import org.apache.poi.benchmark.email.MailserverConfig;
@@ -9,13 +10,14 @@ import org.apache.poi.benchmark.email.PropertyAccess;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class PublishResults {
     private static final File REPORTS_DIR = new File("build/reports/jmh");
+    private static final File RESULTS_DIR = new File("results");
+
+    private static final FastDateFormat DATE_FORMAT = FastDateFormat.getInstance("yyyy-MM-dd");
+    private static final String TODAY = DATE_FORMAT.format(new Date());
 
     public static void main(String[] args) throws IOException {
         // read mail-config
@@ -28,6 +30,22 @@ public class PublishResults {
         }
 
         sendReport(config);
+
+        copyReport();
+    }
+
+    private static void copyReport() throws IOException {
+        File[] files = REPORTS_DIR.listFiles();
+        Preconditions.checkNotNull(files, "Did not find files at %s", REPORTS_DIR.getAbsolutePath());
+
+        for(File file : files) {
+            File destFile = new File(RESULTS_DIR, TODAY + file.getName());
+
+            Preconditions.checkState(!destFile.exists(), "Should not have the destination file %s, but it already exists!", destFile.getAbsolutePath());
+            System.out.println("Copying file from " + file + " to " + destFile);
+
+            FileUtils.copyFile(file, destFile);
+        }
     }
 
     private static void sendReport(MailserverConfig config) throws IOException {
@@ -90,6 +108,7 @@ public class PublishResults {
         config.setServerAddress(PropertyAccess.getProperty("mail.server"));
         config.setServerPort(Integer.parseInt(PropertyAccess.getProperty("mail.port")));
         config.setSSLEnabled(Boolean.parseBoolean(PropertyAccess.getProperty("mail.ssl")));
+        config.setSubjectPrefix("POI-Benchmark] ");
         return config;
     }
 }

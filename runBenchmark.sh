@@ -6,4 +6,4 @@ git fetch && \
 git rebase origin/master && \
 rm -rf build && \
 ./gradlew clean && \
-./gradlew jmh publishResults
+./gradlew jmh publishResults processResults

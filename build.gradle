@@ -45,8 +45,15 @@ wrapper.finalizedBy adjustWrapperPropertiesFile
 
 
 task publishResults(type:JavaExec) {
-    description = 'Publishes and processes results after the benchmark runs'
+    description = 'Publishes results after the benchmark runs, stores results in a directory and sends out an email'
 
     main = 'org.apache.poi.benchmark.PublishResults'
+    classpath = sourceSets.jmh.runtimeClasspath
+}
+
+task processResults(type:JavaExec) {
+    description = 'Post-processes results to charts'
+
+    main = 'org.apache.poi.benchmark.ProcessResults'
     classpath = sourceSets.jmh.runtimeClasspath
 }
