@@ -1,0 +1,86 @@
+package org.apache.poi.benchmark.suite;
+
+import com.google.common.base.Preconditions;
+import org.apache.commons.exec.CommandLine;
+import org.dstadler.commons.exec.BufferingLogOutputStream;
+import org.dstadler.commons.exec.ExecutionHelper;
+import org.openjdk.jmh.annotations.*;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.concurrent.TimeUnit;
+
+@BenchmarkMode(Mode.SingleShotTime)
+@OutputTimeUnit(TimeUnit.MILLISECONDS)
+@State(Scope.Thread)
+@Fork(value = 0, warmups = 0)
+public abstract class BaseBenchmark {
+    protected final File srcDir = new File("sources");
+
+    @Setup
+    public final void baseSetUp() throws IOException {
+        // ensure directories
+        if(!srcDir.exists()) {
+            Preconditions.checkState(srcDir.mkdir(), "Could not create directory " + srcDir.getAbsolutePath());
+        }
+
+        svnCheckout();
+    }
+
+    private void svnCheckout() throws IOException {
+        // svn checkout/update
+        try (OutputStream out = new BufferingLogOutputStream()) {
+            CommandLine cmd = new CommandLine("svn");
+            if(new File(srcDir, ".svn").exists()) {
+                cmd.addArgument("up");
+                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, 60000, out);
+            } else {
+                cmd.addArgument("co");
+                cmd.addArgument("https://svn.apache.org/repos/asf/poi/trunk");
+                cmd.addArgument(srcDir.getName());
+                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir.getParentFile(), 0, 60000, out);
+            }
+        }
+    }
+
+    protected void clean() throws IOException {
+        runAntTarget("clean", 120000);
+    }
+
+    protected void compileAll() throws IOException {
+        runAntTarget("compile-all", 1200000);
+    }
+
+    protected void testMain() throws IOException {
+        runAntTarget("test-main", 1200000);
+    }
+
+    protected void testScratchpad() throws IOException {
+        runAntTarget("test-scratchpad", 1200000);
+    }
+
+    protected void testOOXML() throws IOException {
+        runAntTarget("test-ooxml", 1200000);
+    }
+
+    protected void testOOXMLLite() throws IOException {
+        runAntTarget("test-ooxml-lite", 1200000);
+    }
+
+    protected void testExcelant() throws IOException {
+        runAntTarget("test-excelant", 1200000);
+    }
+
+    protected void testIntegration() throws IOException {
+        runAntTarget("test-integration", 1200000);
+    }
+
+    private void runAntTarget(String target, long timeout) throws IOException {
+        try (OutputStream out = new BufferingLogOutputStream()) {
+            CommandLine cmd = new CommandLine("ant");
+            cmd.addArgument(target);
+            ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out);
+        }
+    }
+}

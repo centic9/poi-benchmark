@@ -1,0 +1,46 @@
+<html>
+<head><script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js"></script>
+<style>#graphdiv { position: absolute; left: 10px; right: 10px; top: 10px; bottom: 10px; }</style>
+</head>
+<body><div id="graphdiv"></div>
+<script type="text/javascript">
+  g = new Dygraph(
+
+    // containing div
+    document.getElementById("graphdiv"),
+
+    // CSV or path to a CSV file.
+    "Date,Time\n" +
+   "2016-04-27,7.263000000000001E-6\n" + 
+"2016-04-28,7.781E-6\n" + 
+"2016-04-29,7.363E-6\n" + 
+"2016-04-30,8.165E-6\n" + 
+"2016-05-01,\n" + 
+"2016-05-02,7.331E-6\n" + 
+"2016-05-03,7.5380000000000005E-6\n" + 
+"2016-05-04,7.311E-6\n" + 
+"2016-05-05,7.518000000000001E-6\n" ,
+    {
+       title: 'Results for \'SSPerformanceBenchmarks.benchmarkXSSFPerformance\'',
+       fillGraph: true,
+       drawPoints: true,
+       strokeWidth: 0.0,
+       includeZero: true,
+       xRangePad: 20,
+       yAxisLabelWidth: 60,
+   axes: {
+       y: {
+                valueFormatter: function(y) {
+                  return y + 's';
+                },
+                axisLabelFormatter: function(y) {
+                  return y + 's';
+                }
+              }
+   },
+    }
+
+  );
+</script>
+</body>
+</html>
