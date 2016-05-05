@@ -1,5 +1,5 @@
 This is a small project which executes various longer running
-tests using Apache POI and measures runtimes using
+tests against Apache POI and measures runtimes using
 the JMH micro-benchmarking suite.
 
 Things that are executed include
