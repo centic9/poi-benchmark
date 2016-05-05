@@ -4,6 +4,6 @@ cd `dirname $0`
 
 git fetch && \
 git rebase origin/master && \
-rm -r build && \
+rm -rf build && \
 ./gradlew clean && \
 ./gradlew jmh publishResults
