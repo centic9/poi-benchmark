@@ -1,12 +1,12 @@
 package org.apache.poi.benchmark.email;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.ImageHtmlEmail;
 import org.apache.commons.mail.MultiPartEmail;
 import org.apache.commons.mail.resolver.DataSourceUrlResolver;
+import org.dstadler.commons.email.EmailConfig;
+import org.dstadler.commons.email.MailserverConfig;
 
 import javax.mail.AuthenticationFailedException;
 import javax.mail.internet.AddressException;
@@ -22,7 +22,7 @@ import java.util.List;
  * @author dominik.stadler
  */
 public class EmailSender {
-    private static final Log logger = LogFactory.getLog(EmailSender.class);
+    //private static final Log logger = LogFactory.getLog(EmailSender.class);
 
 	// error messages
 	//private static final String CANNOT_SEND_EMAIL_WITHOUT_SMTP_SERVER = "Cannot send email without SMTP server set in the configuration.";
@@ -41,11 +41,6 @@ public class EmailSender {
 	 *
 	 * Note: This does not perform HTML image replacement!
 	 *
-	 * @param attachments
-	 * @param mailserverConfig
-	 * @param emailConfig
-	 * @param html
-	 * @throws EmailException
 	 * @throws IOException
 	 */
 	public void sendAttachmentEmail(List<File> attachments, MailserverConfig mailserverConfig,
@@ -100,9 +95,6 @@ public class EmailSender {
 
 	/**
 	 * Helper method to populate the javax-email components with the Mailserver configuration
-	 *
-	 * @param email
-	 * @param config
 	 */
 	private void setSMTPConfig(MultiPartEmail email, MailserverConfig config) {
 		// set properties on the Email object
@@ -135,9 +127,6 @@ public class EmailSender {
 
 	/**
 	 * Helper method to populate the javax-email components with the Email configuration
-	 *
-	 * @param email
-	 * @param emailConfig
 	 * @throws AddressException
 	 * @throws EmailException
 	 */
@@ -190,10 +179,6 @@ public class EmailSender {
 		email.setSubject((subjectPrefix != null ? subjectPrefix : "" ) + emailConfig.getSubject());
 	}
 
-	/**
-	 * @param e
-	 * @return
-	 */
 	private String getExceptionText(Throwable e) {
 		final StringBuilder msg;
 

@@ -3,10 +3,10 @@ package org.apache.poi.benchmark;
 import com.google.common.base.Preconditions;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.time.FastDateFormat;
-import org.apache.poi.benchmark.email.EmailConfig;
 import org.apache.poi.benchmark.email.EmailSender;
-import org.apache.poi.benchmark.email.MailserverConfig;
 import org.apache.poi.benchmark.email.PropertyAccess;
+import org.dstadler.commons.email.EmailConfig;
+import org.dstadler.commons.email.MailserverConfig;
 
 import java.io.File;
 import java.io.IOException;
@@ -108,7 +108,7 @@ public class PublishResults {
         config.setServerAddress(PropertyAccess.getProperty("mail.server"));
         config.setServerPort(Integer.parseInt(PropertyAccess.getProperty("mail.port")));
         config.setSSLEnabled(Boolean.parseBoolean(PropertyAccess.getProperty("mail.ssl")));
-        config.setSubjectPrefix("POI-Benchmark] ");
+        config.setSubjectPrefix("[POI-Benchmark] ");
         return config;
     }
 }
