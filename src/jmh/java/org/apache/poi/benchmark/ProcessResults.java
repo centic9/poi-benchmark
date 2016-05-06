@@ -35,7 +35,7 @@ public class ProcessResults {
     private static final String TEMPLATE =
         "<html>\n" +
         "<head>" +
-                "<script src=\"//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js\"></script>\n" +
+                "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js\"></script>\n" +
                 "<style>#graphdiv { position: absolute; left: 10px; right: 10px; top: 10px; bottom: 10px; }</style>\n" +
         "</head>\n" +
         "<body>" +
