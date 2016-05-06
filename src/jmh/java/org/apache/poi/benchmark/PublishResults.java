@@ -39,7 +39,7 @@ public class PublishResults {
         Preconditions.checkNotNull(files, "Did not find files at %s", REPORTS_DIR.getAbsolutePath());
 
         for(File file : files) {
-            File destFile = new File(RESULTS_DIR, TODAY + file.getName());
+            File destFile = new File(RESULTS_DIR, TODAY + "-" + file.getName());
 
             Preconditions.checkState(!destFile.exists(), "Should not have the destination file %s, but it already exists!", destFile.getAbsolutePath());
             System.out.println("Copying file from " + file + " to " + destFile);
