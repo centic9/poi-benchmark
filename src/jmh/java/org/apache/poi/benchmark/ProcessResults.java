@@ -12,10 +12,7 @@ import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class ProcessResults {
     private static final ObjectMapper mapper = new ObjectMapper();
@@ -47,7 +44,7 @@ public class ProcessResults {
                 "    document.getElementById(\"graphdiv\"),\n" +
                 "\n" +
                 "    // CSV or path to a CSV file.\n" +
-                "    \"Date,Time\\n\" +\n" +
+                "    \"${dataheader}\\n\" +\n" +
                 "   ${data},\n" +
                 "    {\n" +
 
@@ -134,13 +131,29 @@ public class ProcessResults {
     }
 
     private static String getBenchmarkName(String benchmark) {
-        return StringUtils.removeStart(benchmark, "org.apache.poi.benchmark.suite.");
+        return StringUtils.removeStart(benchmark, "org.apache.poi.benchmark.suite.").replace("Benchmarks.benchmark", ".");
+    }
+
+    private static String getBenchmarkNames(Set<String> names) {
+        StringBuilder benchmarkNames = new StringBuilder();
+        for(String benchmark : names) {
+            benchmarkNames.append(getBenchmarkName(benchmark)).append(",");
+        }
+
+        // remove last trailing ","
+        benchmarkNames.setLength(benchmarkNames.length() - 1);
+
+        return benchmarkNames.toString();
     }
 
     private static void generateHtmlFiles(Map<String, Map<String, Double>> values, String maxDateStr) throws ParseException, IOException {
-        StringBuilder overviewHtml = new StringBuilder("<html><body><h1>Available Benchmarks for Apache POI</h1></br>\n");
+        Set<String> dates = new TreeSet<>();
+
+        StringBuilder overviewHtml = new StringBuilder("<html><body><h1>Available Benchmarks for Apache POI</h1><br/>\n");
         overviewHtml.append("Having data from ").append(DATE_FORMAT.format(START_DATE)).
                 append(" to ").append(maxDateStr).append("<br/><br/><br/>");
+
+        // one file per benchmark
         for(String benchmark : values.keySet()) {
             Map<String, Double> dateItems = values.get(benchmark);
 
@@ -151,23 +164,53 @@ public class ProcessResults {
                 Double value = dateItems.get(dateStr);
 
                 // Format: "    \"2008-05-07,75\\n\" +\n" +
-                data.append("\"").append(dateStr).append(",").append(value == null ? "" : value/1000).append("\\n\" + \n");
+                data.append("\"").append(dateStr).append(",").append(formatValue(value)).append("\\n\" + \n");
 
                 date = DateUtils.addDays(date, 1);
+
+                // keep for combined file
+                dates.add(dateStr);
             }
 
             // remove last trailing "+"
             data.setLength(data.length() - 3);
 
             String html = TEMPLATE.replace("${data}", data);
+            html = html.replace("${dataheader}", "Date,Time");
             html = html.replace("${benchmark}", getBenchmarkName(benchmark));
 
             FileUtils.writeStringToFile(new File("results", benchmark + ".html"), html);
 
             overviewHtml.append("<a href=\"").append(benchmark).append(".html\">").
-                    append(getBenchmarkName(benchmark)).append("</a></br>\n");
+                    append(getBenchmarkName(benchmark)).append("</a><br/>\n");
         }
 
+        StringBuilder combinedData = new StringBuilder();
+        for(String dateStr : dates) {
+            combinedData.append("\"").append(dateStr);
+            for(String benchmark : values.keySet()) {
+                Double value = values.get(benchmark).get(dateStr);
+                combinedData.append(",").append(formatValue(value));
+            }
+            combinedData.append("\\n\" + \n");
+        }
+
+        // remove last trailing "+"
+        combinedData.setLength(combinedData.length() - 3);
+
+        String html = TEMPLATE.replace("${data}", combinedData);
+        html = html.replace("${dataheader}", "Date," + getBenchmarkNames(values.keySet()));
+        html = html.replace("${benchmark}", "Combined");
+
+        FileUtils.writeStringToFile(new File("results", "combined.html"), html);
+        overviewHtml.append("<br/><a href=\"combined.html\">Combined</a><br/>");
+
+        overviewHtml.append("</body></html>");
+
         FileUtils.writeStringToFile(new File("results", "results.html"), overviewHtml.toString());
+    }
+
+    private static String formatValue(Double value) {
+        return value == null ? "" : "" + value/1000;
     }
 }
