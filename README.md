@@ -13,7 +13,7 @@ indicate performance of certain areas of functionality
 
 For now the results can be looked at directly from the Git repository, for github you can use:
 
-https://cdn.rawgit.com/centic9/poi-benchmark/master/results/results.html
+https://rawgit.com/centic9/poi-benchmark/master/results/results.html
 
 However this is likely to change with some better deployment setup in the future.
 
