@@ -19,4 +19,4 @@ However this is likely to change with some better deployment setup in the future
 
 ## Cron-entry to run the job every night
 
-0 1 * * * bash /opt/poi-benchmark/runBenchmark.sh
+    0 1 * * * bash /opt/poi-benchmark/runBenchmark.sh
