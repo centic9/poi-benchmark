@@ -84,7 +84,11 @@ public class PublishResults {
         String report = String.join("\n", lines);
         sender.sendAttachmentEmail(Arrays.asList(files), config, email,
                 "Nightly benchmarks for Apache POI have finished, see the attached files for details.<br/><br/>" +
+                "Charts are available at <a href=\"https://rawgit.com/centic9/poi-benchmark/master/results/results.html\">here</a>, " +
+                "see also <a href=\"https://github.com/centic9/poi-benchmark\">https://github.com/centic9/poi-benchmark</a><br/><br/>" +
                 "<pre>" + report + "</pre>");
+
+        System.out.println("Sent email to " + email);
     }
 
     private static void sendReportNotFound(MailserverConfig config) throws IOException {
