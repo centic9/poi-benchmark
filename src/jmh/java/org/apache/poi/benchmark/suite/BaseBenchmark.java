@@ -49,31 +49,31 @@ public abstract class BaseBenchmark {
     }
 
     protected void compileAll() throws IOException {
-        runAntTarget("compile-all", 1200000);
+        runAntTarget("compile-all", TimeUnit.HOURS.toMillis(1));
     }
 
     protected void testMain() throws IOException {
-        runAntTarget("test-main", 1200000);
+        runAntTarget("test-main", TimeUnit.HOURS.toMillis(1));
     }
 
     protected void testScratchpad() throws IOException {
-        runAntTarget("test-scratchpad", 1200000);
+        runAntTarget("test-scratchpad", TimeUnit.HOURS.toMillis(1));
     }
 
     protected void testOOXML() throws IOException {
-        runAntTarget("test-ooxml", 1200000);
+        runAntTarget("test-ooxml", TimeUnit.HOURS.toMillis(1));
     }
 
     protected void testOOXMLLite() throws IOException {
-        runAntTarget("test-ooxml-lite", 1200000);
+        runAntTarget("test-ooxml-lite", TimeUnit.HOURS.toMillis(1));
     }
 
     protected void testExcelant() throws IOException {
-        runAntTarget("test-excelant", 1200000);
+        runAntTarget("test-excelant", TimeUnit.HOURS.toMillis(1));
     }
 
     protected void testIntegration() throws IOException {
-        runAntTarget("test-integration", 1200000);
+        runAntTarget("test-integration", TimeUnit.HOURS.toMillis(1));
     }
 
     private void runAntTarget(String target, long timeout) throws IOException {
