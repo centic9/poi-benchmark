@@ -36,8 +36,7 @@ public class TestBenchmarks extends BaseBenchmark {
         testExcelant();
     }
 
-    // exclude for now as it always fails and I could not find out why
-    // @Benchmark
+    @Benchmark
     public void benchmarkTestIntegration() throws IOException {
         testIntegration();
     }
