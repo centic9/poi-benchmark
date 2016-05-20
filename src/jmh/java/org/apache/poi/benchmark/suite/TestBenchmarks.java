@@ -2,8 +2,10 @@ package org.apache.poi.benchmark.suite;
 
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Setup;
+import org.openjdk.jmh.annotations.Timeout;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class TestBenchmarks extends BaseBenchmark {
     @Setup
@@ -36,6 +38,8 @@ public class TestBenchmarks extends BaseBenchmark {
         testExcelant();
     }
 
+    // set the timeout to a high value as integration tests do not print out anything for quite some time
+    @Timeout(time = 10, timeUnit = TimeUnit.MINUTES)
     @Benchmark
     public void benchmarkTestIntegration() throws IOException {
         testIntegration();

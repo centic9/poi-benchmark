@@ -45,7 +45,7 @@ public abstract class BaseBenchmark {
     }
 
     protected void clean() throws IOException {
-        runAntTarget("clean", 120000);
+        runAntTarget("clean", TimeUnit.MINUTES.toMillis(10));
     }
 
     protected void compileAll() throws IOException {
