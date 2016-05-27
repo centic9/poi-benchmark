@@ -39,7 +39,7 @@ public class TestBenchmarks extends BaseBenchmark {
     }
 
     // set the timeout to a high value as integration tests do not print out anything for quite some time
-    @Timeout(time = 10, timeUnit = TimeUnit.MINUTES)
+    @Timeout(time = 1, timeUnit = TimeUnit.HOURS)
     @Benchmark
     public void benchmarkTestIntegration() throws IOException {
         testIntegration();
