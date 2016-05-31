@@ -73,7 +73,7 @@ public abstract class BaseBenchmark {
     }
 
     protected void testIntegration() throws IOException {
-        runAntTarget("test-integration", TimeUnit.HOURS.toMillis(1), "-Dorg.apache.poi.util.POILogger=org.apache.poi.util.SystemOutLogger");
+        runAntTarget("test-integration", TimeUnit.HOURS.toMillis(2)/*, "-Dorg.apache.poi.util.POILogger=org.apache.poi.util.SystemOutLogger"*/);
     }
 
     private void runAntTarget(String target, long timeout, String... args) throws IOException {
