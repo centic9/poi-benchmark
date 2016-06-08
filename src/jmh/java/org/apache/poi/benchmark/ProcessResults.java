@@ -70,7 +70,7 @@ public class ProcessResults {
                 "   axes: {\n" +
                 "       y: {\n" +
                 "                valueFormatter: function(y) {\n" +
-                "                  return y + 's';\n" +
+                "                  return parseFloat(Math.round(y * 100) / 100).toFixed(2) + 's';\n" +
                 "                },\n" +
                 "                axisLabelFormatter: function(y) {\n" +
                 "                  return y + 's';\n" +

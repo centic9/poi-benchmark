@@ -72,7 +72,7 @@
    axes: {
        y: {
                 valueFormatter: function(y) {
-                  return y + 's';
+                  return parseFloat(Math.round(y * 100) / 100).toFixed(2) + 's';
                 },
                 axisLabelFormatter: function(y) {
                   return y + 's';
