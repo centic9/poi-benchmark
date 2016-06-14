@@ -31,7 +31,7 @@ jmh {
 tasks.getByName('jmhJar').doFirst() {duplicatesStrategy(DuplicatesStrategy.EXCLUDE)}
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.12'
+    gradleVersion = '2.14'
 }
 
 task adjustWrapperPropertiesFile << {
