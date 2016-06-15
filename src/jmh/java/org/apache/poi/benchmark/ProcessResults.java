@@ -59,7 +59,7 @@ public class ProcessResults {
 
                 // Dot-Chart
                 "       drawPoints: true,\n" +
-                "       strokeWidth: 0.0,\n" +
+                //"       strokeWidth: 0.0,\n" +
 
                 "       includeZero: true,\n" +
                 "       xRangePad: 20,\n" +
@@ -80,6 +80,9 @@ public class ProcessResults {
 
                 //"      rollPeriod: 7,\n" +
                 //"      showRoller: true,\n" +
+                //"connectSeparatedPoints: true,\n" +
+                //"       drawPoints: true\n" +
+                "colors: ['#000000', '#ff0000', '#ff8000', '#ffff00', '#40ff00', '#0040ff', '#ff00ff', '#757e83', '#75c5d5', '#663300'],\n" +
                 "    }\n" +
                 "\n" +
                 "  );\n" +
