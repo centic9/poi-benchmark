@@ -20,3 +20,9 @@ However this is likely to change with some better deployment setup in the future
 ## Cron-entry to run the job every night
 
     0 1 * * * bash /opt/poi-benchmark/runBenchmark.sh
+
+## How to setup password-less pushes to github.com
+
+* Go to https://github.com/settings/ssh and follow the steps to create and add a ssh-key
+* See http://mattmakesmaps.com/blog/2013/06/16/auto-push-to-github-via-machine-user/ for more details
+
