@@ -17,6 +17,15 @@ https://rawgit.com/centic9/poi-benchmark/master/results/results.html
 
 However this is likely to change with some better deployment setup in the future.
 
+## Required software
+
+You currently need the following to be installed
+* Java 6 or higher
+* Apache Ant 1.8.0 or higher
+
+Make sure to have Apache Ant in the PATH, i.e. typing `ant` on the commandline should work.
+If Apache ant is installed via your Linux distribution, also install the package ´ant-optional´ or ´ant-junit´
+
 ## Cron-entry to run the job every night
 
     0 1 * * * bash /opt/poi-benchmark/runBenchmark.sh
