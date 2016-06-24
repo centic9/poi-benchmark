@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/centic9/poi-benchmark.svg)](https://travis-ci.org/centic9/poi-benchmark) [![Gradle Status](https://gradleupdate.appspot.com/centic9/poi-benchmark/status.svg?branch=master)](https://gradleupdate.appspot.com/centic9/poi-benchmark/status)
+
 This is a small project which executes various longer running
 tests against Apache POI and measures runtimes using
 the JMH micro-benchmarking suite.
