@@ -2,13 +2,20 @@ package org.apache.poi.benchmark.suite;
 
 import com.google.common.base.Preconditions;
 import org.apache.commons.exec.CommandLine;
+import org.apache.commons.io.filefilter.AndFileFilter;
+import org.apache.commons.io.filefilter.NotFileFilter;
+import org.apache.commons.io.filefilter.SuffixFileFilter;
+import org.dstadler.commons.arrays.ArrayUtils;
 import org.dstadler.commons.exec.BufferingLogOutputStream;
 import org.dstadler.commons.exec.ExecutionHelper;
 import org.openjdk.jmh.annotations.*;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 @BenchmarkMode(Mode.SingleShotTime)
@@ -82,6 +89,44 @@ public abstract class BaseBenchmark {
             cmd.addArgument(target);
             cmd.addArguments(args);
             ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out);
+        }
+    }
+
+    protected void runPOIApplication(String clazz, long timeout, String... args) throws IOException {
+        List<String> jars = new ArrayList<>();
+        addJarsFromDir(jars, "lib");
+        addJarsFromDir(jars, "compile-lib");
+        addJarsFromDir(jars, "ooxml-lib");
+        addClassesDir(jars, "build");
+        try (OutputStream out = new BufferingLogOutputStream()) {
+            CommandLine cmd = new CommandLine("java");
+            cmd.addArgument("-cp");
+            cmd.addArgument(ArrayUtils.toString(jars.toArray(), ":", "", ""));
+            cmd.addArgument(clazz);
+            cmd.addArguments(args);
+            ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out);
+        }
+    }
+
+    private void addClassesDir(List<String> jars, String dir) {
+        File[] files = new File(srcDir, dir).listFiles((FileFilter)
+                        new SuffixFileFilter("classes"));
+        Preconditions.checkNotNull(files);
+        for(File file : files) {
+            jars.add(file.getAbsolutePath());
+        }
+    }
+
+    private void addJarsFromDir(List<String> jars, String dir) {
+        File[] files = new File(srcDir, dir).listFiles((FileFilter)
+                new AndFileFilter(
+                    new SuffixFileFilter(".jar"),
+                    new NotFileFilter(new AndFileFilter(
+                            new SuffixFileFilter("-sources.jar"),
+                            new SuffixFileFilter("xmlbeans-2.3.0.jar")))));
+        Preconditions.checkNotNull(files);
+        for(File file : files) {
+            jars.add(file.getAbsolutePath());
         }
     }
 }
