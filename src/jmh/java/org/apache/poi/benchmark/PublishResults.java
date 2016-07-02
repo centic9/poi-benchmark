@@ -66,7 +66,7 @@ public class PublishResults {
         // remove lines starting with "# " and remove duplicate empty lines
         while(it.hasNext()) {
             String line = it.next();
-            if(line.startsWith("# ")) {
+            if(line.startsWith("# ") || line.startsWith("Iteration   1: ")) {
                 it.remove();
             } else {
                 if(line.isEmpty()) {
@@ -82,13 +82,12 @@ public class PublishResults {
         }
 
         String report = String.join("\n", lines);
-        sender.sendAttachmentEmail(Arrays.asList(files), config, email,
-                "Nightly benchmarks for Apache POI have finished, see the attached files for details.<br/><br/>" +
+        String msg = "Nightly benchmarks for Apache POI have finished, see the attached files for details.<br/><br/>" +
                 "Charts are available at <a href=\"https://rawgit.com/centic9/poi-benchmark/master/results/results.html\">here</a>, " +
                 "see also <a href=\"https://github.com/centic9/poi-benchmark\">https://github.com/centic9/poi-benchmark</a><br/><br/>" +
-                "<pre>" + report + "</pre>");
-
-        System.out.println("Sent email to " + email);
+                "<pre>" + report + "</pre>";
+        System.out.println("Sending email to " + email + " with content: " + msg);
+        sender.sendAttachmentEmail(Arrays.asList(files), config, email, msg);
     }
 
     private static void sendReportNotFound(MailserverConfig config) throws IOException {
