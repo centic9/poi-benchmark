@@ -14,16 +14,16 @@ public class SSPerformanceBenchmarks extends BaseBenchmark {
 
     @Benchmark
     public void benchmarkHSSFPerformance() throws IOException {
-        runPOIApplication("org.apache.poi.ss.examples.SSPerformanceTest", TimeUnit.HOURS.toMillis(1), "HSSF", "2000", "20", "0");
+        runPOIApplication("org.apache.poi.ss.examples.SSPerformanceTest", TimeUnit.HOURS.toMillis(1), "HSSF", "30000", "20", "0");
     }
 
     @Benchmark
     public void benchmarkXSSFPerformance() throws IOException {
-        runPOIApplication("org.apache.poi.ss.examples.SSPerformanceTest", TimeUnit.HOURS.toMillis(1), "XSSF", "20000", "20", "0");
+        runPOIApplication("org.apache.poi.ss.examples.SSPerformanceTest", TimeUnit.HOURS.toMillis(1), "XSSF", "30000", "20", "0");
     }
 
     @Benchmark
     public void benchmarkSXSSFPerformance() throws IOException {
-        runPOIApplication("org.apache.poi.ss.examples.SSPerformanceTest", TimeUnit.HOURS.toMillis(1), "SXSSF", "20000", "20", "0");
+        runPOIApplication("org.apache.poi.ss.examples.SSPerformanceTest", TimeUnit.HOURS.toMillis(1), "SXSSF", "30000", "20", "0");
     }
 }
