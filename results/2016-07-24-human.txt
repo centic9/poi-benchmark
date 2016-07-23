@@ -1,0 +1,258 @@
+# JMH 1.12 (released 114 days ago, please consider updating!)
+# VM version: JDK 1.8.0_91, VM 25.91-b14
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.BuildBenchmarks.benchmarkCompileAll
+
+# Run progress: 0,00% complete, ETA 00:00:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:128)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:106)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:91)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:59)
+	at org.apache.poi.benchmark.suite.BuildBenchmarks.benchmarkCompileAll(BuildBenchmarks.java:16)
+	at org.apache.poi.benchmark.suite.generated.BuildBenchmarks_benchmarkCompileAll_jmhTest.benchmarkCompileAll_ss_jmhStub(BuildBenchmarks_benchmarkCompileAll_jmhTest.java:280)
+	at org.apache.poi.benchmark.suite.generated.BuildBenchmarks_benchmarkCompileAll_jmhTest.benchmarkCompileAll_SingleShotTime(BuildBenchmarks_benchmarkCompileAll_jmhTest.java:259)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:430)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:412)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+# JMH 1.12 (released 114 days ago, please consider updating!)
+# VM version: JDK 1.8.0_91, VM 25.91-b14
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkHSSFPerformance
+
+# Run progress: 10,00% complete, ETA 01:05:32
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:128)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:106)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:91)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:59)
+	at org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.setUp(SSPerformanceBenchmarks.java:12)
+	at org.apache.poi.benchmark.suite.generated.SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest._jmh_tryInit_f_ssperformancebenchmarks0_0(SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.java:305)
+	at org.apache.poi.benchmark.suite.generated.SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.benchmarkHSSFPerformance_SingleShotTime(SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.java:252)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:430)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:412)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+# JMH 1.12 (released 114 days ago, please consider updating!)
+# VM version: JDK 1.8.0_91, VM 25.91-b14
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkSXSSFPerformance
+
+# Run progress: 20,00% complete, ETA 00:41:16
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 11389,081 ms/op
+
+
+# JMH 1.12 (released 114 days ago, please consider updating!)
+# VM version: JDK 1.8.0_91, VM 25.91-b14
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkXSSFPerformance
+
+# Run progress: 30,00% complete, ETA 00:30:18
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 19647,543 ms/op
+
+
+# JMH 1.12 (released 114 days ago, please consider updating!)
+# VM version: JDK 1.8.0_91, VM 25.91-b14
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestExcelant
+
+# Run progress: 40,00% complete, ETA 00:24:06
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 8602,926 ms/op
+
+
+# JMH 1.12 (released 114 days ago, please consider updating!)
+# VM version: JDK 1.8.0_91, VM 25.91-b14
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 3 hr per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestIntegration
+
+# Run progress: 50,00% complete, ETA 00:18:47
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:128)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:106)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:91)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.testIntegration(BaseBenchmark.java:83)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestIntegration(TestBenchmarks.java:45)
+	at org.apache.poi.benchmark.suite.generated.TestBenchmarks_benchmarkTestIntegration_jmhTest.benchmarkTestIntegration_ss_jmhStub(TestBenchmarks_benchmarkTestIntegration_jmhTest.java:280)
+	at org.apache.poi.benchmark.suite.generated.TestBenchmarks_benchmarkTestIntegration_jmhTest.benchmarkTestIntegration_SingleShotTime(TestBenchmarks_benchmarkTestIntegration_jmhTest.java:259)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:430)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:412)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+# JMH 1.12 (released 114 days ago, please consider updating!)
+# VM version: JDK 1.8.0_91, VM 25.91-b14
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestMain
+
+# Run progress: 60,00% complete, ETA 00:19:07
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 123129,913 ms/op
+
+
+# JMH 1.12 (released 114 days ago, please consider updating!)
+# VM version: JDK 1.8.0_91, VM 25.91-b14
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestOOXML
+
+# Run progress: 70,00% complete, ETA 00:14:18
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 143757,996 ms/op
+
+
+# JMH 1.12 (released 114 days ago, please consider updating!)
+# VM version: JDK 1.8.0_91, VM 25.91-b14
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestOOXMLLite
+
+# Run progress: 80,00% complete, ETA 00:09:32
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 283718,925 ms/op
+
+
+# JMH 1.12 (released 114 days ago, please consider updating!)
+# VM version: JDK 1.8.0_91, VM 25.91-b14
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestScratchpad
+
+# Run progress: 90,00% complete, ETA 00:05:01
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 57370,242 ms/op
+
+
+# Run complete. Total time: 00:48:20
+
+Benchmark                                          Mode  Cnt       Score   Error  Units
+SSPerformanceBenchmarks.benchmarkSXSSFPerformance    ss        11389,081          ms/op
+SSPerformanceBenchmarks.benchmarkXSSFPerformance     ss        19647,543          ms/op
+TestBenchmarks.benchmarkTestExcelant                 ss         8602,926          ms/op
+TestBenchmarks.benchmarkTestMain                     ss       123129,913          ms/op
+TestBenchmarks.benchmarkTestOOXML                    ss       143757,996          ms/op
+TestBenchmarks.benchmarkTestOOXMLLite                ss       283718,925          ms/op
+TestBenchmarks.benchmarkTestScratchpad               ss        57370,242          ms/op
+
+Benchmark result is saved to build/reports/jmh/results.json
