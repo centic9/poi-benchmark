@@ -86,6 +86,14 @@ public class ProcessResults {
                 "    }\n" +
                 "\n" +
                 "  );\n" +
+                "\n" +
+                "  g.ready(function() {\n" +
+                "    g.setAnnotations([\n" +
+                "    {series: \"Test.TestOOXMLLite\",x: \"2016-08-01\",shortText: \"A\",text: \"OOXMLLite build change\"},\n" +
+                "    {series: \"Test.TestIntegration\",x: \"2016-09-15\",shortText: \"B\",text: \"Server upgrade\",attachAtBottom: true},\n" +
+                "    {series: \"Test.TestOOXMLLite\",x: \"2016-09-17\",shortText: \"C\",text: \"OOXMLLite enabled again\"},\n" +
+                "    ]);\n" +
+                "  });\n" +
                 "</script>\n" +
         "</body>\n" +
         "</html>\n";

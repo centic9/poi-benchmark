@@ -175,6 +175,14 @@ colors: ['#000000', '#ff0000', '#ff8000', '#ffff00', '#40ff00', '#0040ff', '#ff0
     }
 
   );
+
+  g.ready(function() {
+    g.setAnnotations([
+    {series: "Test.TestOOXMLLite",x: "2016-08-01",shortText: "A",text: "OOXMLLite build change"},
+    {series: "Test.TestIntegration",x: "2016-09-15",shortText: "B",text: "Server upgrade",attachAtBottom: true},
+    {series: "Test.TestOOXMLLite",x: "2016-09-17",shortText: "C",text: "OOXMLLite enabled again"},
+    ]);
+  });
 </script>
 </body>
 </html>

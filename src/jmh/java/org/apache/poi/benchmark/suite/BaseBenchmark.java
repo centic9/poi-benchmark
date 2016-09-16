@@ -72,6 +72,15 @@ public abstract class BaseBenchmark {
     }
 
     protected void testOOXMLLite() throws IOException {
+        // need to clean one file here to avoid not doing anything if the code
+        // was already compiled before
+        final File testfile = new File(srcDir, "build/ooxml-lite-testokfile.txt");
+        if(testfile.exists()) {
+            if(!testfile.delete()) {
+                throw new IOException("Could not delete file " + testfile);
+            }
+        }
+
         runAntTarget("test-ooxml-lite", TimeUnit.HOURS.toMillis(1));
     }
 
