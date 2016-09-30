@@ -127,8 +127,11 @@ public class EmailSender {
 
 	/**
 	 * Helper method to populate the javax-email components with the Email configuration
+	 * @throws AddressException If any of the recipient-addresses can not be parsed
+	 * @throws EmailException If sending the email causes an error
 	 */
-	private void setEmailConfig(MultiPartEmail email, EmailConfig emailConfig, String subjectPrefix) throws AddressException, EmailException, IOException {
+	private void setEmailConfig(MultiPartEmail email, EmailConfig emailConfig, String subjectPrefix)
+			throws AddressException, EmailException, IOException {
 		boolean hadAddress = false;
 
 		// JLT-17850: semicolons are replaced with commas to preempt parsing
