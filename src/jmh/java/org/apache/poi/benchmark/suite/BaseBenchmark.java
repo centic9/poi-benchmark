@@ -32,7 +32,17 @@ public abstract class BaseBenchmark {
             Preconditions.checkState(srcDir.mkdir(), "Could not create directory " + srcDir.getAbsolutePath());
         }
 
+        svnCleanup();
         svnCheckout();
+    }
+
+    private void svnCleanup() throws IOException {
+        // svn checkout/update
+        try (OutputStream out = new BufferingLogOutputStream()) {
+            CommandLine cmd = new CommandLine("svn");
+            cmd.addArgument("cleanup");
+            ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, 60000, out);
+        }
     }
 
     private void svnCheckout() throws IOException {
@@ -101,7 +111,7 @@ public abstract class BaseBenchmark {
         }
     }
 
-    protected void runPOIApplication(String clazz, long timeout, String... args) throws IOException {
+    protected void runPOIApplication(@SuppressWarnings("SameParameterValue") String clazz, long timeout, String... args) throws IOException {
         List<String> jars = new ArrayList<>();
         addJarsFromDir(jars, "lib");
         addJarsFromDir(jars, "compile-lib");
@@ -117,6 +127,7 @@ public abstract class BaseBenchmark {
         }
     }
 
+    @SuppressWarnings("SameParameterValue")
     private void addClassesDir(List<String> jars, String dir) {
         File[] files = new File(srcDir, dir).listFiles((FileFilter)
                         new SuffixFileFilter("classes"));

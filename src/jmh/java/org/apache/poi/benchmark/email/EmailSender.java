@@ -41,7 +41,7 @@ public class EmailSender {
 	 *
 	 * Note: This does not perform HTML image replacement!
 	 *
-	 * @throws IOException
+	 * @throws IOException If sending the email fails.
 	 */
 	public void sendAttachmentEmail(List<File> attachments, MailserverConfig mailserverConfig,
 									EmailConfig emailConfig, String html) throws IOException {
@@ -127,15 +127,13 @@ public class EmailSender {
 
 	/**
 	 * Helper method to populate the javax-email components with the Email configuration
-	 * @throws AddressException
-	 * @throws EmailException
 	 */
 	private void setEmailConfig(MultiPartEmail email, EmailConfig emailConfig, String subjectPrefix) throws AddressException, EmailException, IOException {
 		boolean hadAddress = false;
 
-		// JLT-17850: semicolons are replaced with commas to preemt parsing
+		// JLT-17850: semicolons are replaced with commas to preempt parsing
 		// errors.
-		// note that a semicolon is not a RFC822 compatible recipient seperator
+		// note that a semicolon is not a RFC822 compatible recipient separator
 		// but it seems users are very used to use it as such.
 		if (emailConfig.getTo() != null && !emailConfig.getTo().isEmpty()) {
 			String toWithoutScolons = emailConfig.getToAsEmail().replace(SCOLON, COMMA);
