@@ -59,7 +59,7 @@ public class PublishResults {
         email.setFrom("benchmark@poi.apache.org");
         email.setSubject("Apache POI benchmark results");
 
-        List<String> lines = FileUtils.readLines(new File(REPORTS_DIR, "human.txt"));
+        List<String> lines = FileUtils.readLines(new File(REPORTS_DIR, "human.txt"), "UTF-8");
         Iterator<String> it = lines.iterator();
         boolean prevWasNewline = false;
 

@@ -190,7 +190,7 @@ public class ProcessResults {
             html = html.replace("${dataheader}", "Date,Time");
             html = html.replace("${benchmark}", getBenchmarkName(benchmark));
 
-            FileUtils.writeStringToFile(new File("results", benchmark + ".html"), html);
+            FileUtils.writeStringToFile(new File("results", benchmark + ".html"), html, "UTF-8");
 
             overviewHtml.append("<a href=\"").append(benchmark).append(".html\">").
                     append(getBenchmarkName(benchmark)).append("</a><br/>\n");
@@ -213,12 +213,12 @@ public class ProcessResults {
         html = html.replace("${dataheader}", "Date," + getBenchmarkNames(values.keySet()));
         html = html.replace("${benchmark}", "Combined");
 
-        FileUtils.writeStringToFile(new File("results", "combined.html"), html);
+        FileUtils.writeStringToFile(new File("results", "combined.html"), html, "UTF-8");
         overviewHtml.append("<br/><a href=\"combined.html\">Combined</a><br/>");
 
         overviewHtml.append("</body></html>");
 
-        FileUtils.writeStringToFile(new File("results", "results.html"), overviewHtml.toString());
+        FileUtils.writeStringToFile(new File("results", "results.html"), overviewHtml.toString(), "UTF-8");
     }
 
     private static String formatValue(Double value) {
