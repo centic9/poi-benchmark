@@ -34,15 +34,11 @@ public abstract class BaseBenchmark {
 
         svnCleanup();
         svnCheckout();
+        svnStatus();
     }
 
     private void svnCleanup() throws IOException {
-        // svn checkout/update
-        try (OutputStream out = new BufferingLogOutputStream()) {
-            CommandLine cmd = new CommandLine("svn");
-            cmd.addArgument("cleanup");
-            ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, 60000, out);
-        }
+        runSVN("cleanup", 60000);
     }
 
     private void svnCheckout() throws IOException {
@@ -59,6 +55,10 @@ public abstract class BaseBenchmark {
                 ExecutionHelper.getCommandResultIntoStream(cmd, srcDir.getParentFile(), 0, 60000, out);
             }
         }
+    }
+
+    private void svnStatus() throws IOException {
+        runSVN("status", TimeUnit.MINUTES.toMillis(1));
     }
 
     protected void clean() throws IOException {
@@ -106,6 +106,15 @@ public abstract class BaseBenchmark {
         try (OutputStream out = new BufferingLogOutputStream()) {
             CommandLine cmd = new CommandLine("ant");
             cmd.addArgument(target);
+            cmd.addArguments(args);
+            ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out);
+        }
+    }
+
+    private void runSVN(String command, long timeout, String... args) throws IOException {
+        try (OutputStream out = new BufferingLogOutputStream()) {
+            CommandLine cmd = new CommandLine("svn");
+            cmd.addArgument(command);
             cmd.addArguments(args);
             ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out);
         }
