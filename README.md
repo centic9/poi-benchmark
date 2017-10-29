@@ -13,19 +13,17 @@ indicate performance of certain areas of functionality
 
 ## Initial URL for looking at results
 
-For now the results can be looked at directly from the Git repository, for github you can use:
+The results can be looked at directly from the Git repository, for github you can use:
 
 https://rawgit.com/centic9/poi-benchmark/master/results/results.html
-
-However this is likely to change with some better deployment setup in the future.
 
 ## Required software
 
 You currently need the following to be installed
-* Java 6 or higher
+* Java 8 or higher
 * Apache Ant 1.8.0 or higher
 
-Make sure to have Apache Ant in the PATH, i.e. typing `ant` on the commandline should work.
+Make sure you have Apache Ant available in the PATH, i.e. typing `ant` on the commandline should work.
 If Apache ant is installed via your Linux distribution, also install the package ´ant-optional´ or ´ant-junit´
 
 ## Cron-entry to run the job every night
@@ -39,7 +37,7 @@ If Apache ant is installed via your Linux distribution, also install the package
 
 #### Licensing
 
-   Copyright 2013-2016 Dominik Stadler
+   Copyright 2013-2017 Dominik Stadler
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
