@@ -32,18 +32,22 @@ public class ProcessResults {
 
     private static final String TEMPLATE =
         "<html>\n" +
-        "<head>" +
-                "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js\"></script>\n" +
-                "<style>#graphdiv { position: absolute; left: 10px; right: 10px; top: 10px; bottom: 10px; }</style>\n" +
+        "<head>\n" +
+                "    <!-- downloaded from https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.css -->\n" +
+                "    <link rel=\"stylesheet\" href=\"dygraph.min.css\">\n" +
+                '\n' +
+                "    <!-- downloaded from https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.js -->\n" +
+                "    <script src=\"dygraph.min.js\"></script>\n" +
+                "    <style>#graphdiv { position: absolute; left: 10px; right: 10px; top: 10px; bottom: 10px; }</style>\n" +
         "</head>\n" +
-        "<body>" +
+        "<body>\n" +
                 "<div id=\"graphdiv\"></div>\n" +
                 "<script type=\"text/javascript\">\n" +
                 "  g = new Dygraph(\n" +
-                "\n" +
+                '\n' +
                 "    // containing div\n" +
                 "    document.getElementById(\"graphdiv\"),\n" +
-                "\n" +
+                '\n' +
                 "    // CSV or path to a CSV file.\n" +
                 "    \"${dataheader}\\n\" +\n" +
                 "   ${data},\n" +
@@ -85,9 +89,9 @@ public class ProcessResults {
                 //"       drawPoints: true\n" +
                 "colors: ['#000000', '#ff0000', '#ff8000', '#ffff00', '#40ff00', '#0040ff', '#ff00ff', '#757e83', '#75c5d5', '#663300'],\n" +
                 "    }\n" +
-                "\n" +
+                '\n' +
                 "  );\n" +
-                "\n" +
+                '\n' +
                 "  g.ready(function() {\n" +
                 "    g.setAnnotations([\n" +
                 "    {series: \"Test.TestOOXMLLite\",x: \"2016-08-01\",shortText: \"A\",text: \"OOXMLLite build change\"},\n" +
