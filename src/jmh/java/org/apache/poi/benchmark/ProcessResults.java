@@ -13,6 +13,7 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.*;
+import java.util.function.Predicate;
 
 public class ProcessResults {
     private static final ObjectMapper mapper = new ObjectMapper();
@@ -145,9 +146,12 @@ public class ProcessResults {
         return StringUtils.removeStart(benchmark, "org.apache.poi.benchmark.suite.").replace("Benchmarks.benchmark", ".");
     }
 
-    private static String getBenchmarkNames(Set<String> names) {
+    private static String getBenchmarkNames(Set<String> names, Predicate<String> isIncluded) {
         StringBuilder benchmarkNames = new StringBuilder();
         for(String benchmark : names) {
+            if(!isIncluded.test(benchmark)) {
+                continue;
+            }
             benchmarkNames.append(getBenchmarkName(benchmark)).append(",");
         }
 
@@ -186,20 +190,30 @@ public class ProcessResults {
             // remove last trailing "+"
             data.setLength(data.length() - 3);
 
-            String html = TEMPLATE.replace("${data}", data);
-            html = html.replace("${dataheader}", "Date,Time");
-            html = html.replace("${benchmark}", getBenchmarkName(benchmark));
-
-            FileUtils.writeStringToFile(new File("results", benchmark + ".html"), html, "UTF-8");
-
             overviewHtml.append("<a href=\"").append(benchmark).append(".html\">").
                     append(getBenchmarkName(benchmark)).append("</a><br/>\n");
+
+            writeHtml(data, "Date,Time", getBenchmarkName(benchmark), benchmark);
         }
 
+        writeCombined(values, dates, overviewHtml, "combined", "Combined", s -> true);
+        writeCombined(values, dates, overviewHtml, "ssperformance", "SSPerformance", input -> input.contains("SSPerformance"));
+        overviewHtml.append("</body></html>");
+
+        System.out.println("Writing overview to result.html");
+        FileUtils.writeStringToFile(new File("results", "results.html"), overviewHtml.toString(), "UTF-8");
+    }
+
+    private static void writeCombined(Map<String, Map<String, Double>> values, Set<String> dates,
+                                      StringBuilder overviewHtml, String fileName, String groupName,
+                                      Predicate<String> isIncluded) throws IOException {
         StringBuilder combinedData = new StringBuilder();
         for(String dateStr : dates) {
             combinedData.append("\"").append(dateStr);
             for(String benchmark : values.keySet()) {
+                if(!isIncluded.test(benchmark)) {
+                    continue;
+                }
                 Double value = values.get(benchmark).get(dateStr);
                 combinedData.append(",").append(formatValue(value));
             }
@@ -209,16 +223,18 @@ public class ProcessResults {
         // remove last trailing "+"
         combinedData.setLength(combinedData.length() - 3);
 
-        String html = TEMPLATE.replace("${data}", combinedData);
-        html = html.replace("${dataheader}", "Date," + getBenchmarkNames(values.keySet()));
-        html = html.replace("${benchmark}", "Combined");
+        writeHtml(combinedData, "Date," + getBenchmarkNames(values.keySet(), isIncluded), groupName, fileName);
 
-        FileUtils.writeStringToFile(new File("results", "combined.html"), html, "UTF-8");
-        overviewHtml.append("<br/><a href=\"combined.html\">Combined</a><br/>");
+        overviewHtml.append("<br/><a href=\"").append(fileName).append(".html\">").append(groupName).append("</a><br/>\n");
+    }
 
-        overviewHtml.append("</body></html>");
+    private static void writeHtml(StringBuilder data, String dataHeader, String benchmark, String fileName) throws IOException {
+        String html = TEMPLATE.replace("${data}", data);
+        html = html.replace("${dataheader}", dataHeader);
+        html = html.replace("${benchmark}", benchmark);
 
-        FileUtils.writeStringToFile(new File("results", "results.html"), overviewHtml.toString(), "UTF-8");
+        System.out.println("Writing report to " + fileName + ".html for " + benchmark);
+        FileUtils.writeStringToFile(new File("results", fileName + ".html"), html, "UTF-8");
     }
 
     private static String formatValue(Double value) {
