@@ -71,6 +71,7 @@ public class ProcessResults {
 
                 "       yAxisLabelWidth: 60,\n" +
                 //"       yLabelWidth: 100,\n" +
+                "       legend: 'always',\n" +
 
                 "   axes: {\n" +
                 "       y: {\n" +
@@ -147,7 +148,9 @@ public class ProcessResults {
     }
 
     private static String getBenchmarkName(String benchmark) {
-        return StringUtils.removeStart(benchmark, "org.apache.poi.benchmark.suite.").replace("Benchmarks.benchmark", ".");
+        return StringUtils.removeStart(benchmark, "org.apache.poi.benchmark.suite.").
+                replace("Benchmarks.benchmark", ".").
+                replace("SSPerformance.", "");
     }
 
     private static String getBenchmarkNames(Set<String> names, Predicate<String> isIncluded) {

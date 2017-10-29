@@ -16,7 +16,7 @@
     document.getElementById("graphdiv"),
 
     // CSV or path to a CSV file.
-    "Date,SSPerformance.HSSFPerformance,SSPerformance.SXSSFPerformance,SSPerformance.XSSFPerformance\n" +
+    "Date,HSSFPerformance,SXSSFPerformance,XSSFPerformance\n" +
    "2016-04-27,1.3038E-5,7.903E-6,7.263000000000001E-6\n" + 
 "2016-04-28,7.224000000000001E-6,8.242E-6,7.781E-6\n" + 
 "2016-04-29,8.057E-6,1.2987E-5,7.363E-6\n" + 
@@ -575,6 +575,7 @@
        includeZero: true,
        xRangePad: 20,
        yAxisLabelWidth: 60,
+       legend: 'always',
    axes: {
        y: {
                 valueFormatter: function(y) {
