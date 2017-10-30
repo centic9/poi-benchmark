@@ -27,6 +27,9 @@ jmh {
     iterations = 1
     humanOutputFile = project.file("${project.buildDir}/reports/jmh/human.txt")
     resultFormat = 'JSON'
+
+    // newer JMH-Gradle plugin reported a duplicate file...
+    duplicateClassesStrategy = 'warn'
 }
 
 // see https://github.com/melix/jmh-gradle-plugin/issues/6
