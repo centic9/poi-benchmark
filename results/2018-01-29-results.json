@@ -1,0 +1,514 @@
+[
+    {
+        "jmhVersion" : "1.19",
+        "benchmark" : "org.apache.poi.benchmark.suite.BuildBenchmarks.benchmarkCompileAll",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 0,
+        "jvm" : "/usr/lib/jvm/java-8-oracle/jre/bin/java",
+        "jvmArgs" : [
+            "-Dfile.encoding=UTF-8",
+            "-Duser.country=AT",
+            "-Duser.language=de",
+            "-Duser.variant",
+            "-agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,tenant=fzu35583,tenanttoken=pbjk9IcwmWupNgNR,server=https://sg-eu-west-1-54-77-175-7-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://sg-eu-west-1-52-214-31-22-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://fzu35583.sprint.dynatracelabs.com:443/communication"
+        ],
+        "jdkVersion" : "1.8.0_131",
+        "vmVersion" : "25.131-b11",
+        "warmupIterations" : 0,
+        "warmupTime" : "single-shot",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "single-shot",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 266574.805001,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 266574.805001,
+                "50.0" : 266574.805001,
+                "90.0" : 266574.805001,
+                "95.0" : 266574.805001,
+                "99.0" : 266574.805001,
+                "99.9" : 266574.805001,
+                "99.99" : 266574.805001,
+                "99.999" : 266574.805001,
+                "99.9999" : 266574.805001,
+                "100.0" : 266574.805001
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    266574.805001
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.19",
+        "benchmark" : "org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkHSSFPerformance",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 0,
+        "jvm" : "/usr/lib/jvm/java-8-oracle/jre/bin/java",
+        "jvmArgs" : [
+            "-Dfile.encoding=UTF-8",
+            "-Duser.country=AT",
+            "-Duser.language=de",
+            "-Duser.variant",
+            "-agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,tenant=fzu35583,tenanttoken=pbjk9IcwmWupNgNR,server=https://sg-eu-west-1-54-77-175-7-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://sg-eu-west-1-52-214-31-22-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://fzu35583.sprint.dynatracelabs.com:443/communication"
+        ],
+        "jdkVersion" : "1.8.0_131",
+        "vmVersion" : "25.131-b11",
+        "warmupIterations" : 0,
+        "warmupTime" : "single-shot",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "single-shot",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 3910.677296,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 3910.677296,
+                "50.0" : 3910.677296,
+                "90.0" : 3910.677296,
+                "95.0" : 3910.677296,
+                "99.0" : 3910.677296,
+                "99.9" : 3910.677296,
+                "99.99" : 3910.677296,
+                "99.999" : 3910.677296,
+                "99.9999" : 3910.677296,
+                "100.0" : 3910.677296
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    3910.677296
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.19",
+        "benchmark" : "org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkSXSSFPerformance",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 0,
+        "jvm" : "/usr/lib/jvm/java-8-oracle/jre/bin/java",
+        "jvmArgs" : [
+            "-Dfile.encoding=UTF-8",
+            "-Duser.country=AT",
+            "-Duser.language=de",
+            "-Duser.variant",
+            "-agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,tenant=fzu35583,tenanttoken=pbjk9IcwmWupNgNR,server=https://sg-eu-west-1-54-77-175-7-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://sg-eu-west-1-52-214-31-22-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://fzu35583.sprint.dynatracelabs.com:443/communication"
+        ],
+        "jdkVersion" : "1.8.0_131",
+        "vmVersion" : "25.131-b11",
+        "warmupIterations" : 0,
+        "warmupTime" : "single-shot",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "single-shot",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 4804.760183,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 4804.760183,
+                "50.0" : 4804.760183,
+                "90.0" : 4804.760183,
+                "95.0" : 4804.760183,
+                "99.0" : 4804.760183,
+                "99.9" : 4804.760183,
+                "99.99" : 4804.760183,
+                "99.999" : 4804.760183,
+                "99.9999" : 4804.760183,
+                "100.0" : 4804.760183
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    4804.760183
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.19",
+        "benchmark" : "org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkXSSFPerformance",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 0,
+        "jvm" : "/usr/lib/jvm/java-8-oracle/jre/bin/java",
+        "jvmArgs" : [
+            "-Dfile.encoding=UTF-8",
+            "-Duser.country=AT",
+            "-Duser.language=de",
+            "-Duser.variant",
+            "-agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,tenant=fzu35583,tenanttoken=pbjk9IcwmWupNgNR,server=https://sg-eu-west-1-54-77-175-7-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://sg-eu-west-1-52-214-31-22-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://fzu35583.sprint.dynatracelabs.com:443/communication"
+        ],
+        "jdkVersion" : "1.8.0_131",
+        "vmVersion" : "25.131-b11",
+        "warmupIterations" : 0,
+        "warmupTime" : "single-shot",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "single-shot",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 8676.439096,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 8676.439096,
+                "50.0" : 8676.439096,
+                "90.0" : 8676.439096,
+                "95.0" : 8676.439096,
+                "99.0" : 8676.439096,
+                "99.9" : 8676.439096,
+                "99.99" : 8676.439096,
+                "99.999" : 8676.439096,
+                "99.9999" : 8676.439096,
+                "100.0" : 8676.439096
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    8676.439096
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.19",
+        "benchmark" : "org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestExcelant",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 0,
+        "jvm" : "/usr/lib/jvm/java-8-oracle/jre/bin/java",
+        "jvmArgs" : [
+            "-Dfile.encoding=UTF-8",
+            "-Duser.country=AT",
+            "-Duser.language=de",
+            "-Duser.variant",
+            "-agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,tenant=fzu35583,tenanttoken=pbjk9IcwmWupNgNR,server=https://sg-eu-west-1-54-77-175-7-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://sg-eu-west-1-52-214-31-22-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://fzu35583.sprint.dynatracelabs.com:443/communication"
+        ],
+        "jdkVersion" : "1.8.0_131",
+        "vmVersion" : "25.131-b11",
+        "warmupIterations" : 0,
+        "warmupTime" : "single-shot",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "single-shot",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 7500.320385,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 7500.320385,
+                "50.0" : 7500.320385,
+                "90.0" : 7500.320385,
+                "95.0" : 7500.320385,
+                "99.0" : 7500.320385,
+                "99.9" : 7500.320385,
+                "99.99" : 7500.320385,
+                "99.999" : 7500.320385,
+                "99.9999" : 7500.320385,
+                "100.0" : 7500.320385
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    7500.320385
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.19",
+        "benchmark" : "org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestIntegration",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 0,
+        "jvm" : "/usr/lib/jvm/java-8-oracle/jre/bin/java",
+        "jvmArgs" : [
+            "-Dfile.encoding=UTF-8",
+            "-Duser.country=AT",
+            "-Duser.language=de",
+            "-Duser.variant",
+            "-agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,tenant=fzu35583,tenanttoken=pbjk9IcwmWupNgNR,server=https://sg-eu-west-1-54-77-175-7-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://sg-eu-west-1-52-214-31-22-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://fzu35583.sprint.dynatracelabs.com:443/communication"
+        ],
+        "jdkVersion" : "1.8.0_131",
+        "vmVersion" : "25.131-b11",
+        "warmupIterations" : 0,
+        "warmupTime" : "single-shot",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "single-shot",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 364841.977214,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 364841.977214,
+                "50.0" : 364841.977214,
+                "90.0" : 364841.977214,
+                "95.0" : 364841.977214,
+                "99.0" : 364841.977214,
+                "99.9" : 364841.977214,
+                "99.99" : 364841.977214,
+                "99.999" : 364841.977214,
+                "99.9999" : 364841.977214,
+                "100.0" : 364841.977214
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    364841.977214
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.19",
+        "benchmark" : "org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestMain",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 0,
+        "jvm" : "/usr/lib/jvm/java-8-oracle/jre/bin/java",
+        "jvmArgs" : [
+            "-Dfile.encoding=UTF-8",
+            "-Duser.country=AT",
+            "-Duser.language=de",
+            "-Duser.variant",
+            "-agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,tenant=fzu35583,tenanttoken=pbjk9IcwmWupNgNR,server=https://sg-eu-west-1-54-77-175-7-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://sg-eu-west-1-52-214-31-22-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://fzu35583.sprint.dynatracelabs.com:443/communication"
+        ],
+        "jdkVersion" : "1.8.0_131",
+        "vmVersion" : "25.131-b11",
+        "warmupIterations" : 0,
+        "warmupTime" : "single-shot",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "single-shot",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 78151.769746,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 78151.769746,
+                "50.0" : 78151.769746,
+                "90.0" : 78151.769746,
+                "95.0" : 78151.769746,
+                "99.0" : 78151.769746,
+                "99.9" : 78151.769746,
+                "99.99" : 78151.769746,
+                "99.999" : 78151.769746,
+                "99.9999" : 78151.769746,
+                "100.0" : 78151.769746
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    78151.769746
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.19",
+        "benchmark" : "org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestOOXML",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 0,
+        "jvm" : "/usr/lib/jvm/java-8-oracle/jre/bin/java",
+        "jvmArgs" : [
+            "-Dfile.encoding=UTF-8",
+            "-Duser.country=AT",
+            "-Duser.language=de",
+            "-Duser.variant",
+            "-agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,tenant=fzu35583,tenanttoken=pbjk9IcwmWupNgNR,server=https://sg-eu-west-1-54-77-175-7-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://sg-eu-west-1-52-214-31-22-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://fzu35583.sprint.dynatracelabs.com:443/communication"
+        ],
+        "jdkVersion" : "1.8.0_131",
+        "vmVersion" : "25.131-b11",
+        "warmupIterations" : 0,
+        "warmupTime" : "single-shot",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "single-shot",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 129378.153792,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 129378.153792,
+                "50.0" : 129378.153792,
+                "90.0" : 129378.153792,
+                "95.0" : 129378.153792,
+                "99.0" : 129378.153792,
+                "99.9" : 129378.153792,
+                "99.99" : 129378.153792,
+                "99.999" : 129378.153792,
+                "99.9999" : 129378.153792,
+                "100.0" : 129378.153792
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    129378.153792
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.19",
+        "benchmark" : "org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestOOXMLLite",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 0,
+        "jvm" : "/usr/lib/jvm/java-8-oracle/jre/bin/java",
+        "jvmArgs" : [
+            "-Dfile.encoding=UTF-8",
+            "-Duser.country=AT",
+            "-Duser.language=de",
+            "-Duser.variant",
+            "-agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,tenant=fzu35583,tenanttoken=pbjk9IcwmWupNgNR,server=https://sg-eu-west-1-54-77-175-7-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://sg-eu-west-1-52-214-31-22-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://fzu35583.sprint.dynatracelabs.com:443/communication"
+        ],
+        "jdkVersion" : "1.8.0_131",
+        "vmVersion" : "25.131-b11",
+        "warmupIterations" : 0,
+        "warmupTime" : "single-shot",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "single-shot",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 227315.636048,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 227315.636048,
+                "50.0" : 227315.636048,
+                "90.0" : 227315.636048,
+                "95.0" : 227315.636048,
+                "99.0" : 227315.636048,
+                "99.9" : 227315.636048,
+                "99.99" : 227315.636048,
+                "99.999" : 227315.636048,
+                "99.9999" : 227315.636048,
+                "100.0" : 227315.636048
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    227315.636048
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.19",
+        "benchmark" : "org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestScratchpad",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 0,
+        "jvm" : "/usr/lib/jvm/java-8-oracle/jre/bin/java",
+        "jvmArgs" : [
+            "-Dfile.encoding=UTF-8",
+            "-Duser.country=AT",
+            "-Duser.language=de",
+            "-Duser.variant",
+            "-agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,tenant=fzu35583,tenanttoken=pbjk9IcwmWupNgNR,server=https://sg-eu-west-1-54-77-175-7-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://sg-eu-west-1-52-214-31-22-acceptancee2e-euwest.sprint.ruxitlabs.com/communication;https://fzu35583.sprint.dynatracelabs.com:443/communication"
+        ],
+        "jdkVersion" : "1.8.0_131",
+        "vmVersion" : "25.131-b11",
+        "warmupIterations" : 0,
+        "warmupTime" : "single-shot",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "single-shot",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 30418.193057,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 30418.193057,
+                "50.0" : 30418.193057,
+                "90.0" : 30418.193057,
+                "95.0" : 30418.193057,
+                "99.0" : 30418.193057,
+                "99.9" : 30418.193057,
+                "99.99" : 30418.193057,
+                "99.999" : 30418.193057,
+                "99.9999" : 30418.193057,
+                "100.0" : 30418.193057
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    30418.193057
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+]
+
+
