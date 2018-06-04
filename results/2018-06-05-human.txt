@@ -1,0 +1,455 @@
+# JMH version: 1.20
+# VM version: JDK 1.8.0_171, VM 25.171-b11
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant -agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,***REMOVED***,***REMOVED***,server=***REMOVED***;***REMOVED***;***REMOVED***
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.BuildBenchmarks.benchmarkCompileAll
+
+# Run progress: 0,00% complete, ETA 00:00:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile-all] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:154)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:128)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:106)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:110)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:69)
+	at org.apache.poi.benchmark.suite.BuildBenchmarks.benchmarkCompileAll(BuildBenchmarks.java:16)
+	at org.apache.poi.benchmark.suite.generated.BuildBenchmarks_benchmarkCompileAll_jmhTest.benchmarkCompileAll_ss_jmhStub(BuildBenchmarks_benchmarkCompileAll_jmhTest.java:320)
+	at org.apache.poi.benchmark.suite.generated.BuildBenchmarks_benchmarkCompileAll_jmhTest.benchmarkCompileAll_SingleShotTime(BuildBenchmarks_benchmarkCompileAll_jmhTest.java:299)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:149)
+	... 19 more
+
+
+# JMH version: 1.20
+# VM version: JDK 1.8.0_171, VM 25.171-b11
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant -agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,***REMOVED***,***REMOVED***,server=***REMOVED***;***REMOVED***;***REMOVED***
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkHSSFPerformance
+
+# Run progress: 10,00% complete, ETA 00:46:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile-all] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:154)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:128)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:106)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:110)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:69)
+	at org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.setUp(SSPerformanceBenchmarks.java:12)
+	at org.apache.poi.benchmark.suite.generated.SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest._jmh_tryInit_f_ssperformancebenchmarks0_0(SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.generated.SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.benchmarkHSSFPerformance_SingleShotTime(SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.java:291)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:149)
+	... 19 more
+
+
+# JMH version: 1.20
+# VM version: JDK 1.8.0_171, VM 25.171-b11
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant -agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,***REMOVED***,***REMOVED***,server=***REMOVED***;***REMOVED***;***REMOVED***
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkSXSSFPerformance
+
+# Run progress: 20,00% complete, ETA 00:23:13
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile-all] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:154)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:128)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:106)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:110)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:69)
+	at org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.setUp(SSPerformanceBenchmarks.java:12)
+	at org.apache.poi.benchmark.suite.generated.SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest._jmh_tryInit_f_ssperformancebenchmarks0_0(SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.generated.SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest.benchmarkSXSSFPerformance_SingleShotTime(SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest.java:291)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:149)
+	... 19 more
+
+
+# JMH version: 1.20
+# VM version: JDK 1.8.0_171, VM 25.171-b11
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant -agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,***REMOVED***,***REMOVED***,server=***REMOVED***;***REMOVED***;***REMOVED***
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkXSSFPerformance
+
+# Run progress: 30,00% complete, ETA 00:15:04
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile-all] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:154)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:128)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:106)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:110)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:69)
+	at org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.setUp(SSPerformanceBenchmarks.java:12)
+	at org.apache.poi.benchmark.suite.generated.SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest._jmh_tryInit_f_ssperformancebenchmarks0_0(SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.generated.SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest.benchmarkXSSFPerformance_SingleShotTime(SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest.java:291)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:149)
+	... 19 more
+
+
+# JMH version: 1.20
+# VM version: JDK 1.8.0_171, VM 25.171-b11
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant -agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,***REMOVED***,***REMOVED***,server=***REMOVED***;***REMOVED***;***REMOVED***
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestExcelant
+
+# Run progress: 40,00% complete, ETA 00:10:43
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile-all] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:154)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:128)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:106)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:110)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:69)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.setUp(TestBenchmarks.java:13)
+	at org.apache.poi.benchmark.suite.generated.TestBenchmarks_benchmarkTestExcelant_jmhTest._jmh_tryInit_f_testbenchmarks0_0(TestBenchmarks_benchmarkTestExcelant_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.generated.TestBenchmarks_benchmarkTestExcelant_jmhTest.benchmarkTestExcelant_SingleShotTime(TestBenchmarks_benchmarkTestExcelant_jmhTest.java:291)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:149)
+	... 19 more
+
+
+# JMH version: 1.20
+# VM version: JDK 1.8.0_171, VM 25.171-b11
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant -agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,***REMOVED***,***REMOVED***,server=***REMOVED***;***REMOVED***;***REMOVED***
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 3 hr per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestIntegration
+
+# Run progress: 50,00% complete, ETA 00:07:49
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile-all] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:154)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:128)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:106)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:110)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:69)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.setUp(TestBenchmarks.java:13)
+	at org.apache.poi.benchmark.suite.generated.TestBenchmarks_benchmarkTestIntegration_jmhTest._jmh_tryInit_f_testbenchmarks0_0(TestBenchmarks_benchmarkTestIntegration_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.generated.TestBenchmarks_benchmarkTestIntegration_jmhTest.benchmarkTestIntegration_SingleShotTime(TestBenchmarks_benchmarkTestIntegration_jmhTest.java:291)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:149)
+	... 19 more
+
+
+# JMH version: 1.20
+# VM version: JDK 1.8.0_171, VM 25.171-b11
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant -agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,***REMOVED***,***REMOVED***,server=***REMOVED***;***REMOVED***;***REMOVED***
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestMain
+
+# Run progress: 60,00% complete, ETA 00:06:45
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile-all] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:154)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:128)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:106)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:110)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:69)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.setUp(TestBenchmarks.java:13)
+	at org.apache.poi.benchmark.suite.generated.TestBenchmarks_benchmarkTestMain_jmhTest._jmh_tryInit_f_testbenchmarks0_0(TestBenchmarks_benchmarkTestMain_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.generated.TestBenchmarks_benchmarkTestMain_jmhTest.benchmarkTestMain_SingleShotTime(TestBenchmarks_benchmarkTestMain_jmhTest.java:291)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:149)
+	... 19 more
+
+
+# JMH version: 1.20
+# VM version: JDK 1.8.0_171, VM 25.171-b11
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant -agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,***REMOVED***,***REMOVED***,server=***REMOVED***;***REMOVED***;***REMOVED***
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestOOXML
+
+# Run progress: 70,00% complete, ETA 00:04:38
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile-all] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:154)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:128)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:106)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:110)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:69)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.setUp(TestBenchmarks.java:13)
+	at org.apache.poi.benchmark.suite.generated.TestBenchmarks_benchmarkTestOOXML_jmhTest._jmh_tryInit_f_testbenchmarks0_0(TestBenchmarks_benchmarkTestOOXML_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.generated.TestBenchmarks_benchmarkTestOOXML_jmhTest.benchmarkTestOOXML_SingleShotTime(TestBenchmarks_benchmarkTestOOXML_jmhTest.java:291)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:149)
+	... 19 more
+
+
+# JMH version: 1.20
+# VM version: JDK 1.8.0_171, VM 25.171-b11
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant -agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,***REMOVED***,***REMOVED***,server=***REMOVED***;***REMOVED***;***REMOVED***
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestOOXMLLite
+
+# Run progress: 80,00% complete, ETA 00:02:51
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile-all] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:154)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:128)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:106)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:110)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:69)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.setUp(TestBenchmarks.java:13)
+	at org.apache.poi.benchmark.suite.generated.TestBenchmarks_benchmarkTestOOXMLLite_jmhTest._jmh_tryInit_f_testbenchmarks0_0(TestBenchmarks_benchmarkTestOOXMLLite_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.generated.TestBenchmarks_benchmarkTestOOXMLLite_jmhTest.benchmarkTestOOXMLLite_SingleShotTime(TestBenchmarks_benchmarkTestOOXMLLite_jmhTest.java:291)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:149)
+	... 19 more
+
+
+# JMH version: 1.20
+# VM version: JDK 1.8.0_171, VM 25.171-b11
+# VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+# VM options: -Dfile.encoding=UTF-8 -Duser.country=AT -Duser.language=de -Duser.variant -agentpath:/opt/dynatrace/oneagent/agent/lib64/liboneagentloader.so=loglevelcon=none,***REMOVED***,***REMOVED***,server=***REMOVED***;***REMOVED***;***REMOVED***
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestScratchpad
+
+# Run progress: 90,00% complete, ETA 00:01:20
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile-all] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:154)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:128)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:106)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:110)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:69)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.setUp(TestBenchmarks.java:13)
+	at org.apache.poi.benchmark.suite.generated.TestBenchmarks_benchmarkTestScratchpad_jmhTest._jmh_tryInit_f_testbenchmarks0_0(TestBenchmarks_benchmarkTestScratchpad_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.generated.TestBenchmarks_benchmarkTestScratchpad_jmhTest.benchmarkTestScratchpad_SingleShotTime(TestBenchmarks_benchmarkTestScratchpad_jmhTest.java:291)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:149)
+	... 19 more
+
+
+# Run complete. Total time: 00:12:38
+
+Benchmark  Mode  Cnt  Score   Error  Units
+
+Benchmark result is saved to build/reports/jmh/results.json
