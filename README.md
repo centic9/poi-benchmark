@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/centic9/poi-benchmark.svg)](https://travis-ci.org/centic9/poi-benchmark) [![Gradle Status](https://gradleupdate.appspot.com/centic9/poi-benchmark/status.svg?branch=master)](https://gradleupdate.appspot.com/centic9/poi-benchmark/status)
 
 This is a small project which executes various longer running
-tests against Apache POI and measures runtimes using
+tests against Apache POI and measures execution times using
 the JMH micro-benchmarking suite.
 
 Things that are executed include
@@ -11,7 +11,7 @@ Things that are executed include
 * running some of the example applications which
 indicate performance of certain areas of functionality
 
-## Initial URL for looking at results
+## Current results
 
 The results can be looked at directly from the Git repository, for github you can use:
 
@@ -37,7 +37,7 @@ If Apache ant is installed via your Linux distribution, also install the package
 
 #### Licensing
 
-   Copyright 2013-2017 Dominik Stadler
+   Copyright 2013-2018 Dominik Stadler
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
