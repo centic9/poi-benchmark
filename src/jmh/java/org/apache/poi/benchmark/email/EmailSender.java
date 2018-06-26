@@ -53,24 +53,22 @@ public class EmailSender {
 			throw new IOException(CANNOT_SEND_EMAIL_NO_EMAIL_DATA);
 		}
 
-		if(attachments== null || attachments.size() == 0) {
-			throw new IOException("Cannot send email, no attachments specified.");
-		}
-
 		try {
 			final ImageHtmlEmail email = new ImageHtmlEmail();
 	        email.setDataSourceResolver(new DataSourceUrlResolver(new File(".").toURI().toURL(), true));
 
-			for(File report : attachments) {
-				// Create the attachment
-				EmailAttachment attachment = new EmailAttachment();
-				attachment.setPath(report.getAbsolutePath());
-				attachment.setDisposition(EmailAttachment.ATTACHMENT);
-				attachment.setDescription("The generated report");
-				attachment.setName(report.getName());
+			if(attachments != null) {
+				for (File report : attachments) {
+					// Create the attachment
+					EmailAttachment attachment = new EmailAttachment();
+					attachment.setPath(report.getAbsolutePath());
+					attachment.setDisposition(EmailAttachment.ATTACHMENT);
+					attachment.setDescription("The generated report");
+					attachment.setName(report.getName());
 
-				// add the attachment
-				email.attach(attachment);
+					// add the attachment
+					email.attach(attachment);
+				}
 			}
 
 			setSMTPConfig(email, mailserverConfig);
