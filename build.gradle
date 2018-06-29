@@ -66,3 +66,6 @@ task processResults(type:JavaExec) {
     main = 'org.apache.poi.benchmark.ProcessResults'
     classpath = sourceSets.jmh.runtimeClasspath
 }
+
+processResults.mustRunAfter publishResults
+
