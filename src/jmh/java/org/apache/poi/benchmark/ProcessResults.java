@@ -105,8 +105,12 @@ public class ProcessResults {
         "</html>\n";
 
     public static void main(String[] args) throws IOException, ParseException {
-        //<script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js"></script>
-        File[] files = new File("results").listFiles((FilenameFilter) new SuffixFileFilter("-results.json"));
+        File resultDir = new File("results");
+        File[] files = resultDir.listFiles((FilenameFilter) new SuffixFileFilter("-results.json"));
+        Preconditions.checkNotNull(files, "Directory %s does not exist",
+                resultDir.getAbsolutePath());
+
+        System.out.println("Found " + files.length + " file to process in directory " + resultDir.getAbsolutePath());
 
         Map<String, Map<String,Double>> values = new TreeMap<>();
         String maxDateStr = readFiles(files, values);
@@ -127,7 +131,7 @@ public class ProcessResults {
 
                 String benchmark = data.get("benchmark").toString();
                 double value = Double.parseDouble(primaryMetric.get("score").toString());
-                System.out.println("File " + file + ": Found: " + benchmark + ": " + value);
+                //System.out.println("File " + file + ": Found: " + benchmark + ": " + value);
 
                 Map<String,Double> benchmarkValues = values.get(benchmark);
                 if(benchmarkValues == null) {
