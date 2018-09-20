@@ -8,16 +8,22 @@ import org.apache.commons.io.filefilter.SuffixFileFilter;
 import org.dstadler.commons.arrays.ArrayUtils;
 import org.dstadler.commons.exec.BufferingLogOutputStream;
 import org.dstadler.commons.exec.ExecutionHelper;
+import org.dstadler.commons.logging.jdk.DefaultFormatter;
 import org.dstadler.commons.logging.jdk.LoggerFactory;
 import org.openjdk.jmh.annotations.*;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Handler;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 @BenchmarkMode(Mode.SingleShotTime)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
@@ -26,7 +32,22 @@ import java.util.concurrent.TimeUnit;
 public abstract class BaseBenchmark {
     static {
         try {
-            LoggerFactory.initLogging();
+            LoggerFactory.sendCommonsLogToJDKLog();
+
+            try (InputStream resource = new FileInputStream("src/jmh/resources/logging.properties")) {
+                // apply configuration
+                try {
+                    LogManager.getLogManager().readConfiguration(resource);
+                } finally {
+                    resource.close();
+                }
+
+                // apply a default format to the log handlers here before throwing an exception further down
+                Logger log = Logger.getLogger("");    // NOSONAR - local logger used on purpose here
+                for (Handler handler : log.getHandlers()) {
+                    handler.setFormatter(new DefaultFormatter());
+                }
+            }
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
@@ -41,7 +62,9 @@ public abstract class BaseBenchmark {
             Preconditions.checkState(srcDir.mkdir(), "Could not create directory " + srcDir.getAbsolutePath());
         }
 
-        svnCleanup();
+        if(new File(srcDir, ".svn").exists()) {
+            svnCleanup();
+        }
         svnCheckout();
         svnStatus();
     }
