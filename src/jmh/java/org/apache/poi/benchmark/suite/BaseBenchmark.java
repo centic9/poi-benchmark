@@ -8,6 +8,7 @@ import org.apache.commons.io.filefilter.SuffixFileFilter;
 import org.dstadler.commons.arrays.ArrayUtils;
 import org.dstadler.commons.exec.BufferingLogOutputStream;
 import org.dstadler.commons.exec.ExecutionHelper;
+import org.dstadler.commons.logging.jdk.LoggerFactory;
 import org.openjdk.jmh.annotations.*;
 
 import java.io.File;
@@ -23,6 +24,14 @@ import java.util.concurrent.TimeUnit;
 @State(Scope.Thread)
 @Fork(value = 0, warmups = 0)
 public abstract class BaseBenchmark {
+    static {
+        try {
+            LoggerFactory.initLogging();
+        } catch (IOException e) {
+            throw new IllegalStateException(e);
+        }
+    }
+
     protected final File srcDir = new File("sources");
 
     @Setup
