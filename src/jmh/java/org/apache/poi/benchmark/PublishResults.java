@@ -18,6 +18,7 @@ public class PublishResults {
 
     private static final FastDateFormat DATE_FORMAT = FastDateFormat.getInstance("yyyy-MM-dd");
     private static final String TODAY = DATE_FORMAT.format(new Date());
+    private static final File LOG_FILE = new File("poi-benchmark.0.0.log");
 
     public static void main(String[] args) throws IOException {
         // read mail-config
@@ -51,7 +52,12 @@ public class PublishResults {
     private static void sendReport(MailserverConfig config) throws IOException {
         EmailSender sender = new EmailSender();
 
-        File[] files = REPORTS_DIR.listFiles();
+        File[] dirFiles = REPORTS_DIR.listFiles();
+        Preconditions.checkNotNull(dirFiles, "Did not find directory " + REPORTS_DIR.getAbsolutePath());        List<File> files = new ArrayList<>(Arrays.asList(dirFiles));
+        if(LOG_FILE.exists()) {
+            files.add(LOG_FILE);
+        }
+
         Preconditions.checkNotNull(files, "Should have the directory " + REPORTS_DIR);
 
         EmailConfig email = new EmailConfig();
@@ -87,7 +93,7 @@ public class PublishResults {
                 "see also <a href=\"https://github.com/centic9/poi-benchmark\">https://github.com/centic9/poi-benchmark</a><br/><br/>" +
                 "<pre>" + report + "</pre>";
         System.out.println("Sending email to " + email + " with content: " + msg);
-        sender.sendAttachmentEmail(Arrays.asList(files), config, email, msg);
+        sender.sendAttachmentEmail(files, config, email, msg);
     }
 
     private static void sendReportNotFound(MailserverConfig config) throws IOException {
