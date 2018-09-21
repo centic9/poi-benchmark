@@ -2,6 +2,7 @@ package org.apache.poi.benchmark.suite;
 
 import com.google.common.base.Preconditions;
 import org.apache.commons.exec.CommandLine;
+import org.apache.commons.exec.ExecuteException;
 import org.apache.commons.io.filefilter.AndFileFilter;
 import org.apache.commons.io.filefilter.NotFileFilter;
 import org.apache.commons.io.filefilter.SuffixFileFilter;
@@ -19,9 +20,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Handler;
+import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
@@ -52,6 +55,7 @@ public abstract class BaseBenchmark {
             throw new IllegalStateException(e);
         }
     }
+    private static final Logger log = LoggerFactory.make();
 
     protected final File srcDir = new File("sources");
 
@@ -139,7 +143,13 @@ public abstract class BaseBenchmark {
             CommandLine cmd = new CommandLine("ant");
             cmd.addArgument(target);
             cmd.addArguments(args);
-            ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out);
+            try {
+                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out);
+            } catch (ExecuteException e) {
+                log.log(Level.WARNING, "Failed to run Ant with target " + target +
+                        " and args: " + Arrays.toString(args), e);
+                throw e;
+            }
         }
     }
 
@@ -148,7 +158,13 @@ public abstract class BaseBenchmark {
             CommandLine cmd = new CommandLine("svn");
             cmd.addArgument(command);
             cmd.addArguments(args);
-            ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out);
+            try {
+                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out);
+            } catch (ExecuteException e) {
+                log.log(Level.WARNING, "Failed to run SVN with command " + command +
+                        " and args: " + Arrays.toString(args), e);
+                throw e;
+            }
         }
     }
 
@@ -164,7 +180,15 @@ public abstract class BaseBenchmark {
             cmd.addArgument(ArrayUtils.toString(jars.toArray(), ":", "", ""));
             cmd.addArgument(clazz);
             cmd.addArguments(args);
-            ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out);
+
+            try {
+                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out);
+            } catch (ExecuteException e) {
+                log.log(Level.WARNING, "Failed to run POI application " + clazz + "" +
+                        " and args: " + Arrays.toString(args), e);
+                throw e;
+            }
+
         }
     }
 
