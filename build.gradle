@@ -1,6 +1,6 @@
 plugins {
     // Release 0.4.0 and higher require Gradle 4.0
-  id "me.champeau.gradle.jmh" version "0.4.6"
+  id "me.champeau.gradle.jmh" version "0.4.7"
 }
 
 repositories {
@@ -8,21 +8,21 @@ repositories {
 }
 
 dependencies {
-    compile 'org.dstadler:commons-dost:1.0.0.25'
+    compile 'org.dstadler:commons-dost:1.0.0.26'
     compile 'org.apache.commons:commons-email:1.5'
     compile 'com.google.guava:guava:20.0'
 
-    compile 'com.fasterxml.jackson.core:jackson-core:2.9.4'
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.4'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.9.7'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.7'
 
     // for IntelliJ JMH support
-    compile 'org.openjdk.jmh:jmh-core:1.20'
-    jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.20'
+    compile 'org.openjdk.jmh:jmh-core:1.21'
+    jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.21'
 }
 
 jmh {
     // see https://github.com/melix/jmh-gradle-plugin
-    jmhVersion = '1.20'
+    jmhVersion = '1.21'
     iterations = 1
     humanOutputFile = project.file("${project.buildDir}/reports/jmh/human.txt")
     resultFormat = 'JSON'
