@@ -19,6 +19,7 @@ public class PublishResults {
     private static final FastDateFormat DATE_FORMAT = FastDateFormat.getInstance("yyyy-MM-dd");
     private static final String TODAY = DATE_FORMAT.format(new Date());
     private static final File LOG_FILE = new File("poi-benchmark.0.0.log");
+    private static final File OUTPUT_FILE = new File("benchmark.log");
 
     public static void main(String[] args) throws IOException {
         // read mail-config
@@ -54,8 +55,15 @@ public class PublishResults {
 
         File[] dirFiles = REPORTS_DIR.listFiles();
         Preconditions.checkNotNull(dirFiles, "Did not find directory " + REPORTS_DIR.getAbsolutePath());        List<File> files = new ArrayList<>(Arrays.asList(dirFiles));
+
+        // Add the Java log file
         if(LOG_FILE.exists()) {
             files.add(LOG_FILE);
+        }
+
+        // Add the logfile produced via redirection of commands in the shell-script
+        if(OUTPUT_FILE.exists()) {
+            files.add(OUTPUT_FILE);
         }
 
         Preconditions.checkNotNull(files, "Should have the directory " + REPORTS_DIR);
