@@ -102,7 +102,7 @@ public abstract class BaseBenchmark {
     }
 
     protected void compileAll() throws IOException {
-        runAntTarget("compile-all", TimeUnit.HOURS.toMillis(1));
+        runAntTarget("compile", TimeUnit.HOURS.toMillis(1));
     }
 
     protected void testMain() throws IOException {
