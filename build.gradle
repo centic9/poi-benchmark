@@ -34,8 +34,8 @@ jmh {
 // see https://github.com/melix/jmh-gradle-plugin/issues/6
 tasks.getByName('jmhJar').doFirst() {duplicatesStrategy(DuplicatesStrategy.EXCLUDE)}
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.6'
+wrapper {
+    gradleVersion = '4.10.3'
 }
 
 task adjustWrapperPropertiesFile {
