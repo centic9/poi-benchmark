@@ -1,34 +1,26 @@
 package org.apache.poi.benchmark;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Preconditions;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.SuffixFileFilter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.apache.commons.lang3.time.FastDateFormat;
+import org.apache.poi.benchmark.results.Results;
 
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.*;
+import java.util.Date;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.function.Predicate;
 
 public class ProcessResults {
-    private static final ObjectMapper mapper = new ObjectMapper();
-
-    private static final Date START_DATE;
 
     private static final FastDateFormat DATE_FORMAT = FastDateFormat.getInstance("yyyy-MM-dd");
-
-    static {
-        try {
-            START_DATE = DATE_FORMAT.parse("2016-04-27");
-        } catch (ParseException e) {
-            throw new IllegalStateException("Failed to parse date", e);
-        }
-    }
 
     private static final String TEMPLATE =
         "<html>\n" +
@@ -105,50 +97,21 @@ public class ProcessResults {
         "</html>\n";
 
     public static void main(String[] args) throws IOException, ParseException {
-        File resultDir = new File("results");
-        File[] files = resultDir.listFiles((FilenameFilter) new SuffixFileFilter("-results.json"));
+        File resultsDir = new File("results");
+        File[] files = resultsDir.listFiles((FilenameFilter) new SuffixFileFilter("-results.json"));
         Preconditions.checkNotNull(files, "Directory %s does not exist",
-                resultDir.getAbsolutePath());
+                resultsDir.getAbsolutePath());
 
-        System.out.println("Found " + files.length + " file to process in directory " + resultDir.getAbsolutePath());
+        System.out.println("Found " + files.length + " file to process in directory " + resultsDir.getAbsolutePath());
 
-        Map<String, Map<String,Double>> values = new TreeMap<>();
-        String maxDateStr = readFiles(files, values);
+        Results results = new Results();
+        String maxDateStr = results.readFiles(files);
 
-        generateHtmlFiles(values, maxDateStr);
-    }
+        Map<String, Map<String, Double>> values = results.getValues();
+        generateHtmlFiles(values, DATE_FORMAT.parse("2016-04-27"), maxDateStr, resultsDir);
 
-    private static String readFiles(File[] files, Map<String, Map<String, Double>> values) throws IOException {
-        String maxDateStr = null;
-        for(File file : files) {
-            String date = file.getName().replace("-results.json", "");
-
-            //noinspection unchecked
-            Map<String,Object>[] userData = mapper.readValue(file, Map[].class);
-            for(Map<String,Object> data : userData) {
-                //noinspection unchecked
-                Map<String, Object> primaryMetric = (Map<String, Object>) data.get("primaryMetric");
-
-                String benchmark = data.get("benchmark").toString();
-                double value = Double.parseDouble(primaryMetric.get("score").toString());
-                //System.out.println("File " + file + ": Found: " + benchmark + ": " + value);
-
-                Map<String,Double> benchmarkValues = values.get(benchmark);
-                if(benchmarkValues == null) {
-                    benchmarkValues = new HashMap<>();
-                }
-                benchmarkValues.put(date, value);
-                values.put(benchmark, benchmarkValues);
-
-                if(maxDateStr == null || maxDateStr.compareTo(date) <= 0) {
-                    maxDateStr = date;
-                }
-            }
-        }
-
-        Preconditions.checkNotNull(maxDateStr, "Should have a max date now!");
-
-        return maxDateStr;
+        // produce charts for only the last 30 days
+        generateHtmlFiles(values, DateUtils.addDays(new Date(), -90), maxDateStr, new File(resultsDir, "month"));
     }
 
     private static String getBenchmarkName(String benchmark) {
@@ -172,11 +135,11 @@ public class ProcessResults {
         return benchmarkNames.toString();
     }
 
-    private static void generateHtmlFiles(Map<String, Map<String, Double>> values, String maxDateStr) throws ParseException, IOException {
+    private static void generateHtmlFiles(Map<String, Map<String, Double>> values, Date startDate, String maxDateStr, File resultsDir) throws ParseException, IOException {
         Set<String> dates = new TreeSet<>();
 
         StringBuilder overviewHtml = new StringBuilder("<html><body><h1>Available Benchmarks for Apache POI</h1><br/>\n");
-        overviewHtml.append("Having data from ").append(DATE_FORMAT.format(START_DATE)).
+        overviewHtml.append("Having data from ").append(DATE_FORMAT.format(startDate)).
                 append(" to ").append(maxDateStr).append("<br/><br/><br/>");
 
         // one file per benchmark
@@ -184,7 +147,7 @@ public class ProcessResults {
             Map<String, Double> dateItems = values.get(benchmark);
 
             StringBuilder data = new StringBuilder();
-            Date date = START_DATE;
+            Date date = startDate;
             while(date.compareTo(DATE_FORMAT.parse(maxDateStr)) <= 0) {
                 String dateStr = DATE_FORMAT.format(date);
                 Double value = dateItems.get(dateStr);
@@ -199,25 +162,27 @@ public class ProcessResults {
             }
 
             // remove last trailing "+"
-            data.setLength(data.length() - 3);
+            if(data.length() >= 3) {
+                data.setLength(data.length() - 3);
+            }
 
             overviewHtml.append("<a href=\"").append(benchmark).append(".html\">").
                     append(getBenchmarkName(benchmark)).append("</a><br/>\n");
 
-            writeHtml(data, "Date,Time", getBenchmarkName(benchmark), benchmark);
+            writeHtml(data, "Date,Time", getBenchmarkName(benchmark), benchmark, resultsDir);
         }
 
-        writeCombined(values, dates, overviewHtml, "combined", "Combined", s -> true);
-        writeCombined(values, dates, overviewHtml, "ssperformance", "SSPerformance", input -> input.contains("SSPerformance"));
+        writeCombined(values, dates, overviewHtml, "combined", "Combined", s -> true, resultsDir);
+        writeCombined(values, dates, overviewHtml, "ssperformance", "SSPerformance", input -> input.contains("SSPerformance"), resultsDir);
         overviewHtml.append("</body></html>");
 
         System.out.println("Writing overview to result.html");
-        FileUtils.writeStringToFile(new File("results", "results.html"), overviewHtml.toString(), "UTF-8");
+        FileUtils.writeStringToFile(new File(resultsDir, "results.html"), overviewHtml.toString(), "UTF-8");
     }
 
     private static void writeCombined(Map<String, Map<String, Double>> values, Set<String> dates,
                                       StringBuilder overviewHtml, String fileName, String groupName,
-                                      Predicate<String> isIncluded) throws IOException {
+                                      Predicate<String> isIncluded, File resultsDir) throws IOException {
         StringBuilder combinedData = new StringBuilder();
         for(String dateStr : dates) {
             combinedData.append("\"").append(dateStr);
@@ -232,20 +197,22 @@ public class ProcessResults {
         }
 
         // remove last trailing "+"
-        combinedData.setLength(combinedData.length() - 3);
+        if(combinedData.length() >= 3) {
+            combinedData.setLength(combinedData.length() - 3);
+        }
 
-        writeHtml(combinedData, "Date," + getBenchmarkNames(values.keySet(), isIncluded), groupName, fileName);
+        writeHtml(combinedData, "Date," + getBenchmarkNames(values.keySet(), isIncluded), groupName, fileName, resultsDir);
 
         overviewHtml.append("<br/><a href=\"").append(fileName).append(".html\">").append(groupName).append("</a><br/>\n");
     }
 
-    private static void writeHtml(StringBuilder data, String dataHeader, String benchmark, String fileName) throws IOException {
+    private static void writeHtml(StringBuilder data, String dataHeader, String benchmark, String fileName, File resultsDir) throws IOException {
         String html = TEMPLATE.replace("${data}", data);
         html = html.replace("${dataheader}", dataHeader);
         html = html.replace("${benchmark}", benchmark);
 
         System.out.println("Writing report to " + fileName + ".html for " + benchmark);
-        FileUtils.writeStringToFile(new File("results", fileName + ".html"), html, "UTF-8");
+        FileUtils.writeStringToFile(new File(resultsDir, fileName + ".html"), html, "UTF-8");
     }
 
     private static String formatValue(Double value) {
