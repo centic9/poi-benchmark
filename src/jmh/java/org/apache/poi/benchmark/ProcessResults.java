@@ -19,8 +19,11 @@ import java.util.TreeSet;
 import java.util.function.Predicate;
 
 public class ProcessResults {
-
     private static final FastDateFormat DATE_FORMAT = FastDateFormat.getInstance("yyyy-MM-dd");
+
+    private enum ResultType {
+        all, last90Days
+    }
 
     private static final String TEMPLATE =
         "<html>\n" +
@@ -108,10 +111,10 @@ public class ProcessResults {
         String maxDateStr = results.readFiles(files);
 
         Map<String, Map<String, Double>> values = results.getValues();
-        generateHtmlFiles(values, DATE_FORMAT.parse("2016-04-27"), maxDateStr, resultsDir);
+        generateHtmlFiles(values, DATE_FORMAT.parse("2016-04-27"), maxDateStr, resultsDir, ResultType.all);
 
         // produce charts for only the last 30 days
-        generateHtmlFiles(values, DateUtils.addDays(new Date(), -90), maxDateStr, new File(resultsDir, "month"));
+        generateHtmlFiles(values, DateUtils.addDays(new Date(), -90), maxDateStr, new File(resultsDir, "month"), ResultType.last90Days);
     }
 
     private static String getBenchmarkName(String benchmark) {
@@ -135,10 +138,12 @@ public class ProcessResults {
         return benchmarkNames.toString();
     }
 
-    private static void generateHtmlFiles(Map<String, Map<String, Double>> values, Date startDate, String maxDateStr, File resultsDir) throws ParseException, IOException {
+    private static void generateHtmlFiles(Map<String, Map<String, Double>> values, Date startDate, String maxDateStr,
+                                          File resultsDir, ResultType resultType) throws ParseException, IOException {
         Set<String> dates = new TreeSet<>();
 
-        StringBuilder overviewHtml = new StringBuilder("<html><body><h1>Available Benchmarks for Apache POI</h1><br/>\n");
+        StringBuilder overviewHtml = new StringBuilder("<html><body><h1>Available Benchmarks for Apache POI" +
+                (resultType == ResultType.last90Days ? " for last 90 days" : "") + "</h1><br/>\n");
         overviewHtml.append("Having data from ").append(DATE_FORMAT.format(startDate)).
                 append(" to ").append(maxDateStr).append("<br/><br/><br/>");
 
@@ -174,6 +179,12 @@ public class ProcessResults {
 
         writeCombined(values, dates, overviewHtml, "combined", "Combined", s -> true, resultsDir);
         writeCombined(values, dates, overviewHtml, "ssperformance", "SSPerformance", input -> input.contains("SSPerformance"), resultsDir);
+
+        if(resultType == ResultType.all) {
+            overviewHtml.append("<br/><a href=\"month/results.html\">Last 90 days</a>");
+        } else {
+            overviewHtml.append("<br/><a href=\"../results.html\">Full time range</a>");
+        }
         overviewHtml.append("</body></html>");
 
         System.out.println("Writing overview to result.html");
