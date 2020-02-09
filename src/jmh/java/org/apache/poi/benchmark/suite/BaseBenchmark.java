@@ -52,9 +52,10 @@ public abstract class BaseBenchmark {
                 }
             }
         } catch (IOException e) {
-            throw new IllegalStateException(e);
+            throw new IllegalStateException("Current directory: " + new File(".").getAbsolutePath(), e);
         }
     }
+
     private static final Logger log = LoggerFactory.make();
 
     protected final File srcDir = new File("sources");
