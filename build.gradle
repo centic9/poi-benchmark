@@ -35,7 +35,9 @@ jmh {
 tasks.getByName('jmhJar').doFirst() {duplicatesStrategy(DuplicatesStrategy.EXCLUDE)}
 
 wrapper {
-    gradleVersion = '5.6.4'
+	// Gradle 5 changed the current directory of the jmh-tasks to some .gradle/wrapper directory
+	// which causes them to fail, therefore stick to Gradle 4 for now here...
+    gradleVersion = "4.10.3"
 }
 
 task adjustWrapperPropertiesFile {
