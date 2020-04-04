@@ -12,8 +12,8 @@ dependencies {
     compile 'org.apache.commons:commons-email:1.5'
     compile 'com.google.guava:guava:20.0'
 
-    compile 'com.fasterxml.jackson.core:jackson-core:2.10.2'
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.10.2'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.10.3'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.10.3'
 
     // for IntelliJ JMH support
     compile 'org.openjdk.jmh:jmh-core:1.21'
@@ -37,7 +37,7 @@ tasks.getByName('jmhJar').doFirst() {duplicatesStrategy(DuplicatesStrategy.EXCLU
 wrapper {
 	// Gradle 5 changed the current directory of the jmh-tasks to some .gradle/wrapper directory
 	// which causes them to fail, therefore stick to Gradle 4 for now here...
-    gradleVersion = /* do not use Gradle 5 for now */ '4.10.3'
+    gradleVersion=/* do not use Gradle 5 for now */ '4.10.3'
 }
 
 task adjustWrapperPropertiesFile {
