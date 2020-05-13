@@ -197,7 +197,8 @@ public abstract class BaseBenchmark {
     private void addClassesDir(List<String> jars, String dir) {
         File[] files = new File(srcDir, dir).listFiles((FileFilter)
                         new SuffixFileFilter("classes"));
-        Preconditions.checkNotNull(files);
+        Preconditions.checkNotNull(files,
+                "Directory %s does not exist", srcDir.getAbsolutePath());
         for(File file : files) {
             jars.add(file.getAbsolutePath());
         }
@@ -210,7 +211,8 @@ public abstract class BaseBenchmark {
                     new NotFileFilter(new AndFileFilter(
                             new SuffixFileFilter("-sources.jar"),
                             new SuffixFileFilter("xmlbeans-2.3.0.jar")))));
-        Preconditions.checkNotNull(files);
+        Preconditions.checkNotNull(files,
+                "Directory %s does not exist", srcDir.getAbsolutePath());
         for(File file : files) {
             jars.add(file.getAbsolutePath());
         }
