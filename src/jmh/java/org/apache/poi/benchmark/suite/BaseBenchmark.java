@@ -34,6 +34,15 @@ import java.util.logging.Logger;
 @Fork(value = 0, warmups = 0)
 public abstract class BaseBenchmark {
     static {
+        // set up logging configuration
+        configureLoggingFramework();
+    }
+
+    private static final Logger log = LoggerFactory.make();
+
+    protected final File srcDir = new File("sources");
+
+    private static void configureLoggingFramework() {
         try {
             LoggerFactory.sendCommonsLogToJDKLog();
 
@@ -56,20 +65,18 @@ public abstract class BaseBenchmark {
         }
     }
 
-    private static final Logger log = LoggerFactory.make();
-
-    protected final File srcDir = new File("sources");
-
     @Setup
     public final void baseSetUp() throws IOException {
-        // ensure directories
+        // ensure directories exist
         if(!srcDir.exists()) {
             Preconditions.checkState(srcDir.mkdir(), "Could not create directory " + srcDir.getAbsolutePath());
         }
 
+        // clean up checkout
         if(new File(srcDir, ".svn").exists()) {
             svnCleanup();
         }
+
         svnCheckout();
         svnStatus();
     }
@@ -171,6 +178,8 @@ public abstract class BaseBenchmark {
 
     protected void runPOIApplication(@SuppressWarnings("SameParameterValue") String clazz, long timeout, String... args) throws IOException {
         List<String> jars = new ArrayList<>();
+
+        // Collect third-party jar-files
         addJarsFromDir(jars, "lib/excelant");
         addJarsFromDir(jars, "lib/main");
         addJarsFromDir(jars, "lib/main-tests");
@@ -178,7 +187,10 @@ public abstract class BaseBenchmark {
         addJarsFromDir(jars, "lib/ooxml-provided");
         addJarsFromDir(jars, "lib/ooxml-tests");
         addJarsFromDir(jars, "lib/util");
+
+        // Collect complied classes for Apache POI itself
         addClassesDir(jars, "build");
+
         try (OutputStream out = new BufferingLogOutputStream()) {
             CommandLine cmd = new CommandLine("java");
             cmd.addArgument("-cp");
