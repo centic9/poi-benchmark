@@ -171,9 +171,13 @@ public abstract class BaseBenchmark {
 
     protected void runPOIApplication(@SuppressWarnings("SameParameterValue") String clazz, long timeout, String... args) throws IOException {
         List<String> jars = new ArrayList<>();
-        addJarsFromDir(jars, "lib");
-        addJarsFromDir(jars, "compile-lib");
-        addJarsFromDir(jars, "ooxml-lib");
+        addJarsFromDir(jars, "lib/excelant");
+        addJarsFromDir(jars, "lib/main");
+        addJarsFromDir(jars, "lib/main-tests");
+        addJarsFromDir(jars, "lib/ooxml");
+        addJarsFromDir(jars, "lib/ooxml-provided");
+        addJarsFromDir(jars, "lib/ooxml-tests");
+        addJarsFromDir(jars, "lib/util");
         addClassesDir(jars, "build");
         try (OutputStream out = new BufferingLogOutputStream()) {
             CommandLine cmd = new CommandLine("java");
