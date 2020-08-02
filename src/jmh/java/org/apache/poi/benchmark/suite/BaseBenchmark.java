@@ -21,7 +21,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Handler;
 import java.util.logging.Level;
@@ -33,6 +35,21 @@ import java.util.logging.Logger;
 @State(Scope.Thread)
 @Fork(value = 0, warmups = 0)
 public abstract class BaseBenchmark {
+    private static final long ONE_MINUTE = TimeUnit.MINUTES.toMillis(1);
+    private static final long TEN_MINUTES = TimeUnit.MINUTES.toMillis(10);
+    private static final long ONE_HOUR = TimeUnit.HOURS.toMillis(1);
+    private static final long TWO_HOURS = TimeUnit.HOURS.toMillis(2);
+
+    // Apache POI requires a newer Ant now, but the jmh plugin does not re-use the one from the
+    // commandline therefore we resort to setting it manually here for now
+    private static final String ANT_HOME = "/opt/apache-ant-1.10.8";
+    private static final Map<String, String> ENVIRONMENT = new HashMap<>();
+
+    static {
+        ENVIRONMENT.put("ANT_HOME", ANT_HOME);
+        ENVIRONMENT.put("PATH", ANT_HOME + "/bin:" + System.getenv("PATH"));
+    }
+
     static {
         // set up logging configuration
         configureLoggingFramework();
@@ -83,7 +100,7 @@ public abstract class BaseBenchmark {
     }
 
     private void svnCleanup() throws IOException {
-        runSVN("cleanup", 60000);
+        runSVN("cleanup");
     }
 
     private void svnCheckout() throws IOException {
@@ -92,22 +109,23 @@ public abstract class BaseBenchmark {
             CommandLine cmd = new CommandLine("svn");
             if(new File(srcDir, ".svn").exists()) {
                 cmd.addArgument("up");
-                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, 60000, out);
+                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, ONE_MINUTE, out, ENVIRONMENT);
             } else {
                 cmd.addArgument("co");
                 cmd.addArgument("https://svn.apache.org/repos/asf/poi/trunk");
                 cmd.addArgument(srcDir.getName());
-                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir.getParentFile(), 0, 60000, out);
+                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir.getParentFile(), 0, ONE_MINUTE,
+                        out, ENVIRONMENT);
             }
         }
     }
 
     private void svnStatus() throws IOException {
-        runSVN("status", TimeUnit.MINUTES.toMillis(1));
+        runSVN("status");
     }
 
     protected void clean() throws IOException {
-        runAntTarget("clean", TimeUnit.MINUTES.toMillis(10));
+        runAntTarget("clean", TEN_MINUTES);
     }
 
     private void printEnvironment() throws IOException {
@@ -116,7 +134,7 @@ public abstract class BaseBenchmark {
             cmd.addArgument("-c");
             cmd.addArguments("set");
             try {
-                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, TimeUnit.MINUTES.toMillis(1), out);
+                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, ONE_MINUTE, out, ENVIRONMENT);
             } catch (ExecuteException e) {
                 log.log(Level.WARNING, "Failed to print the environment variables", e);
                 throw e;
@@ -125,19 +143,19 @@ public abstract class BaseBenchmark {
     }
 
     protected void compileAll() throws IOException {
-        runAntTarget("compile", TimeUnit.HOURS.toMillis(1));
+        runAntTarget("compile", ONE_HOUR);
     }
 
     protected void testMain() throws IOException {
-        runAntTarget("test-main", TimeUnit.HOURS.toMillis(1));
+        runAntTarget("test-main", ONE_HOUR);
     }
 
     protected void testScratchpad() throws IOException {
-        runAntTarget("test-scratchpad", TimeUnit.HOURS.toMillis(1));
+        runAntTarget("test-scratchpad", ONE_HOUR);
     }
 
     protected void testOOXML() throws IOException {
-        runAntTarget("test-ooxml", TimeUnit.HOURS.toMillis(1));
+        runAntTarget("test-ooxml", ONE_HOUR);
     }
 
     protected void testOOXMLLite() throws IOException {
@@ -150,15 +168,15 @@ public abstract class BaseBenchmark {
             }
         }
 
-        runAntTarget("test-ooxml-lite", TimeUnit.HOURS.toMillis(1));
+        runAntTarget("test-ooxml-lite", ONE_HOUR);
     }
 
     protected void testExcelant() throws IOException {
-        runAntTarget("test-excelant", TimeUnit.HOURS.toMillis(1));
+        runAntTarget("test-excelant", ONE_HOUR);
     }
 
     protected void testIntegration() throws IOException {
-        runAntTarget("test-integration", TimeUnit.HOURS.toMillis(2)/*, "-Dorg.apache.poi.util.POILogger=org.apache.poi.util.SystemOutLogger"*/);
+        runAntTarget("test-integration", TWO_HOURS/*, "-Dorg.apache.poi.util.POILogger=org.apache.poi.util.SystemOutLogger"*/);
     }
 
     private void runAntTarget(String target, long timeout, String... args) throws IOException {
@@ -167,7 +185,7 @@ public abstract class BaseBenchmark {
             cmd.addArgument(target);
             cmd.addArguments(args);
             try {
-                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out);
+                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out, ENVIRONMENT);
             } catch (ExecuteException e) {
                 log.log(Level.WARNING, "Failed to run Ant with target " + target +
                         " and args: " + Arrays.toString(args), e);
@@ -176,13 +194,13 @@ public abstract class BaseBenchmark {
         }
     }
 
-    private void runSVN(String command, long timeout, String... args) throws IOException {
+    private void runSVN(String command, String... args) throws IOException {
         try (OutputStream out = new BufferingLogOutputStream()) {
             CommandLine cmd = new CommandLine("svn");
             cmd.addArgument(command);
             cmd.addArguments(args);
             try {
-                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out);
+                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, ONE_MINUTE, out, ENVIRONMENT);
             } catch (ExecuteException e) {
                 log.log(Level.WARNING, "Failed to run SVN with command " + command +
                         " and args: " + Arrays.toString(args), e);
@@ -214,7 +232,7 @@ public abstract class BaseBenchmark {
             cmd.addArguments(args);
 
             try {
-                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out);
+                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out, ENVIRONMENT);
             } catch (ExecuteException e) {
                 log.log(Level.WARNING, "Failed to run POI application " + clazz + "" +
                         " and args: " + Arrays.toString(args), e);
