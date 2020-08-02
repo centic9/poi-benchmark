@@ -47,7 +47,8 @@ public abstract class BaseBenchmark {
 
     static {
         ENVIRONMENT.put("ANT_HOME", ANT_HOME);
-        ENVIRONMENT.put("PATH", ANT_HOME + "/bin:" + System.getenv("PATH"));
+        ENVIRONMENT.put("PATH", ANT_HOME + "/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:"
+                + System.getenv("PATH"));
     }
 
     static {
