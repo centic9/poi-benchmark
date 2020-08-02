@@ -8,6 +8,12 @@ export PATH=${ANT_HOME}/bin:${PATH}
 
 export GRADLE_CMD="--console=plain --no-parallel --no-daemon"
 
+echo `which ant`
+ant -version
+
+echo `which javac`
+javac -version
+
 git fetch > benchmark.log && \
 git rebase origin/master >> benchmark.log && \
 rm -rf build >> benchmark.log && \
