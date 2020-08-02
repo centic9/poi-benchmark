@@ -79,6 +79,7 @@ public abstract class BaseBenchmark {
 
         svnCheckout();
         svnStatus();
+        printEnvironment();
     }
 
     private void svnCleanup() throws IOException {
@@ -107,6 +108,20 @@ public abstract class BaseBenchmark {
 
     protected void clean() throws IOException {
         runAntTarget("clean", TimeUnit.MINUTES.toMillis(10));
+    }
+
+    private void printEnvironment() throws IOException {
+        try (OutputStream out = new BufferingLogOutputStream()) {
+            CommandLine cmd = new CommandLine("bash");
+            cmd.addArgument("-c");
+            cmd.addArguments("set");
+            try {
+                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, TimeUnit.MINUTES.toMillis(1), out);
+            } catch (ExecuteException e) {
+                log.log(Level.WARNING, "Failed to print the environment variables", e);
+                throw e;
+            }
+        }
     }
 
     protected void compileAll() throws IOException {
