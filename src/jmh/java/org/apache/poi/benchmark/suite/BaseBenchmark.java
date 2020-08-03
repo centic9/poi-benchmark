@@ -6,19 +6,24 @@ import org.apache.commons.exec.ExecuteException;
 import org.apache.commons.io.filefilter.AndFileFilter;
 import org.apache.commons.io.filefilter.NotFileFilter;
 import org.apache.commons.io.filefilter.SuffixFileFilter;
+import org.apache.poi.benchmark.TailLogOutputStream;
 import org.dstadler.commons.arrays.ArrayUtils;
-import org.dstadler.commons.exec.BufferingLogOutputStream;
 import org.dstadler.commons.exec.ExecutionHelper;
 import org.dstadler.commons.logging.jdk.DefaultFormatter;
 import org.dstadler.commons.logging.jdk.LoggerFactory;
-import org.openjdk.jmh.annotations.*;
+import org.openjdk.jmh.annotations.BenchmarkMode;
+import org.openjdk.jmh.annotations.Fork;
+import org.openjdk.jmh.annotations.Mode;
+import org.openjdk.jmh.annotations.OutputTimeUnit;
+import org.openjdk.jmh.annotations.Scope;
+import org.openjdk.jmh.annotations.Setup;
+import org.openjdk.jmh.annotations.State;
 
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -44,6 +49,7 @@ public abstract class BaseBenchmark {
     // commandline therefore we resort to setting it manually here for now
     private static final String ANT_HOME = "/opt/apache-ant-1.10.8";
     private static final Map<String, String> ENVIRONMENT = new HashMap<>();
+    private static final int TAIL_LINES = 100;
 
     static {
         ENVIRONMENT.put("ANT_HOME", ANT_HOME);
@@ -106,17 +112,21 @@ public abstract class BaseBenchmark {
 
     private void svnCheckout() throws IOException {
         // svn checkout/update
-        try (OutputStream out = new BufferingLogOutputStream()) {
-            CommandLine cmd = new CommandLine("svn");
-            if(new File(srcDir, ".svn").exists()) {
-                cmd.addArgument("up");
-                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, ONE_MINUTE, out, ENVIRONMENT);
-            } else {
-                cmd.addArgument("co");
-                cmd.addArgument("https://svn.apache.org/repos/asf/poi/trunk");
-                cmd.addArgument(srcDir.getName());
-                ExecutionHelper.getCommandResultIntoStream(cmd, srcDir.getParentFile(), 0, ONE_MINUTE,
-                        out, ENVIRONMENT);
+        try (TailLogOutputStream out = new TailLogOutputStream(TAIL_LINES)) {
+            try {
+                CommandLine cmd = new CommandLine("svn");
+                if (new File(srcDir, ".svn").exists()) {
+                    cmd.addArgument("up");
+                    ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, ONE_MINUTE, out, ENVIRONMENT);
+                } else {
+                    cmd.addArgument("co");
+                    cmd.addArgument("https://svn.apache.org/repos/asf/poi/trunk");
+                    cmd.addArgument(srcDir.getName());
+                    ExecutionHelper.getCommandResultIntoStream(cmd, srcDir.getParentFile(), 0, ONE_MINUTE,
+                            out, ENVIRONMENT);
+                }
+            } catch (IOException e) {
+                throw new IOException("Log-Tail: " + out.getLines(), e);
             }
         }
     }
@@ -130,7 +140,7 @@ public abstract class BaseBenchmark {
     }
 
     private void printEnvironment() throws IOException {
-        try (OutputStream out = new BufferingLogOutputStream()) {
+        try (TailLogOutputStream out = new TailLogOutputStream(TAIL_LINES)) {
             CommandLine cmd = new CommandLine("bash");
             cmd.addArgument("-c");
             cmd.addArguments("set");
@@ -138,7 +148,7 @@ public abstract class BaseBenchmark {
                 ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, ONE_MINUTE, out, ENVIRONMENT);
             } catch (ExecuteException e) {
                 log.log(Level.WARNING, "Failed to print the environment variables", e);
-                throw e;
+                throw new IOException("Log-Tail: " + out.getLines(), e);
             }
         }
     }
@@ -181,7 +191,7 @@ public abstract class BaseBenchmark {
     }
 
     private void runAntTarget(String target, long timeout, String... args) throws IOException {
-        try (OutputStream out = new BufferingLogOutputStream()) {
+        try (TailLogOutputStream out = new TailLogOutputStream(TAIL_LINES)) {
             CommandLine cmd = new CommandLine("ant");
             cmd.addArgument(target);
             cmd.addArguments(args);
@@ -190,13 +200,13 @@ public abstract class BaseBenchmark {
             } catch (ExecuteException e) {
                 log.log(Level.WARNING, "Failed to run Ant with target " + target +
                         " and args: " + Arrays.toString(args), e);
-                throw e;
+                throw new IOException("Log-Tail: " + out.getLines(), e);
             }
         }
     }
 
     private void runSVN(String command, String... args) throws IOException {
-        try (OutputStream out = new BufferingLogOutputStream()) {
+        try (TailLogOutputStream out = new TailLogOutputStream(TAIL_LINES)) {
             CommandLine cmd = new CommandLine("svn");
             cmd.addArgument(command);
             cmd.addArguments(args);
@@ -205,7 +215,7 @@ public abstract class BaseBenchmark {
             } catch (ExecuteException e) {
                 log.log(Level.WARNING, "Failed to run SVN with command " + command +
                         " and args: " + Arrays.toString(args), e);
-                throw e;
+                throw new IOException("Log-Tail: " + out.getLines(), e);
             }
         }
     }
@@ -225,7 +235,7 @@ public abstract class BaseBenchmark {
         // Collect complied classes for Apache POI itself
         addClassesDir(jars, "build");
 
-        try (OutputStream out = new BufferingLogOutputStream()) {
+        try (TailLogOutputStream out = new TailLogOutputStream(TAIL_LINES)) {
             CommandLine cmd = new CommandLine("java");
             cmd.addArgument("-cp");
             cmd.addArgument(ArrayUtils.toString(jars.toArray(), ":", "", ""));
@@ -237,9 +247,8 @@ public abstract class BaseBenchmark {
             } catch (ExecuteException e) {
                 log.log(Level.WARNING, "Failed to run POI application " + clazz + "" +
                         " and args: " + Arrays.toString(args), e);
-                throw e;
+                throw new IOException("Log-Tail: " + out.getLines(), e);
             }
-
         }
     }
 
