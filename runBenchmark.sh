@@ -23,7 +23,7 @@ git fetch > benchmark.log && \
 git rebase origin/master >> benchmark.log && \
 rm -rf build >> benchmark.log && \
 ./gradlew ${GRADLE_CMD} clean >> benchmark.log && \
-./gradlew ${GRADLE_CMD} jmh >> benchmark.log && \
+java -Xmx8m -jar build/libs/poi-benchmark-jmh.jar && \
 ./gradlew ${GRADLE_CMD} publishResults processResults >> benchmark.log && \
 git add results && git ci -m "[ci skip] Add daily results" >> benchmark.log && \
 git push >> benchmark.log
