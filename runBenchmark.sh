@@ -2,9 +2,14 @@
 
 cd `dirname $0`
 
+# limit memory-usage of Gradle process
+export GRADLE_OPTS="-Xmx64m -Dorg.gradle.jvmargs=-Xmx64m"
+
 # use a newer Apache Ant if it is available at this location
+# make sure to also adjust these values in BaseBenchmark.java
 export ANT_HOME=/opt/apache-ant-1.10.8
 export PATH=${ANT_HOME}/bin:${PATH}
+export ANT_OPTS="-Xmx512m"
 
 export GRADLE_CMD="--console=plain --no-parallel --no-daemon"
 

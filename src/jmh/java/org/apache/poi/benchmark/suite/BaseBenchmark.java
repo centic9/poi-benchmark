@@ -35,6 +35,7 @@ import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
+@SuppressWarnings("JmhInspections")
 @BenchmarkMode(Mode.SingleShotTime)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @State(Scope.Thread)
@@ -48,11 +49,13 @@ public abstract class BaseBenchmark {
     // Apache POI requires a newer Ant now, but the jmh plugin does not re-use the one from the
     // commandline therefore we resort to setting it manually here for now
     private static final String ANT_HOME = "/opt/apache-ant-1.10.8";
+    private static final String ANT_OPTS = "-Xmx512m";
     private static final Map<String, String> ENVIRONMENT = new HashMap<>();
     private static final int TAIL_LINES = 100;
 
     static {
         ENVIRONMENT.put("ANT_HOME", ANT_HOME);
+        ENVIRONMENT.put("ANT_OPTS", ANT_OPTS);
         ENVIRONMENT.put("PATH", ANT_HOME + "/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:"
                 + System.getenv("PATH"));
     }
