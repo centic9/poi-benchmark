@@ -1,6 +1,5 @@
 plugins {
-    // Release 0.4.0 and higher require Gradle 4.0
-  id 'me.champeau.gradle.jmh' version '0.4.7'
+  id 'me.champeau.gradle.jmh' version '0.5.2'
 }
 
 repositories {
@@ -16,13 +15,13 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-databind:2.11.3'
 
     // for IntelliJ JMH support
-    compile 'org.openjdk.jmh:jmh-core:1.21'
-    jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.21'
+    compile 'org.openjdk.jmh:jmh-core:1.27'
+    jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.27'
 }
 
 jmh {
     // see https://github.com/melix/jmh-gradle-plugin
-    jmhVersion = '1.21'
+    jmhVersion = '1.27'
     iterations = 1
     humanOutputFile = project.file("${project.buildDir}/reports/jmh/human.txt")
     resultFormat = 'JSON'
@@ -35,9 +34,7 @@ jmh {
 tasks.getByName('jmhJar').doFirst() {duplicatesStrategy(DuplicatesStrategy.EXCLUDE)}
 
 wrapper {
-	// Gradle 5 changed the current directory of the jmh-tasks to some .gradle/wrapper directory
-	// which causes them to fail, therefore stick to Gradle 4 for now here...
-    gradleVersion=/* do not use Gradle 5 for now */ '4.10.3'
+    gradleVersion= '6.6.1'
 }
 
 task adjustWrapperPropertiesFile {
