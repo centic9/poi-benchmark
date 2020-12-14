@@ -24,7 +24,11 @@ git rebase origin/master >> benchmark.log && \
 rm -rf build >> benchmark.log && \
 ./gradlew ${GRADLE_CMD} clean >> benchmark.log && \
 ./gradlew ${GRADLE_CMD} jmhJar >> benchmark.log && \
-java -Xmx8m -jar build/libs/poi-benchmark-jmh.jar && \
+mkdir -p build/reports/jmh/ && \
+java -Xmx8m -jar build/libs/poi-benchmark-jmh.jar \
+  -o build/reports/jmh/human.txt \
+  -rf JSON \
+  -rff build/reports/jmh/results.json && \
 ./gradlew ${GRADLE_CMD} publishResults processResults >> benchmark.log && \
 git add results && git ci -m "[ci skip] Add daily results" >> benchmark.log && \
 git push >> benchmark.log
