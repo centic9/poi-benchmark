@@ -8,14 +8,12 @@ import org.apache.commons.mail.resolver.DataSourceUrlResolver;
 import org.dstadler.commons.email.EmailConfig;
 import org.dstadler.commons.email.MailserverConfig;
 
-import javax.mail.AuthenticationFailedException;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-
 
 /**
  *
@@ -76,7 +74,7 @@ public class EmailSender {
 			try {
 				setEmailConfig(email, emailConfig, mailserverConfig.getSubjectPrefix());
 			} catch (AddressException e) {
-				throw new IOException("AddressException: " + getExceptionText(e), e);
+				throw new IOException("AddressException", e);
 			}
 
 			email.setMsg("Your email client does not support HTML messages");
@@ -87,7 +85,7 @@ public class EmailSender {
 
 			email.send();
 		} catch (EmailException e) {
-			throw new IOException("Sending the email caused an exception: " + getExceptionText(e));	// NOPMD - I do not want to pass EmailException to the outside
+			throw new IOException("Sending the email caused an exception", e);
 		}
 	}
 
@@ -176,25 +174,5 @@ public class EmailSender {
 		}
 
 		email.setSubject((subjectPrefix != null ? subjectPrefix : "" ) + emailConfig.getSubject());
-	}
-
-	private String getExceptionText(Throwable e) {
-		final StringBuilder msg;
-
-		// handle some exception types specially to provide more user-friendly error messages
-		if(e instanceof AuthenticationFailedException) {
-			msg = new StringBuilder("Authentication with the provided SMTP username and password failed");
-		} else if(e.getMessage() != null) {
-			msg = new StringBuilder(e.toString());
-		} else {
-			msg = new StringBuilder(e.getClass().getSimpleName());
-		}
-
-		// recursively add all nested exceptions to provide full error information
-		if(e.getCause() != null) {
-			msg.append("\n").append(getExceptionText(e.getCause()));
-		}
-
-		return msg.toString();
 	}
 }
