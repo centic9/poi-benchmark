@@ -98,7 +98,7 @@ public class EmailSender {
 		email.setHostName(config.getServerAddress());
 		if (port != -1) {
 			email.setSmtpPort(port);
-			email.setSslSmtpPort(Integer.toString(port));
+			// fails: email.setSslSmtpPort(Integer.toString(port));
 		}
 
 		// set optional SMTP username and password
