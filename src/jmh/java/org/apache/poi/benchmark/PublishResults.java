@@ -100,7 +100,7 @@ public class PublishResults {
                 "Charts are available <a href=\"https://rawgit.com/centic9/poi-benchmark/master/results/results.html\">here</a>, " +
                 "see also <a href=\"https://github.com/centic9/poi-benchmark\">https://github.com/centic9/poi-benchmark</a><br/><br/>" +
                 "<pre>" + report + "</pre>";
-        System.out.println("Sending email to " + email + " with content: " + msg);
+        System.out.println("Sending email to " + email + " with content: " + msg + " and config " + config);
         sender.sendAttachmentEmail(files, config, email, msg);
     }
 
@@ -113,7 +113,7 @@ public class PublishResults {
         email.setSubject("No JMH reports found");
 
         sender.sendAttachmentEmail(Collections.emptyList(), config, email,
-                "Could not find any results in directory " + REPORTS_DIR);
+                "Could not find any results in directory " + REPORTS_DIR + " - " + REPORTS_DIR.getAbsolutePath());
     }
 
     private static MailserverConfig getMailserverConfig() {
