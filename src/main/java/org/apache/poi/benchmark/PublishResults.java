@@ -116,7 +116,7 @@ public class PublishResults {
                 "Could not find any results in directory " + REPORTS_DIR + " - " + REPORTS_DIR.getAbsolutePath());
     }
 
-    private static MailserverConfig getMailserverConfig() {
+    protected static MailserverConfig getMailserverConfig() {
         MailserverConfig config = new MailserverConfig();
         config.setBounce(PropertyAccess.getProperty("mail.bounce"));
         config.setDebug(Boolean.parseBoolean(PropertyAccess.getProperty("mail.debug")));

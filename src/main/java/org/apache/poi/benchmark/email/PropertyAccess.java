@@ -9,7 +9,7 @@ public final class PropertyAccess {
 
 	private static PropertyAccess instance = null;
 
-	private Properties properties;
+	private final Properties properties;
 
 	// private constructor to prevent access from outside
 	private PropertyAccess() {

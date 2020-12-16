@@ -35,9 +35,17 @@ If Apache ant is installed via your Linux distribution, also install the package
 * Go to https://github.com/settings/ssh and follow the steps to create and add a ssh-key
 * See http://mattmakesmaps.com/blog/2013/06/16/auto-push-to-github-via-machine-user/ for more details
 
+## Email-Setup
+
+There are some configuration values necessary to make sending email work, take a look
+at the file `src/main/resources/benchmark.properties.template` and create a file 
+`src/main/resources/benchmark.properties` with your values.
+
+Make sure to not commit this file to the VCS!
+
 #### Licensing
 
-   Copyright 2013-2018 Dominik Stadler
+   Copyright 2013-2020 Dominik Stadler
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
