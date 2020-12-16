@@ -1,6 +1,7 @@
-package org.apache.poi.benchmark;
+package org.apache.poi.benchmark.util;
 
 import com.google.common.collect.EvictingQueue;
+import org.apache.commons.lang3.StringUtils;
 import org.dstadler.commons.exec.BufferingLogOutputStream;
 
 import java.util.Collection;
@@ -23,7 +24,10 @@ public class TailLogOutputStream extends BufferingLogOutputStream {
     @Override
     protected void processLine(String line, int level) {
         synchronized (lastLines) {
-            lastLines.add(line);
+            // silently ignore null and empty lines here as the queue does not accept this value
+            if (StringUtils.isNotEmpty(line)) {
+                lastLines.add(line);
+            }
         }
 
         super.processLine(line, level);

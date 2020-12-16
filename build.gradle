@@ -18,7 +18,13 @@ dependencies {
     jmh 'org.openjdk.jmh:jmh-core:1.27'
     jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.27'
 
+    testCompile('org.dstadler:commons-test:1.0.0.19') {
+        // don't drag in JUnit 4
+        exclude group: 'junit', module: 'junit'
+    }
+
     testCompile 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-migrationsupport', version: '5.7.0'
 }
 
 jmh {

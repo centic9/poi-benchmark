@@ -6,7 +6,7 @@ import org.apache.commons.exec.ExecuteException;
 import org.apache.commons.io.filefilter.AndFileFilter;
 import org.apache.commons.io.filefilter.NotFileFilter;
 import org.apache.commons.io.filefilter.SuffixFileFilter;
-import org.apache.poi.benchmark.TailLogOutputStream;
+import org.apache.poi.benchmark.util.TailLogOutputStream;
 import org.dstadler.commons.arrays.ArrayUtils;
 import org.dstadler.commons.exec.ExecutionHelper;
 import org.dstadler.commons.logging.jdk.DefaultFormatter;
