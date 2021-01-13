@@ -1,0 +1,200 @@
+[
+    {
+        "jmhVersion" : "1.27",
+        "benchmark" : "org.apache.poi.benchmark.suite.BuildBenchmarks.benchmarkCompileAll",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 0,
+        "jvm" : "/usr/lib/jvm/java-11-openjdk-amd64/bin/java",
+        "jvmArgs" : [
+            "-Xmx8m",
+            "-agentpath:/opt/dynatrace/oneagent/agent/bin/1.209.24.20210111-150216/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent"
+        ],
+        "jdkVersion" : "11.0.9.1",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "11.0.9.1+1-Ubuntu-0ubuntu1.20.04",
+        "warmupIterations" : 0,
+        "warmupTime" : "single-shot",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "single-shot",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 227423.657053,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 227423.657053,
+                "50.0" : 227423.657053,
+                "90.0" : 227423.657053,
+                "95.0" : 227423.657053,
+                "99.0" : 227423.657053,
+                "99.9" : 227423.657053,
+                "99.99" : 227423.657053,
+                "99.999" : 227423.657053,
+                "99.9999" : 227423.657053,
+                "100.0" : 227423.657053
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    227423.657053
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.27",
+        "benchmark" : "org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkHSSFPerformance",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 0,
+        "jvm" : "/usr/lib/jvm/java-11-openjdk-amd64/bin/java",
+        "jvmArgs" : [
+            "-Xmx8m",
+            "-agentpath:/opt/dynatrace/oneagent/agent/bin/1.209.24.20210111-150216/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent"
+        ],
+        "jdkVersion" : "11.0.9.1",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "11.0.9.1+1-Ubuntu-0ubuntu1.20.04",
+        "warmupIterations" : 0,
+        "warmupTime" : "single-shot",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "single-shot",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 6553.330736,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 6553.330736,
+                "50.0" : 6553.330736,
+                "90.0" : 6553.330736,
+                "95.0" : 6553.330736,
+                "99.0" : 6553.330736,
+                "99.9" : 6553.330736,
+                "99.99" : 6553.330736,
+                "99.999" : 6553.330736,
+                "99.9999" : 6553.330736,
+                "100.0" : 6553.330736
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    6553.330736
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.27",
+        "benchmark" : "org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkSXSSFPerformance",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 0,
+        "jvm" : "/usr/lib/jvm/java-11-openjdk-amd64/bin/java",
+        "jvmArgs" : [
+            "-Xmx8m",
+            "-agentpath:/opt/dynatrace/oneagent/agent/bin/1.209.24.20210111-150216/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent"
+        ],
+        "jdkVersion" : "11.0.9.1",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "11.0.9.1+1-Ubuntu-0ubuntu1.20.04",
+        "warmupIterations" : 0,
+        "warmupTime" : "single-shot",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "single-shot",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 6885.990664,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 6885.990664,
+                "50.0" : 6885.990664,
+                "90.0" : 6885.990664,
+                "95.0" : 6885.990664,
+                "99.0" : 6885.990664,
+                "99.9" : 6885.990664,
+                "99.99" : 6885.990664,
+                "99.999" : 6885.990664,
+                "99.9999" : 6885.990664,
+                "100.0" : 6885.990664
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    6885.990664
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.27",
+        "benchmark" : "org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkXSSFPerformance",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 0,
+        "jvm" : "/usr/lib/jvm/java-11-openjdk-amd64/bin/java",
+        "jvmArgs" : [
+            "-Xmx8m",
+            "-agentpath:/opt/dynatrace/oneagent/agent/bin/1.209.24.20210111-150216/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent"
+        ],
+        "jdkVersion" : "11.0.9.1",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "11.0.9.1+1-Ubuntu-0ubuntu1.20.04",
+        "warmupIterations" : 0,
+        "warmupTime" : "single-shot",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "single-shot",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 9912.768814,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 9912.768814,
+                "50.0" : 9912.768814,
+                "90.0" : 9912.768814,
+                "95.0" : 9912.768814,
+                "99.0" : 9912.768814,
+                "99.9" : 9912.768814,
+                "99.99" : 9912.768814,
+                "99.999" : 9912.768814,
+                "99.9999" : 9912.768814,
+                "100.0" : 9912.768814
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    9912.768814
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+]
+
+
