@@ -7,7 +7,7 @@ export GRADLE_OPTS="-Xmx64m -Dorg.gradle.jvmargs=-Xmx64m"
 
 # use a newer Apache Ant if it is available at this location
 # make sure to also adjust these values in BaseBenchmark.java
-export ANT_HOME=/opt/apache-ant-1.10.8
+export ANT_HOME=/opt/apache-ant-1.10.9
 export PATH=${ANT_HOME}/bin:${PATH}
 export ANT_OPTS="-Xmx512m"
 

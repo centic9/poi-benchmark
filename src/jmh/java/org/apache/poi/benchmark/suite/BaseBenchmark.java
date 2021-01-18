@@ -48,7 +48,7 @@ public abstract class BaseBenchmark {
 
     // Apache POI requires a newer Ant now, but the jmh plugin does not re-use the one from the
     // commandline therefore we resort to setting it manually here for now
-    private static final String ANT_HOME = "/opt/apache-ant-1.10.8";
+    private static final String ANT_HOME = "/opt/apache-ant-1.10.9";
     private static final String ANT_OPTS = "-Xmx512m";
     private static final Map<String, String> ENVIRONMENT = new HashMap<>();
     private static final int TAIL_LINES = 100;
