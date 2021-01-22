@@ -29,6 +29,19 @@ java -Xmx8m -jar build/libs/poi-benchmark-jmh.jar \
   -o build/reports/jmh/human.txt \
   -rf JSON \
   -rff build/reports/jmh/results.json && \
-./gradlew ${GRADLE_CMD} publishResults processResults >> benchmark.log && \
+./gradlew ${GRADLE_CMD} publishResults processResults >> benchmark.log
+RET=$?
+if [ ${RET} -ne 0 ]; then
+  echo "Failed to run poi-benchmark"
+  exit 1
+fi
+
+grep -Ri tenant results >> benchmark.log
+RET=$?
+if [ ${RET} -ne 1 ]; then
+  echo "Found invalid text 'tenanttoken' in the result-files, not committing changes"
+  exit 2
+fi
+
 git add results && git ci -m "[ci skip] Add daily results" >> benchmark.log && \
 git push >> benchmark.log
