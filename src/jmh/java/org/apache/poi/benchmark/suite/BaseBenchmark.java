@@ -238,6 +238,15 @@ public abstract class BaseBenchmark {
         // Collect complied classes for Apache POI itself
         addClassesDir(jars, "build");
 
+        // new directories after starting move to Gradle
+        addClassesDir(jars, "examples/build");
+        addClassesDir(jars, "excelant/build");
+        addClassesDir(jars, "integrationtest/build");
+        addClassesDir(jars, "main/build");
+        addClassesDir(jars, "ooxml/build");
+        addClassesDir(jars, "ooxml-schema/build");
+        addClassesDir(jars, "scratchpad/build");
+
         try (TailLogOutputStream out = new TailLogOutputStream(TAIL_LINES)) {
             CommandLine cmd = new CommandLine("java");
             cmd.addArgument("-cp");
