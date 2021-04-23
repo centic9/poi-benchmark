@@ -1,0 +1,292 @@
+# JMH version: 1.27
+# VM version: JDK 11.0.10, OpenJDK 64-Bit Server VM, 11.0.10+9-Ubuntu-0ubuntu1.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.215.149.20210423-105703/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.BuildBenchmarks.benchmarkCompileAll
+
+# Run progress: 0.00% complete, ETA 00:00:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 233397.385 ms/op
+
+
+# JMH version: 1.27
+# VM version: JDK 11.0.10, OpenJDK 64-Bit Server VM, 11.0.10+9-Ubuntu-0ubuntu1.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.215.149.20210423-105703/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkHSSFPerformance
+
+# Run progress: 10.00% complete, ETA 00:38:23
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: [Error: Could not find or load main class org.apache.poi.examples.ss.SSPerformanceTest, Caused by: java.lang.ClassNotFoundException: org.apache.poi.examples.ss.SSPerformanceTest]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runPOIApplication(BaseBenchmark.java:262)
+	at org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkHSSFPerformance(SSPerformanceBenchmarks.java:17)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.benchmarkHSSFPerformance_ss_jmhStub(SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.java:320)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.benchmarkHSSFPerformance_SingleShotTime(SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.java:299)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); [java, -cp, /opt/poi-benchmark/sources/lib/excelant/ant-launcher-1.10.9.jar:/opt/poi-benchmark/sources/lib/excelant/ant-1.10.9.jar:/opt/poi-benchmark/sources/lib/main/log4j-api-2.14.0.jar:/opt/poi-benchmark/sources/lib/main/commons-math3-3.6.1.jar:/opt/poi-benchmark/sources/lib/main/SparseBitSet-1.2.jar:/opt/poi-benchmark/sources/lib/main/commons-codec-1.15.jar:/opt/poi-benchmark/sources/lib/main/commons-collections4-4.4.jar:/opt/poi-benchmark/sources/lib/main-tests/jmh-core-1.27.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-jupiter-engine-5.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/objenesis-3.1.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-platform-launcher-1.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/mockito-core-3.6.28.jar:/opt/poi-benchmark/sources/lib/main-tests/apiguardian-api-1.1.0.jar:/opt/poi-benchmark/sources/lib/main-tests/byte-buddy-1.10.19.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-platform-engine-1.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/xmlunit-core-2.8.2.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-jupiter-api-5.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/hamcrest-2.2.jar:/opt/poi-benchmark/sources/lib/main-tests/byte-buddy-agent-1.10.19.jar:/opt/poi-benchmark/sources/lib/main-tests/log4j-core-2.14.0.jar:/opt/poi-benchmark/sources/lib/main-tests/commons-logging-1.2.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-jupiter-params-5.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-platform-commons-1.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/jmh-generator-annprocess-1.27.jar:/opt/poi-benchmark/sources/lib/main-tests/opentest4j-1.2.0.jar:/opt/poi-benchmark/sources/lib/ooxml/xmlbeans-5.0.0.jar:/opt/poi-benchmark/sources/lib/ooxml/curvesapi-1.06.jar:/opt/poi-benchmark/sources/lib/ooxml/commons-compress-1.20.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/xml-apis-ext-1.3.04.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/slf4j-api-1.7.30.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/graphics2d-0.31.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/pdfbox-2.0.22.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/xmlgraphics-commons-2.4.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/fontbox-2.0.22.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/xmlsec-2.2.1.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/bcpkix-jdk15on-1.68.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/bcprov-jdk15on-1.68.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/log4j-1.2.17.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/slf4j-api-1.7.30.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/ooxml-lite-agent.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/javassist-3.27.0-GA.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/guava-30.1-jre.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/reflections-0.9.12.jar:/opt/poi-benchmark/sources/lib/util/asm-tree-9.0.jar:/opt/poi-benchmark/sources/lib/util/jacocoagent.jar:/opt/poi-benchmark/sources/lib/util/forbiddenapis-3.1.jar:/opt/poi-benchmark/sources/lib/util/asm-commons-9.0.jar:/opt/poi-benchmark/sources/lib/util/org.jacoco.core-0.8.6.202009150832.jar:/opt/poi-benchmark/sources/lib/util/org.jacoco.report-0.8.6.202009150832.jar:/opt/poi-benchmark/sources/lib/util/org.jacoco.agent-0.8.6.202009150832.jar:/opt/poi-benchmark/sources/lib/util/asm-9.0.jar:/opt/poi-benchmark/sources/lib/util/jacocoant.jar:/opt/poi-benchmark/sources/lib/util/org.jacoco.ant-0.8.6.202009150832.jar:/opt/poi-benchmark/sources/lib/util/jacococli.jar:/opt/poi-benchmark/sources/lib/util/apache-rat-0.13.jar:/opt/poi-benchmark/sources/examples/build/classes:/opt/poi-benchmark/sources/excelant/build/classes:/opt/poi-benchmark/sources/excelant/build/test-classes:/opt/poi-benchmark/sources/integrationtest/build/test-classes:/opt/poi-benchmark/sources/main/build/classes:/opt/poi-benchmark/sources/main/build/test-classes:/opt/poi-benchmark/sources/ooxml/build/classes:/opt/poi-benchmark/sources/ooxml/build/test-classes:/opt/poi-benchmark/sources/ooxml-schema/build/classes:/opt/poi-benchmark/sources/ooxml-schema/build/generated-classes:/opt/poi-benchmark/sources/ooxml-schema/build/test-classes:/opt/poi-benchmark/sources/scratchpad/build/classes:/opt/poi-benchmark/sources/scratchpad/build/test-classes, org.apache.poi.examples.ss.SSPerformanceTest, HSSF, 30000, 20, 0] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runPOIApplication(BaseBenchmark.java:258)
+	... 15 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 17 more
+
+
+# JMH version: 1.27
+# VM version: JDK 11.0.10, OpenJDK 64-Bit Server VM, 11.0.10+9-Ubuntu-0ubuntu1.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.215.149.20210423-105703/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkSXSSFPerformance
+
+# Run progress: 20.00% complete, ETA 00:17:59
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: [Error: Could not find or load main class org.apache.poi.examples.ss.SSPerformanceTest, Caused by: java.lang.ClassNotFoundException: org.apache.poi.examples.ss.SSPerformanceTest]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runPOIApplication(BaseBenchmark.java:262)
+	at org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkSXSSFPerformance(SSPerformanceBenchmarks.java:27)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest.benchmarkSXSSFPerformance_ss_jmhStub(SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest.java:320)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest.benchmarkSXSSFPerformance_SingleShotTime(SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest.java:299)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); [java, -cp, /opt/poi-benchmark/sources/lib/excelant/ant-launcher-1.10.9.jar:/opt/poi-benchmark/sources/lib/excelant/ant-1.10.9.jar:/opt/poi-benchmark/sources/lib/main/log4j-api-2.14.0.jar:/opt/poi-benchmark/sources/lib/main/commons-math3-3.6.1.jar:/opt/poi-benchmark/sources/lib/main/SparseBitSet-1.2.jar:/opt/poi-benchmark/sources/lib/main/commons-codec-1.15.jar:/opt/poi-benchmark/sources/lib/main/commons-collections4-4.4.jar:/opt/poi-benchmark/sources/lib/main-tests/jmh-core-1.27.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-jupiter-engine-5.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/objenesis-3.1.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-platform-launcher-1.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/mockito-core-3.6.28.jar:/opt/poi-benchmark/sources/lib/main-tests/apiguardian-api-1.1.0.jar:/opt/poi-benchmark/sources/lib/main-tests/byte-buddy-1.10.19.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-platform-engine-1.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/xmlunit-core-2.8.2.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-jupiter-api-5.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/hamcrest-2.2.jar:/opt/poi-benchmark/sources/lib/main-tests/byte-buddy-agent-1.10.19.jar:/opt/poi-benchmark/sources/lib/main-tests/log4j-core-2.14.0.jar:/opt/poi-benchmark/sources/lib/main-tests/commons-logging-1.2.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-jupiter-params-5.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-platform-commons-1.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/jmh-generator-annprocess-1.27.jar:/opt/poi-benchmark/sources/lib/main-tests/opentest4j-1.2.0.jar:/opt/poi-benchmark/sources/lib/ooxml/xmlbeans-5.0.0.jar:/opt/poi-benchmark/sources/lib/ooxml/curvesapi-1.06.jar:/opt/poi-benchmark/sources/lib/ooxml/commons-compress-1.20.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/xml-apis-ext-1.3.04.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/slf4j-api-1.7.30.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/graphics2d-0.31.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/pdfbox-2.0.22.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/xmlgraphics-commons-2.4.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/fontbox-2.0.22.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/xmlsec-2.2.1.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/bcpkix-jdk15on-1.68.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/bcprov-jdk15on-1.68.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/log4j-1.2.17.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/slf4j-api-1.7.30.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/ooxml-lite-agent.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/javassist-3.27.0-GA.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/guava-30.1-jre.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/reflections-0.9.12.jar:/opt/poi-benchmark/sources/lib/util/asm-tree-9.0.jar:/opt/poi-benchmark/sources/lib/util/jacocoagent.jar:/opt/poi-benchmark/sources/lib/util/forbiddenapis-3.1.jar:/opt/poi-benchmark/sources/lib/util/asm-commons-9.0.jar:/opt/poi-benchmark/sources/lib/util/org.jacoco.core-0.8.6.202009150832.jar:/opt/poi-benchmark/sources/lib/util/org.jacoco.report-0.8.6.202009150832.jar:/opt/poi-benchmark/sources/lib/util/org.jacoco.agent-0.8.6.202009150832.jar:/opt/poi-benchmark/sources/lib/util/asm-9.0.jar:/opt/poi-benchmark/sources/lib/util/jacocoant.jar:/opt/poi-benchmark/sources/lib/util/org.jacoco.ant-0.8.6.202009150832.jar:/opt/poi-benchmark/sources/lib/util/jacococli.jar:/opt/poi-benchmark/sources/lib/util/apache-rat-0.13.jar:/opt/poi-benchmark/sources/examples/build/classes:/opt/poi-benchmark/sources/excelant/build/classes:/opt/poi-benchmark/sources/excelant/build/test-classes:/opt/poi-benchmark/sources/integrationtest/build/test-classes:/opt/poi-benchmark/sources/main/build/classes:/opt/poi-benchmark/sources/main/build/test-classes:/opt/poi-benchmark/sources/ooxml/build/classes:/opt/poi-benchmark/sources/ooxml/build/test-classes:/opt/poi-benchmark/sources/ooxml-schema/build/classes:/opt/poi-benchmark/sources/ooxml-schema/build/generated-classes:/opt/poi-benchmark/sources/ooxml-schema/build/test-classes:/opt/poi-benchmark/sources/scratchpad/build/classes:/opt/poi-benchmark/sources/scratchpad/build/test-classes, org.apache.poi.examples.ss.SSPerformanceTest, SXSSF, 30000, 20, 0] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runPOIApplication(BaseBenchmark.java:258)
+	... 15 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 17 more
+
+
+# JMH version: 1.27
+# VM version: JDK 11.0.10, OpenJDK 64-Bit Server VM, 11.0.10+9-Ubuntu-0ubuntu1.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.215.149.20210423-105703/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkXSSFPerformance
+
+# Run progress: 30.00% complete, ETA 00:10:59
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: [Error: Could not find or load main class org.apache.poi.examples.ss.SSPerformanceTest, Caused by: java.lang.ClassNotFoundException: org.apache.poi.examples.ss.SSPerformanceTest]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runPOIApplication(BaseBenchmark.java:262)
+	at org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkXSSFPerformance(SSPerformanceBenchmarks.java:22)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest.benchmarkXSSFPerformance_ss_jmhStub(SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest.java:320)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest.benchmarkXSSFPerformance_SingleShotTime(SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest.java:299)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); [java, -cp, /opt/poi-benchmark/sources/lib/excelant/ant-launcher-1.10.9.jar:/opt/poi-benchmark/sources/lib/excelant/ant-1.10.9.jar:/opt/poi-benchmark/sources/lib/main/log4j-api-2.14.0.jar:/opt/poi-benchmark/sources/lib/main/commons-math3-3.6.1.jar:/opt/poi-benchmark/sources/lib/main/SparseBitSet-1.2.jar:/opt/poi-benchmark/sources/lib/main/commons-codec-1.15.jar:/opt/poi-benchmark/sources/lib/main/commons-collections4-4.4.jar:/opt/poi-benchmark/sources/lib/main-tests/jmh-core-1.27.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-jupiter-engine-5.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/objenesis-3.1.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-platform-launcher-1.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/mockito-core-3.6.28.jar:/opt/poi-benchmark/sources/lib/main-tests/apiguardian-api-1.1.0.jar:/opt/poi-benchmark/sources/lib/main-tests/byte-buddy-1.10.19.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-platform-engine-1.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/xmlunit-core-2.8.2.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-jupiter-api-5.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/hamcrest-2.2.jar:/opt/poi-benchmark/sources/lib/main-tests/byte-buddy-agent-1.10.19.jar:/opt/poi-benchmark/sources/lib/main-tests/log4j-core-2.14.0.jar:/opt/poi-benchmark/sources/lib/main-tests/commons-logging-1.2.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-jupiter-params-5.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-platform-commons-1.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/jmh-generator-annprocess-1.27.jar:/opt/poi-benchmark/sources/lib/main-tests/opentest4j-1.2.0.jar:/opt/poi-benchmark/sources/lib/ooxml/xmlbeans-5.0.0.jar:/opt/poi-benchmark/sources/lib/ooxml/curvesapi-1.06.jar:/opt/poi-benchmark/sources/lib/ooxml/commons-compress-1.20.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/xml-apis-ext-1.3.04.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/slf4j-api-1.7.30.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/graphics2d-0.31.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/pdfbox-2.0.22.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/xmlgraphics-commons-2.4.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/fontbox-2.0.22.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/xmlsec-2.2.1.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/bcpkix-jdk15on-1.68.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/bcprov-jdk15on-1.68.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/log4j-1.2.17.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/slf4j-api-1.7.30.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/ooxml-lite-agent.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/javassist-3.27.0-GA.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/guava-30.1-jre.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/reflections-0.9.12.jar:/opt/poi-benchmark/sources/lib/util/asm-tree-9.0.jar:/opt/poi-benchmark/sources/lib/util/jacocoagent.jar:/opt/poi-benchmark/sources/lib/util/forbiddenapis-3.1.jar:/opt/poi-benchmark/sources/lib/util/asm-commons-9.0.jar:/opt/poi-benchmark/sources/lib/util/org.jacoco.core-0.8.6.202009150832.jar:/opt/poi-benchmark/sources/lib/util/org.jacoco.report-0.8.6.202009150832.jar:/opt/poi-benchmark/sources/lib/util/org.jacoco.agent-0.8.6.202009150832.jar:/opt/poi-benchmark/sources/lib/util/asm-9.0.jar:/opt/poi-benchmark/sources/lib/util/jacocoant.jar:/opt/poi-benchmark/sources/lib/util/org.jacoco.ant-0.8.6.202009150832.jar:/opt/poi-benchmark/sources/lib/util/jacococli.jar:/opt/poi-benchmark/sources/lib/util/apache-rat-0.13.jar:/opt/poi-benchmark/sources/examples/build/classes:/opt/poi-benchmark/sources/excelant/build/classes:/opt/poi-benchmark/sources/excelant/build/test-classes:/opt/poi-benchmark/sources/integrationtest/build/test-classes:/opt/poi-benchmark/sources/main/build/classes:/opt/poi-benchmark/sources/main/build/test-classes:/opt/poi-benchmark/sources/ooxml/build/classes:/opt/poi-benchmark/sources/ooxml/build/test-classes:/opt/poi-benchmark/sources/ooxml-schema/build/classes:/opt/poi-benchmark/sources/ooxml-schema/build/generated-classes:/opt/poi-benchmark/sources/ooxml-schema/build/test-classes:/opt/poi-benchmark/sources/scratchpad/build/classes:/opt/poi-benchmark/sources/scratchpad/build/test-classes, org.apache.poi.examples.ss.SSPerformanceTest, XSSF, 30000, 20, 0] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runPOIApplication(BaseBenchmark.java:258)
+	... 15 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 17 more
+
+
+# JMH version: 1.27
+# VM version: JDK 11.0.10, OpenJDK 64-Bit Server VM, 11.0.10+9-Ubuntu-0ubuntu1.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.215.149.20210423-105703/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestExcelant
+
+# Run progress: 40.00% complete, ETA 00:07:18
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 232717.140 ms/op
+
+
+# JMH version: 1.27
+# VM version: JDK 11.0.10, OpenJDK 64-Bit Server VM, 11.0.10+9-Ubuntu-0ubuntu1.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.215.149.20210423-105703/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 3 hr per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestIntegration
+
+# Run progress: 50.00% complete, ETA 00:08:52
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 269897.654 ms/op
+
+
+# JMH version: 1.27
+# VM version: JDK 11.0.10, OpenJDK 64-Bit Server VM, 11.0.10+9-Ubuntu-0ubuntu1.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.215.149.20210423-105703/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestMain
+
+# Run progress: 60.00% complete, ETA 00:09:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 190919.235 ms/op
+
+
+# JMH version: 1.27
+# VM version: JDK 11.0.10, OpenJDK 64-Bit Server VM, 11.0.10+9-Ubuntu-0ubuntu1.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.215.149.20210423-105703/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestOOXML
+
+# Run progress: 70.00% complete, ETA 00:07:13
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 5214.910 ms/op
+
+
+# JMH version: 1.27
+# VM version: JDK 11.0.10, OpenJDK 64-Bit Server VM, 11.0.10+9-Ubuntu-0ubuntu1.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.215.149.20210423-105703/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestOOXMLLite
+
+# Run progress: 80.00% complete, ETA 00:04:16
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 217462.819 ms/op
+
+
+# JMH version: 1.27
+# VM version: JDK 11.0.10, OpenJDK 64-Bit Server VM, 11.0.10+9-Ubuntu-0ubuntu1.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.215.149.20210423-105703/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestScratchpad
+
+# Run progress: 90.00% complete, ETA 00:02:18
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 63822.224 ms/op
+
+
+# Run complete. Total time: 00:21:59
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                Mode  Cnt       Score   Error  Units
+BuildBenchmarks.benchmarkCompileAll        ss       233397.385          ms/op
+TestBenchmarks.benchmarkTestExcelant       ss       232717.140          ms/op
+TestBenchmarks.benchmarkTestIntegration    ss       269897.654          ms/op
+TestBenchmarks.benchmarkTestMain           ss       190919.235          ms/op
+TestBenchmarks.benchmarkTestOOXML          ss         5214.910          ms/op
+TestBenchmarks.benchmarkTestOOXMLLite      ss       217462.819          ms/op
+TestBenchmarks.benchmarkTestScratchpad     ss        63822.224          ms/op
+
+Benchmark result is saved to build/reports/jmh/results.json
