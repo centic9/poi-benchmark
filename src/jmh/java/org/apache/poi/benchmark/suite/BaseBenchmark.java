@@ -48,12 +48,19 @@ public abstract class BaseBenchmark {
 
     // Apache POI requires a newer Ant now, but the jmh plugin does not re-use the one from the
     // commandline therefore we resort to setting it manually here for now
-    private static final String ANT_HOME = "/opt/apache-ant-1.10.9";
+    private static final String ANT_HOME;
+    static {
+        ANT_HOME = new File("/opt/apache/apache-ant/apache-ant-1.10.9/").exists() ?
+                "/opt/apache/apache-ant/apache-ant-1.10.9/" : "/opt/apache-ant-1.10.9";
+    }
     private static final String ANT_OPTS = "-Xmx512m";
     private static final Map<String, String> ENVIRONMENT = new HashMap<>();
     private static final int TAIL_LINES = 100;
 
     static {
+        if (!new File(ANT_HOME).exists() || !new File(ANT_HOME).isDirectory()) {
+            throw new IllegalStateException("Could not find Apache Ant at the expected location " + ANT_HOME);
+        }
         ENVIRONMENT.put("ANT_HOME", ANT_HOME);
         ENVIRONMENT.put("ANT_OPTS", ANT_OPTS);
         ENVIRONMENT.put("PATH", ANT_HOME + "/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:"
@@ -239,13 +246,13 @@ public abstract class BaseBenchmark {
         addClassesDir(jars, "build");
 
         // new directories after starting move to Gradle
-        addClassesDir(jars, "examples/build");
-        addClassesDir(jars, "excelant/build");
-        addClassesDir(jars, "integrationtest/build");
-        addClassesDir(jars, "main/build");
-        addClassesDir(jars, "ooxml/build");
-        addClassesDir(jars, "ooxml-schema/build");
-        addClassesDir(jars, "scratchpad/build");
+        addClassesDir(jars, "poi/build");
+        addClassesDir(jars, "poi-examples/build");
+        addClassesDir(jars, "poi-excelant/build");
+        addClassesDir(jars, "poi-integration/build");
+        addClassesDir(jars, "poi-ooxml/build");
+        addClassesDir(jars, "poi-ooxml-full/build");
+        addClassesDir(jars, "poi-scratchpad/build");
 
         try (TailLogOutputStream out = new TailLogOutputStream(TAIL_LINES)) {
             CommandLine cmd = new CommandLine("java");
@@ -273,6 +280,7 @@ public abstract class BaseBenchmark {
                 dir, srcDir.getAbsolutePath());
         for(File file : files) {
             jars.add(file.getAbsolutePath());
+            jars.add(file.getAbsolutePath() + "/ant/java");
         }
     }
 
