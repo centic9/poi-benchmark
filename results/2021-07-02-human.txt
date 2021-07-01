@@ -1,0 +1,490 @@
+# JMH version: 1.27
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.221.71.20210701-144404/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.BuildBenchmarks.benchmarkCompileAll
+
+# Run progress: 0.00% complete, ETA 00:00:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: [A    sources/test-data/xmldsign, A    sources/test-data/slideshow/painting.png, A    sources/test-data/integration/testPDFEmbeddingAndEmbedded.docx, A    sources/test-data/integration/test_recursive_embedded.docx, A    sources/test-data/integration/stress025.docx, A    sources/test-data/slideshow/PPTWithAttachments.pptm, A    sources/test-data/slideshow/tomcat.png, A    sources/test-data/integration/stress002.xlsx, A    sources/test-data/integration/stress006.docx, A    sources/test-data/integration/stress023.docx, A    sources/test-data/integration/stress021.pptx, A    sources/test-data/integration/stress022.pptx, A    sources/test-data/integration/stress010.docx, A    sources/test-data/integration/stress003.docx, A    sources/test-data/integration/stress007.docx, A    sources/test-data/integration/stress011.docx, A    sources/test-data/integration/stress014.docx, A    sources/test-data/integration/stress004.docx, A    sources/test-data/integration/stress015.docx, A    sources/test-data/integration/stress018.docx, A    sources/test-data/xmldsign/bug63011_key1.pem, A    sources/test-data/xmldsign/office2007prettyPrintedRels.docx, A    sources/test-data/xmldsign/hello-world-office-2010-technical-preview.docx, A    sources/test-data/poifs, A    sources/test-data/integration/stress019.docx, A    sources/test-data/xmldsign/bug63011_key2.pem, A    sources/test-data/xmldsign/chaintest.pfx, A    sources/test-data/xmldsign/hello-world-signed-twice.docx, A    sources/test-data/xmldsign/hello-world-unsigned.docx, A    sources/test-data/xmldsign/hello-world-signed.xlsx, A    sources/test-data/integration/stress008.docx, A    sources/test-data/integration/stress012.docx, A    sources/test-data/integration/stress016.docx, A    sources/test-data/integration/stress020.xlsx, A    sources/test-data/xmldsign/PPT2016withComment.pptx, A    sources/test-data/xmldsign/Office2010-SP1-XAdES-X-L.docx, A    sources/test-data/xmldsign/hello-world-signed.docx, A    sources/test-data/xmldsign/hello-world-unsigned.pptx, A    sources/test-data/xmldsign/ms-office-2010-signed.pptx, A    sources/test-data/xmldsign/hyperlink-example-signed.docx, A    sources/test-data/xmldsign/ms-office-2010-signed.docx, A    sources/test-data/xmldsign/signed.docx, A    sources/test-data/poifs/61300.bin, A    sources/test-data/poifs/60256.bin, A    sources/test-data/poifs/unknown_properties.msg, A    sources/test-data/poifs/protected_agile.docx, A    sources/test-data/hsmf, A    sources/test-data/poifs/20-Force-on-a-current-S00.doc, A    sources/test-data/poifs/protected_sha512.xlsx, A    sources/test-data/poifs/Notes.ole2, A    sources/test-data/poifs/BlockSize4096.zvi, A    sources/test-data/poifs/ReferencesInvalidSectors.mpp, A    sources/test-data/hsmf/ASCII_CP1251_LCID1049.msg, A    sources/test-data/poifs/ShortLastBlock.wps, A    sources/test-data/hsmf/ASCII_UTF-8_CP1252_LCID1031_HTML.msg, A    sources/test-data/hsmf/HTMLBodyBinary_UTF-8.msg, A    sources/test-data/hsmf/msgClassAppointment.msg, A    sources/test-data/hsmf/msgClassPost.msg, A    sources/test-data/hsmf/msgClassTask.msg, A    sources/test-data/hsmf/logsat.com_signatures_valid.msg, A    sources/test-data/hsmf/58214_with_attachment.msg, A    sources/test-data/poifs/64322.ole2, A    sources/test-data/poifs/only-zero-byte-streams.ole2, A    sources/test-data/poifs/multimedia.doc, A    sources/test-data/poifs/poitest.pfx, A    sources/test-data/poifs/BlockSize512.zvi, A    sources/test-data/hsmf/keywords.msg, A    sources/test-data/hsmf/HTMLBodyBinary_CP1251.msg, A    sources/test-data/hsmf/msgClassContact.msg, A    sources/test-data/hsmf/attachment_msg_inlineImg.msg, A    sources/test-data/hsmf/message_extra_hyphen_submission_chunk.msg, A    sources/test-data/hsmf/message_normal_submission_chunk.msg, A    sources/test-data/hsmf/message_1980.msg, A    sources/test-data/hsmf/message_1981.msg, A    sources/test-data/hsmf/51873.msg, A    sources/test-data/hsmf/attachment_test_msg.msg, A    sources/test-data/hsmf/53784_succeeds.msg, A    sources/test-data/hsmf/attachment_msg_pdf.msg, A    sources/test-data/hsmf/chinese-traditional.msg, A    sources/test-data/hsmf/cyrillic_message.msg, A    sources/test-data/hsmf/example_received_regular.msg, A    sources/test-data/hsmf/example_sent_unicode.msg, A    sources/test-data/hmef, A    sources/test-data/hmef/quick-contents, A    sources/test-data/hsmf/example_sent_regular.msg, A    sources/test-data/hsmf/no_recipient_address.msg, A    sources/test-data/hsmf/simple_test_msg.msg, A    sources/test-data/hsmf/quick.msg, A    sources/test-data/hmef/bug63955-winmail.dat, A    sources/test-data/hmef/quick-contents/quick.txt, A    sources/test-data/hmef/quick-contents/quick.pdf, A    sources/test-data/hmef/quick-contents/quick.html, A    sources/test-data/hmef/quick-contents/message.rtf, A    sources/test-data/hmef/bug52400-winmail-simple.dat, A    sources/test-data/slideshow/iisd_report.ppt, A    sources/test-data/openxml4j, A    sources/test-data/project-header.svg, A    sources/test-data/hmef/bug52400-winmail-with-attachments.dat, A    sources/test-data/openxml4j/62592.thmx, A    sources/test-data/hmef/quick-winmail.dat]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.svnCheckout(BaseBenchmark.java:139)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.baseSetUp(BaseBenchmark.java:114)
+	at org.apache.poi.benchmark.suite.jmh_generated.BuildBenchmarks_benchmarkCompileAll_jmhTest._jmh_tryInit_f_buildbenchmarks0_0(BuildBenchmarks_benchmarkCompileAll_jmhTest.java:334)
+	at org.apache.poi.benchmark.suite.jmh_generated.BuildBenchmarks_benchmarkCompileAll_jmhTest.benchmarkCompileAll_SingleShotTime(BuildBenchmarks_benchmarkCompileAll_jmhTest.java:291)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (null); [svn, co, https://svn.apache.org/repos/asf/poi/trunk, sources] (Exit value: 143. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 143 (Exit value: 143))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.svnCheckout(BaseBenchmark.java:135)
+	... 15 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 143 (Exit value: 143)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 17 more
+
+
+# JMH version: 1.27
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.221.71.20210701-144404/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkHSSFPerformance
+
+# Run progress: 10.00% complete, ETA 00:09:05
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: [    [mkdir] Created dir: /opt/poi-benchmark/sources/poi/build/test-results,     [mkdir] Created dir: /opt/poi-benchmark/sources/poi-scratchpad/build/classes/ant/java,     [mkdir] Created dir: /opt/poi-benchmark/sources/poi-scratchpad/build/test-classes,     [mkdir] Created dir: /opt/poi-benchmark/sources/poi-scratchpad/build/test-results,     [mkdir] Created dir: /opt/poi-benchmark/sources/poi-ooxml/build/classes/ant/java,     [mkdir] Created dir: /opt/poi-benchmark/sources/poi-ooxml/build/test-classes,     [mkdir] Created dir: /opt/poi-benchmark/sources/poi-ooxml-full/build/classes/ant/java,     [mkdir] Created dir: /opt/poi-benchmark/sources/poi-ooxml-full/build/test-classes,     [mkdir] Created dir: /opt/poi-benchmark/sources/poi-ooxml-full/build/generated-sources,     [mkdir] Created dir: /opt/poi-benchmark/sources/poi-ooxml-full/build/generated-classes,     [mkdir] Created dir: /opt/poi-benchmark/sources/poi-ooxml/build/test-results,     [mkdir] Created dir: /opt/poi-benchmark/sources/poi-excelant/build/classes/ant/java,     [mkdir] Created dir: /opt/poi-benchmark/sources/poi-excelant/build/test-classes,     [mkdir] Created dir: /opt/poi-benchmark/sources/poi-excelant/build/test-results,     [mkdir] Created dir: /opt/poi-benchmark/sources/poi-examples/build/classes/ant/java,     [mkdir] Created dir: /opt/poi-benchmark/sources/poi-integration/build/test-classes,     [mkdir] Created dir: /opt/poi-benchmark/sources/poi-integration/build/test-results,     [mkdir] Created dir: /opt/poi-benchmark/sources/build/dist,     [mkdir] Created dir: /opt/poi-benchmark/sources/build/site,      [echo] Using Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 from /opt/apache-ant-1.10.9, Ant detected Java 11 (may be different than actual Java sometimes...),      [echo] Using Java: 11.0.11/11.0.11+9-Ubuntu-0ubuntu2.20.04/11.0.11+9-Ubuntu-0ubuntu2.20.04/OpenJDK 64-Bit Server VM from Ubuntu on Linux: 5.4.0-29-generic,      [echo] Building Apache POI version 5.0.1-SNAPSHOT and RC: RC1, isJava8: false,      [echo] Compiling for Java 9+, -version-java-check:, compile-version:,     [mkdir] Created dir: /opt/poi-benchmark/sources/poi/build/generated-sources/org/apache/poi,      [copy] Copying 1 file to /opt/poi-benchmark/sources/poi/build/generated-sources/org/apache/poi,     [javac] Compiling 1 source file to /opt/poi-benchmark/sources/poi/build/classes/ant/java,     [javac] warning: [options] bootstrap class path not set in conjunction with -source 8,     [javac] 1 warning, compile-main:,     [javac] Compiling 1171 source files to /opt/poi-benchmark/sources/poi/build/classes/ant/java,     [javac] Ignoring source, target and bootclasspath as release has been set,     [javac] Note: Some input files use or override a deprecated API.,     [javac] Note: Recompile with -Xlint:deprecation for details.,     [javac] Note: Some input files use unchecked or unsafe operations.,     [javac] Note: Recompile with -Xlint:unchecked for details.,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/ddf/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/hssf/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/poifs/dev/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/util/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/poifs/common/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/hssf/record/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/poifs/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/poifs/crypt/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/hpsf/wellknown/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/hssf/dev/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/ss/formula/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/hpsf/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/poifs/property/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/poifs/filesystem/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/ss/formula/ptg/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/poifs/storage/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/hssf/eventusermodel/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/hssf/record/aggregates/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/ss/format/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/hssf/model/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/hssf/usermodel/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/hssf/util/package-info.class,     [javac] Creating empty /opt/poi-benchmark/sources/poi/build/classes/ant/java/org/apache/poi/poifs/eventfilesystem/package-info.class,     [mkdir] Created dir: /opt/poi-benchmark/sources/build/dist/maven/poi,      [echo] Building jar for poi, module-name: poi with isJava8: false,       [jar] Building jar: /opt/poi-benchmark/sources/build/dist/maven/poi/poi-5.0.1-SNAPSHOT.jar,     [javac] Compiling 516 source files to /opt/poi-benchmark/sources/poi/build/test-classes,     [javac] Ignoring source, target and bootclasspath as release has been set,     [javac] Note: Some input files use or override a deprecated API.,     [javac] Note: Recompile with -Xlint:deprecation for details.,      [echo] Building test-jar for poi, module-name: poi with isJava8: false,       [jar] Building jar: /opt/poi-benchmark/sources/build/dist/maven/poi-tests/poi-5.0.1-SNAPSHOT-tests.jar,       [jar] Building jar: /opt/poi-benchmark/sources/build/dist/maven/poi/poi-5.0.1-SNAPSHOT-sources.jar, compile-scratchpad:,     [javac] Compiling 514 source files to /opt/poi-benchmark/sources/poi-scratchpad/build/classes/ant/java,     [javac] Ignoring source, target and bootclasspath as release has been set,     [javac] Note: Some input files use or override a deprecated API.,     [javac] Note: Recompile with -Xlint:deprecation for details.,     [javac] Note: /opt/poi-benchmark/sources/poi-scratchpad/src/main/java/org/apache/poi/hwpf/model/BytePropertyNode.java uses unchecked or unsafe operations.,     [javac] Note: Recompile with -Xlint:unchecked for details.,     [mkdir] Created dir: /opt/poi-benchmark/sources/build/dist/maven/poi-scratchpad,      [echo] Building jar for poi-scratchpad, module-name: scratchpad with isJava8: false,       [jar] Building jar: /opt/poi-benchmark/sources/build/dist/maven/poi-scratchpad/poi-scratchpad-5.0.1-SNAPSHOT.jar,     [javac] Compiling 197 source files to /opt/poi-benchmark/sources/poi-scratchpad/build/test-classes,     [javac] Ignoring source, target and bootclasspath as release has been set,     [javac] Note: Some input files use or override a deprecated API.,     [javac] Note: Recompile with -Xlint:deprecation for details.,      [echo] Building test-jar for poi-scratchpad, module-name: scratchpad with isJava8: false,       [jar] Building jar: /opt/poi-benchmark/sources/build/dist/maven/poi-scratchpad-tests/poi-scratchpad-5.0.1-SNAPSHOT-tests.jar,       [jar] Building jar: /opt/poi-benchmark/sources/build/dist/maven/poi-scratchpad/poi-scratchpad-5.0.1-SNAPSHOT-sources.jar, check-compiled-ooxml-xsds:, compile-ooxml-xsds:,     [mkdir] Created dir: /opt/poi-benchmark/sources/poi-ooxml-full/build/xsds,      [copy] Copying 8 files to /opt/poi-benchmark/sources/poi-ooxml-full/build/xsds,      [copy] Copying 28 resources to /opt/poi-benchmark/sources/poi-ooxml-full/build/xsds,   [xmlbean] SchemaCompiler  Metadata LOAD:org/apache/xmlbeans/metadata GEN:org/apache/poi/schemas/ooxml,   [xmlbean] Time to build schema type system: 3.104 seconds,   [xmlbean] Time to generate code: 4.607 seconds,     [javac] Compiling 5064 source files to /opt/poi-benchmark/sources/poi-ooxml-full/build/classes/ant/java,     [javac] Ignoring source, target and bootclasspath as release has been set, BUILD FAILED, /opt/poi-benchmark/sources/build.xml:985: Compile failed; see the compiler error output for details., Total time: 1 minute 24 seconds]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:213)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:167)
+	at org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.setUp(SSPerformanceBenchmarks.java:12)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest._jmh_tryInit_f_ssperformancebenchmarks0_0(SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.benchmarkHSSFPerformance_SingleShotTime(SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.java:291)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:209)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 18 more
+
+
+# JMH version: 1.27
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.221.71.20210701-144404/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkSXSSFPerformance
+
+# Run progress: 20.00% complete, ETA 00:11:26
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: [Buildfile: /opt/poi-benchmark/sources/build.xml, check-jars:, fetch-jars:, check-ooxml-jars:, fetch-ooxml-jars:, init:,      [echo] Using Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 from /opt/apache-ant-1.10.9, Ant detected Java 11 (may be different than actual Java sometimes...),      [echo] Using Java: 11.0.11/11.0.11+9-Ubuntu-0ubuntu2.20.04/11.0.11+9-Ubuntu-0ubuntu2.20.04/OpenJDK 64-Bit Server VM from Ubuntu on Linux: 5.4.0-29-generic,      [echo] Building Apache POI version 5.0.1-SNAPSHOT and RC: RC1, isJava8: false,      [echo] Compiling for Java 9+, -version-java-check:, compile-version:, compile-main:,      [echo] Building jar for poi, module-name: poi with isJava8: false,      [echo] Building test-jar for poi, module-name: poi with isJava8: false, compile-scratchpad:,      [echo] Building jar for poi-scratchpad, module-name: scratchpad with isJava8: false,      [echo] Building test-jar for poi-scratchpad, module-name: scratchpad with isJava8: false, check-compiled-ooxml-xsds:, compile-ooxml-xsds:,   [xmlbean] SchemaCompiler  Metadata LOAD:org/apache/xmlbeans/metadata GEN:org/apache/poi/schemas/ooxml,   [xmlbean] Time to build schema type system: 3.205 seconds,   [xmlbean] Time to generate code: 5.229 seconds,     [javac] Compiling 5064 source files to /opt/poi-benchmark/sources/poi-ooxml-full/build/classes/ant/java,     [javac] Ignoring source, target and bootclasspath as release has been set, BUILD FAILED, /opt/poi-benchmark/sources/build.xml:985: Compile failed; see the compiler error output for details., Total time: 22 seconds]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:213)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:167)
+	at org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.setUp(SSPerformanceBenchmarks.java:12)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest._jmh_tryInit_f_ssperformancebenchmarks0_0(SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest.benchmarkSXSSFPerformance_SingleShotTime(SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest.java:291)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:209)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 18 more
+
+
+# JMH version: 1.27
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.221.71.20210701-144404/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkXSSFPerformance
+
+# Run progress: 30.00% complete, ETA 00:08:08
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: [Buildfile: /opt/poi-benchmark/sources/build.xml, check-jars:, fetch-jars:, check-ooxml-jars:, fetch-ooxml-jars:, init:,      [echo] Using Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 from /opt/apache-ant-1.10.9, Ant detected Java 11 (may be different than actual Java sometimes...),      [echo] Using Java: 11.0.11/11.0.11+9-Ubuntu-0ubuntu2.20.04/11.0.11+9-Ubuntu-0ubuntu2.20.04/OpenJDK 64-Bit Server VM from Ubuntu on Linux: 5.4.0-29-generic,      [echo] Building Apache POI version 5.0.1-SNAPSHOT and RC: RC1, isJava8: false,      [echo] Compiling for Java 9+, -version-java-check:, compile-version:, compile-main:,      [echo] Building jar for poi, module-name: poi with isJava8: false,      [echo] Building test-jar for poi, module-name: poi with isJava8: false, compile-scratchpad:,      [echo] Building jar for poi-scratchpad, module-name: scratchpad with isJava8: false,      [echo] Building test-jar for poi-scratchpad, module-name: scratchpad with isJava8: false, check-compiled-ooxml-xsds:, compile-ooxml-xsds:,   [xmlbean] SchemaCompiler  Metadata LOAD:org/apache/xmlbeans/metadata GEN:org/apache/poi/schemas/ooxml,   [xmlbean] Time to build schema type system: 3.438 seconds,   [xmlbean] Time to generate code: 5.588 seconds,     [javac] Compiling 5064 source files to /opt/poi-benchmark/sources/poi-ooxml-full/build/classes/ant/java,     [javac] Ignoring source, target and bootclasspath as release has been set, BUILD FAILED, /opt/poi-benchmark/sources/build.xml:985: Compile failed; see the compiler error output for details., Total time: 3 minutes 0 seconds]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:213)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:167)
+	at org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.setUp(SSPerformanceBenchmarks.java:12)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest._jmh_tryInit_f_ssperformancebenchmarks0_0(SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest.benchmarkXSSFPerformance_SingleShotTime(SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest.java:291)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:209)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 18 more
+
+
+# JMH version: 1.27
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.221.71.20210701-144404/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestExcelant
+
+# Run progress: 40.00% complete, ETA 00:10:06
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: [Buildfile: /opt/poi-benchmark/sources/build.xml, check-jars:, fetch-jars:, check-ooxml-jars:, fetch-ooxml-jars:, init:,      [echo] Using Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 from /opt/apache-ant-1.10.9, Ant detected Java 11 (may be different than actual Java sometimes...),      [echo] Using Java: 11.0.11/11.0.11+9-Ubuntu-0ubuntu2.20.04/11.0.11+9-Ubuntu-0ubuntu2.20.04/OpenJDK 64-Bit Server VM from Ubuntu on Linux: 5.4.0-29-generic,      [echo] Building Apache POI version 5.0.1-SNAPSHOT and RC: RC1, isJava8: false,      [echo] Compiling for Java 9+, -version-java-check:, compile-version:, compile-main:,      [echo] Building jar for poi, module-name: poi with isJava8: false,      [echo] Building test-jar for poi, module-name: poi with isJava8: false, compile-scratchpad:,      [echo] Building jar for poi-scratchpad, module-name: scratchpad with isJava8: false,      [echo] Building test-jar for poi-scratchpad, module-name: scratchpad with isJava8: false, check-compiled-ooxml-xsds:, compile-ooxml-xsds:,   [xmlbean] SchemaCompiler  Metadata LOAD:org/apache/xmlbeans/metadata GEN:org/apache/poi/schemas/ooxml,   [xmlbean] Time to build schema type system: 3.162 seconds,   [xmlbean] Time to generate code: 5.462 seconds,     [javac] Compiling 5064 source files to /opt/poi-benchmark/sources/poi-ooxml-full/build/classes/ant/java,     [javac] Ignoring source, target and bootclasspath as release has been set, BUILD FAILED, /opt/poi-benchmark/sources/build.xml:985: Compile failed; see the compiler error output for details., Total time: 3 minutes 32 seconds]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:213)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:167)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.setUp(TestBenchmarks.java:13)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestExcelant_jmhTest._jmh_tryInit_f_testbenchmarks0_0(TestBenchmarks_benchmarkTestExcelant_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestExcelant_jmhTest.benchmarkTestExcelant_SingleShotTime(TestBenchmarks_benchmarkTestExcelant_jmhTest.java:291)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:209)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 18 more
+
+
+# JMH version: 1.27
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.221.71.20210701-144404/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 3 hr per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestIntegration
+
+# Run progress: 50.00% complete, ETA 00:10:30
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: [Buildfile: /opt/poi-benchmark/sources/build.xml, check-jars:, fetch-jars:, check-ooxml-jars:, fetch-ooxml-jars:, init:,      [echo] Using Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 from /opt/apache-ant-1.10.9, Ant detected Java 11 (may be different than actual Java sometimes...),      [echo] Using Java: 11.0.11/11.0.11+9-Ubuntu-0ubuntu2.20.04/11.0.11+9-Ubuntu-0ubuntu2.20.04/OpenJDK 64-Bit Server VM from Ubuntu on Linux: 5.4.0-29-generic,      [echo] Building Apache POI version 5.0.1-SNAPSHOT and RC: RC1, isJava8: false,      [echo] Compiling for Java 9+, -version-java-check:, compile-version:, compile-main:,      [echo] Building jar for poi, module-name: poi with isJava8: false,      [echo] Building test-jar for poi, module-name: poi with isJava8: false, compile-scratchpad:,      [echo] Building jar for poi-scratchpad, module-name: scratchpad with isJava8: false,      [echo] Building test-jar for poi-scratchpad, module-name: scratchpad with isJava8: false, check-compiled-ooxml-xsds:, compile-ooxml-xsds:,   [xmlbean] SchemaCompiler  Metadata LOAD:org/apache/xmlbeans/metadata GEN:org/apache/poi/schemas/ooxml,   [xmlbean] Time to build schema type system: 3.203 seconds,   [xmlbean] Time to generate code: 5.214 seconds,     [javac] Compiling 5064 source files to /opt/poi-benchmark/sources/poi-ooxml-full/build/classes/ant/java,     [javac] Ignoring source, target and bootclasspath as release has been set, BUILD FAILED, /opt/poi-benchmark/sources/build.xml:985: Compile failed; see the compiler error output for details., Total time: 45 seconds]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:213)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:167)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.setUp(TestBenchmarks.java:13)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestIntegration_jmhTest._jmh_tryInit_f_testbenchmarks0_0(TestBenchmarks_benchmarkTestIntegration_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestIntegration_jmhTest.benchmarkTestIntegration_SingleShotTime(TestBenchmarks_benchmarkTestIntegration_jmhTest.java:291)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:209)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 18 more
+
+
+# JMH version: 1.27
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.221.71.20210701-144404/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestMain
+
+# Run progress: 60.00% complete, ETA 00:07:40
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: [Buildfile: /opt/poi-benchmark/sources/build.xml, check-jars:, fetch-jars:, check-ooxml-jars:, fetch-ooxml-jars:, init:,      [echo] Using Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 from /opt/apache-ant-1.10.9, Ant detected Java 11 (may be different than actual Java sometimes...),      [echo] Using Java: 11.0.11/11.0.11+9-Ubuntu-0ubuntu2.20.04/11.0.11+9-Ubuntu-0ubuntu2.20.04/OpenJDK 64-Bit Server VM from Ubuntu on Linux: 5.4.0-29-generic,      [echo] Building Apache POI version 5.0.1-SNAPSHOT and RC: RC1, isJava8: false,      [echo] Compiling for Java 9+, -version-java-check:, compile-version:, compile-main:,      [echo] Building jar for poi, module-name: poi with isJava8: false,      [echo] Building test-jar for poi, module-name: poi with isJava8: false, compile-scratchpad:,      [echo] Building jar for poi-scratchpad, module-name: scratchpad with isJava8: false,      [echo] Building test-jar for poi-scratchpad, module-name: scratchpad with isJava8: false, check-compiled-ooxml-xsds:, compile-ooxml-xsds:,   [xmlbean] SchemaCompiler  Metadata LOAD:org/apache/xmlbeans/metadata GEN:org/apache/poi/schemas/ooxml,   [xmlbean] Time to build schema type system: 3.395 seconds,   [xmlbean] Time to generate code: 5.274 seconds,     [javac] Compiling 5064 source files to /opt/poi-benchmark/sources/poi-ooxml-full/build/classes/ant/java,     [javac] Ignoring source, target and bootclasspath as release has been set, BUILD FAILED, /opt/poi-benchmark/sources/build.xml:985: Compile failed; see the compiler error output for details., Total time: 1 minute 45 seconds]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:213)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:167)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.setUp(TestBenchmarks.java:13)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestMain_jmhTest._jmh_tryInit_f_testbenchmarks0_0(TestBenchmarks_benchmarkTestMain_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestMain_jmhTest.benchmarkTestMain_SingleShotTime(TestBenchmarks_benchmarkTestMain_jmhTest.java:291)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:209)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 18 more
+
+
+# JMH version: 1.27
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.221.71.20210701-144404/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestOOXML
+
+# Run progress: 70.00% complete, ETA 00:05:46
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: [Buildfile: /opt/poi-benchmark/sources/build.xml, check-jars:, fetch-jars:, check-ooxml-jars:, fetch-ooxml-jars:, init:,      [echo] Using Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 from /opt/apache-ant-1.10.9, Ant detected Java 11 (may be different than actual Java sometimes...),      [echo] Using Java: 11.0.11/11.0.11+9-Ubuntu-0ubuntu2.20.04/11.0.11+9-Ubuntu-0ubuntu2.20.04/OpenJDK 64-Bit Server VM from Ubuntu on Linux: 5.4.0-29-generic,      [echo] Building Apache POI version 5.0.1-SNAPSHOT and RC: RC1, isJava8: false,      [echo] Compiling for Java 9+, -version-java-check:, compile-version:, compile-main:,      [echo] Building jar for poi, module-name: poi with isJava8: false,      [echo] Building test-jar for poi, module-name: poi with isJava8: false, compile-scratchpad:,      [echo] Building jar for poi-scratchpad, module-name: scratchpad with isJava8: false,      [echo] Building test-jar for poi-scratchpad, module-name: scratchpad with isJava8: false, check-compiled-ooxml-xsds:, compile-ooxml-xsds:,   [xmlbean] SchemaCompiler  Metadata LOAD:org/apache/xmlbeans/metadata GEN:org/apache/poi/schemas/ooxml,   [xmlbean] Time to build schema type system: 3.191 seconds,   [xmlbean] Time to generate code: 5.512 seconds,     [javac] Compiling 5064 source files to /opt/poi-benchmark/sources/poi-ooxml-full/build/classes/ant/java,     [javac] Ignoring source, target and bootclasspath as release has been set, BUILD FAILED, /opt/poi-benchmark/sources/build.xml:985: Compile failed; see the compiler error output for details., Total time: 23 seconds]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:213)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:167)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.setUp(TestBenchmarks.java:13)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestOOXML_jmhTest._jmh_tryInit_f_testbenchmarks0_0(TestBenchmarks_benchmarkTestOOXML_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestOOXML_jmhTest.benchmarkTestOOXML_SingleShotTime(TestBenchmarks_benchmarkTestOOXML_jmhTest.java:291)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:209)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 18 more
+
+
+# JMH version: 1.27
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.221.71.20210701-144404/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestOOXMLLite
+
+# Run progress: 80.00% complete, ETA 00:03:31
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: [Buildfile: /opt/poi-benchmark/sources/build.xml, check-jars:, fetch-jars:, check-ooxml-jars:, fetch-ooxml-jars:, init:,      [echo] Using Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 from /opt/apache-ant-1.10.9, Ant detected Java 11 (may be different than actual Java sometimes...),      [echo] Using Java: 11.0.11/11.0.11+9-Ubuntu-0ubuntu2.20.04/11.0.11+9-Ubuntu-0ubuntu2.20.04/OpenJDK 64-Bit Server VM from Ubuntu on Linux: 5.4.0-29-generic,      [echo] Building Apache POI version 5.0.1-SNAPSHOT and RC: RC1, isJava8: false,      [echo] Compiling for Java 9+, -version-java-check:, compile-version:, compile-main:,      [echo] Building jar for poi, module-name: poi with isJava8: false,      [echo] Building test-jar for poi, module-name: poi with isJava8: false, compile-scratchpad:,      [echo] Building jar for poi-scratchpad, module-name: scratchpad with isJava8: false,      [echo] Building test-jar for poi-scratchpad, module-name: scratchpad with isJava8: false, check-compiled-ooxml-xsds:, compile-ooxml-xsds:,   [xmlbean] SchemaCompiler  Metadata LOAD:org/apache/xmlbeans/metadata GEN:org/apache/poi/schemas/ooxml,   [xmlbean] Time to build schema type system: 3.148 seconds,   [xmlbean] Time to generate code: 5.139 seconds,     [javac] Compiling 5064 source files to /opt/poi-benchmark/sources/poi-ooxml-full/build/classes/ant/java,     [javac] Ignoring source, target and bootclasspath as release has been set, BUILD FAILED, /opt/poi-benchmark/sources/build.xml:985: Compile failed; see the compiler error output for details., Total time: 19 seconds]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:213)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:167)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.setUp(TestBenchmarks.java:13)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestOOXMLLite_jmhTest._jmh_tryInit_f_testbenchmarks0_0(TestBenchmarks_benchmarkTestOOXMLLite_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestOOXMLLite_jmhTest.benchmarkTestOOXMLLite_SingleShotTime(TestBenchmarks_benchmarkTestOOXMLLite_jmhTest.java:291)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:209)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 18 more
+
+
+# JMH version: 1.27
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.221.71.20210701-144404/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# JMH blackhole mode: full blackhole + dont-inline hint
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestScratchpad
+
+# Run progress: 90.00% complete, ETA 00:01:37
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: [Buildfile: /opt/poi-benchmark/sources/build.xml, check-jars:, fetch-jars:, check-ooxml-jars:, fetch-ooxml-jars:, init:,      [echo] Using Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 from /opt/apache-ant-1.10.9, Ant detected Java 11 (may be different than actual Java sometimes...),      [echo] Using Java: 11.0.11/11.0.11+9-Ubuntu-0ubuntu2.20.04/11.0.11+9-Ubuntu-0ubuntu2.20.04/OpenJDK 64-Bit Server VM from Ubuntu on Linux: 5.4.0-29-generic,      [echo] Building Apache POI version 5.0.1-SNAPSHOT and RC: RC1, isJava8: false,      [echo] Compiling for Java 9+, -version-java-check:, compile-version:, compile-main:,      [echo] Building jar for poi, module-name: poi with isJava8: false,      [echo] Building test-jar for poi, module-name: poi with isJava8: false, compile-scratchpad:,      [echo] Building jar for poi-scratchpad, module-name: scratchpad with isJava8: false,      [echo] Building test-jar for poi-scratchpad, module-name: scratchpad with isJava8: false, check-compiled-ooxml-xsds:, compile-ooxml-xsds:,   [xmlbean] SchemaCompiler  Metadata LOAD:org/apache/xmlbeans/metadata GEN:org/apache/poi/schemas/ooxml,   [xmlbean] Time to build schema type system: 4.375 seconds,   [xmlbean] Time to generate code: 8.247 seconds,     [javac] Compiling 5064 source files to /opt/poi-benchmark/sources/poi-ooxml-full/build/classes/ant/java,     [javac] Ignoring source, target and bootclasspath as release has been set, BUILD FAILED, /opt/poi-benchmark/sources/build.xml:985: Compile failed; see the compiler error output for details., Total time: 38 seconds]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:213)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:167)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.setUp(TestBenchmarks.java:13)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestScratchpad_jmhTest._jmh_tryInit_f_testbenchmarks0_0(TestBenchmarks_benchmarkTestScratchpad_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestScratchpad_jmhTest.benchmarkTestScratchpad_SingleShotTime(TestBenchmarks_benchmarkTestScratchpad_jmhTest.java:291)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); [ant, compile] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runAntTarget(BaseBenchmark.java:209)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 18 more
+
+
+# Run complete. Total time: 00:15:29
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark  Mode  Cnt  Score   Error  Units
+
+Benchmark result is saved to build/reports/jmh/results.json
