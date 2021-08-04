@@ -50,8 +50,8 @@ public abstract class BaseBenchmark {
     // commandline therefore we resort to setting it manually here for now
     private static final String ANT_HOME;
     static {
-        ANT_HOME = new File("/opt/apache/apache-ant/apache-ant-1.10.9/").exists() ?
-                "/opt/apache/apache-ant/apache-ant-1.10.9/" : "/opt/apache-ant-1.10.9";
+        ANT_HOME = new File("/opt/apache/apache-ant/apache-ant-1.10.11/").exists() ?
+                "/opt/apache/apache-ant/apache-ant-1.10.11/" : "/opt/apache-ant-1.10.11";
     }
     private static final String ANT_OPTS = "-Xmx512m";
     private static final Map<String, String> ENVIRONMENT = new HashMap<>();
@@ -99,6 +99,7 @@ public abstract class BaseBenchmark {
         }
     }
 
+    @SuppressWarnings("unused")
     @Setup
     public final void baseSetUp() throws IOException {
         // ensure directories exist
