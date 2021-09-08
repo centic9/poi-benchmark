@@ -46,26 +46,8 @@ public abstract class BaseBenchmark {
     private static final long ONE_HOUR = TimeUnit.HOURS.toMillis(1);
     private static final long TWO_HOURS = TimeUnit.HOURS.toMillis(2);
 
-    // Apache POI requires a newer Ant now, but the jmh plugin does not re-use the one from the
-    // commandline therefore we resort to setting it manually here for now
-    private static final String ANT_HOME;
-    static {
-        ANT_HOME = new File("/opt/apache/apache-ant/apache-ant-1.10.11/").exists() ?
-                "/opt/apache/apache-ant/apache-ant-1.10.11/" : "/opt/apache-ant-1.10.11";
-    }
-    private static final String ANT_OPTS = "-Xmx512m";
     private static final Map<String, String> ENVIRONMENT = new HashMap<>();
     private static final int TAIL_LINES = 100;
-
-    static {
-        if (!new File(ANT_HOME).exists() || !new File(ANT_HOME).isDirectory()) {
-            throw new IllegalStateException("Could not find Apache Ant at the expected location " + ANT_HOME);
-        }
-        ENVIRONMENT.put("ANT_HOME", ANT_HOME);
-        ENVIRONMENT.put("ANT_OPTS", ANT_OPTS);
-        ENVIRONMENT.put("PATH", ANT_HOME + "/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:"
-                + System.getenv("PATH"));
-    }
 
     static {
         // set up logging configuration
@@ -147,7 +129,7 @@ public abstract class BaseBenchmark {
     }
 
     protected void clean() throws IOException {
-        runAntTarget("clean", TEN_MINUTES);
+        runGradleTarget("clean", TEN_MINUTES);
     }
 
     private void printEnvironment() throws IOException {
@@ -165,19 +147,20 @@ public abstract class BaseBenchmark {
     }
 
     protected void compileAll() throws IOException {
-        runAntTarget("compile", ONE_HOUR);
+        runGradleTarget("compileJava", ONE_HOUR);
+        runGradleTarget("compileTestJava", ONE_HOUR);
     }
 
     protected void testMain() throws IOException {
-        runAntTarget("test-main", ONE_HOUR);
+        runGradleTarget(":poi:check", ONE_HOUR);
     }
 
     protected void testScratchpad() throws IOException {
-        runAntTarget("test-scratchpad", ONE_HOUR);
+        runGradleTarget(":poi-scratchpad:check", ONE_HOUR);
     }
 
     protected void testOOXML() throws IOException {
-        runAntTarget("test-ooxml", ONE_HOUR);
+        runGradleTarget(":poi-ooxml:check", ONE_HOUR);
     }
 
     protected void testOOXMLLite() throws IOException {
@@ -190,27 +173,27 @@ public abstract class BaseBenchmark {
             }
         }
 
-        runAntTarget("test-ooxml-lite", ONE_HOUR);
+        runGradleTarget(":poi-ooxml-lite:check", ONE_HOUR);
     }
 
     protected void testExcelant() throws IOException {
-        runAntTarget("test-excelant", ONE_HOUR);
+        runGradleTarget(":poi-excelant:check", ONE_HOUR);
     }
 
     protected void testIntegration() throws IOException {
-        runAntTarget("test-integration", TWO_HOURS/*, "-Dorg.apache.poi.util.POILogger=org.apache.poi.util.SystemOutLogger"*/);
+        runGradleTarget(":poi-integration:check", TWO_HOURS);
     }
 
-    private void runAntTarget(String target, long timeout, String... args) throws IOException {
+    private void runGradleTarget(String target, long timeout, String... args) throws IOException {
         try (TailLogOutputStream out = new TailLogOutputStream(TAIL_LINES)) {
-            CommandLine cmd = new CommandLine("ant");
+            CommandLine cmd = new CommandLine("bash");
+            cmd.addArgument("./gradlew");
             cmd.addArgument(target);
             cmd.addArguments(args);
             try {
                 ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out, ENVIRONMENT);
             } catch (ExecuteException e) {
-                log.log(Level.WARNING, "Failed to run Ant with ANT_OPTS: " + ANT_OPTS + ", ANT_HOME: " + ANT_HOME +
-                        ", target: '" + target + "' and args: " +
+                log.log(Level.WARNING, "Failed to run Gradle with target: '" + target + "' and args: " +
                         ArrayUtils.toString(args, " ", "", ""), e);
                 throw new IOException("Log-Tail: " + out.getLines(), e);
             }
