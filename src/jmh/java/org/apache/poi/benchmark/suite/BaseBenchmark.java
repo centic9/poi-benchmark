@@ -209,8 +209,9 @@ public abstract class BaseBenchmark {
             try {
                 ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out, ENVIRONMENT);
             } catch (ExecuteException e) {
-                log.log(Level.WARNING, "Failed to run Ant with target " + target +
-                        " and args: " + Arrays.toString(args), e);
+                log.log(Level.WARNING, "Failed to run Ant with ANT_OPTS: " + ANT_OPTS + ", ANT_HOME: " + ANT_HOME +
+                        ", target: '" + target + "' and args: " +
+                        ArrayUtils.toString(args, " ", "", ""), e);
                 throw new IOException("Log-Tail: " + out.getLines(), e);
             }
         }
