@@ -1,0 +1,378 @@
+# JMH version: 1.33
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.231.71.20211112-011812/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.BuildBenchmarks.benchmarkCompileAll
+
+# Run progress: 0.00% complete, ETA 00:00:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: [/opt/poi-benchmark/sources/poi-ooxml/src/test/java/org/apache/poi/xwpf/usermodel/TestXWPFRun.java:598: warning: [deprecation] getFontSize() in XWPFRun has been deprecated,             assertEquals(Short.MAX_VALUE, run.getFontSize());,                                              ^, /opt/poi-benchmark/sources/poi-ooxml/src/test/java/org/apache/poi/xwpf/usermodel/TestXWPFRun.java:601: warning: [deprecation] getFontSize() in XWPFRun has been deprecated,             assertEquals(Short.MAX_VALUE + 1, run.getFontSize());,                                                  ^, /opt/poi-benchmark/sources/poi-ooxml/src/test/java/org/apache/poi/xwpf/usermodel/TestXWPFRun.java:604: warning: [deprecation] getFontSize() in XWPFRun has been deprecated,             assertEquals(Integer.MAX_VALUE - 1, run.getFontSize());,                                                    ^, /opt/poi-benchmark/sources/poi-ooxml/src/test/java/org/apache/poi/xwpf/usermodel/TestXWPFRun.java:607: warning: [deprecation] getFontSize() in XWPFRun has been deprecated,             assertEquals(Integer.MAX_VALUE, run.getFontSize());,                                                ^, /opt/poi-benchmark/sources/poi-ooxml/src/test/java/org/apache/poi/xwpf/usermodel/TestXWPFRun.java:610: warning: [deprecation] getFontSize() in XWPFRun has been deprecated,             assertEquals(-1, run.getFontSize());,                                 ^, /opt/poi-benchmark/sources/poi-ooxml/src/test/java/org/apache/poi/xwpf/usermodel/TestXWPFRun.java:658: warning: [deprecation] getFontSize() in XWPFRun has been deprecated,             assertEquals(10, run.getFontSize());,                                 ^, 13 warnings, > Task :poi-ooxml:compileTest9, > Task :poi-ooxml:cacheTest9 UP-TO-DATE, > Task :poi-ooxml:testClasses, > Task :poi-ooxml:testJar, > Task :poi-integration:compileTestJava, > Task :poi-integration:compileTest9, > Task :poi-integration:cacheTest9 UP-TO-DATE, > Task :poi-integration:testClasses, > Task :poi-integration:testJar, > Task :poi-integration:forbiddenApisTest, > Task :poi-integration:forbiddenApis, > Task :poi-excelant:javadoc, > Task :poi-excelant:javadocJar, > Task :poi-excelant:assemble, > Task :poi-excelant:forbiddenApisMain, > Task :poi-excelant:compileTestJava, > Task :poi-excelant:compileTest9, > Task :poi-excelant:cacheTest9 UP-TO-DATE, > Task :poi-excelant:testClasses, > Task :poi-excelant:forbiddenApisTest, > Task :poi-excelant:forbiddenApis, SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder"., SLF4J: Defaulting to no-operation (NOP) logger implementation, SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details., > Task :poi-integration:test, > Task :poi-ooxml:javadoc, > Task :poi-integration:spotbugsTest, > Task :poi-excelant:spotbugsMain, > Task :poi-integration:spotbugsTest, 6 SpotBugs violations were found. See the report at: file:///opt/poi-benchmark/sources/poi-integration/build/reports/spotbugs/test.xml, > Task :poi-excelant:spotbugsMain, 4 SpotBugs violations were found. See the report at: file:///opt/poi-benchmark/sources/poi-excelant/build/reports/spotbugs/main.xml, > Task :poi-excelant:testJar, > Task :poi-excelant:spotbugsTest, 4 SpotBugs violations were found. See the report at: file:///opt/poi-benchmark/sources/poi-excelant/build/reports/spotbugs/test.xml, > Task :poi-excelant:test, SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder"., SLF4J: Defaulting to no-operation (NOP) logger implementation, SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details., > Task :poi-ooxml:javadocJar, > Task :poi-ooxml:assemble, > Task :poi-ooxml:forbiddenApisMain, > Task :poi-ooxml:forbiddenApisTest, > Task :poi-ooxml:forbiddenApis, > Task :poi-excelant:check, > Task :poi-excelant:build, > Task :poi-ooxml:spotbugsMain, > Task :poi-ooxml:spotbugsTest, > Task :poi-ooxml:test, > Task :poi-ooxml:spotbugsMain FAILED, > Task :poi-integration:test FAILED, > Task :poi-ooxml:test, SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder"., SLF4J: Defaulting to no-operation (NOP) logger implementation, SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details., > Task :poi-ooxml:spotbugsTest, 92 SpotBugs violations were found. See the report at: file:///opt/poi-benchmark/sources/poi-ooxml/build/reports/spotbugs/test.xml, FAILURE: Build completed with 2 failures., FAILURE: Build completed with 2 failures.81 actionable tasks: 69 executed, 12 up-to-date, 1: Task failed with an exception., -----------, * What went wrong:, Execution failed for task ':poi-ooxml:spotbugsMain'., > A failure occurred while executing com.github.spotbugs.snom.internal.SpotBugsRunnerForWorker$SpotBugsExecutor,    > Failed to run Gradle Worker Daemon,       > Process 'Gradle Worker Daemon 5' finished with non-zero exit value 137, * Try:, Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights., ==============================================================================, 2: Task failed with an exception., -----------, * What went wrong:, Execution failed for task ':poi-integration:test'., > Process 'Gradle Test Executor 2' finished with non-zero exit value 137,   This problem might be caused by incorrect test process configuration.,   Please refer to the test execution section in the User Manual at https://docs.gradle.org/7.2/userguide/java_testing.html#sec:test_execution, * Try:, Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights., ==============================================================================, * Get more help at https://help.gradle.org, BUILD FAILED in 8m 14s]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:198)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:150)
+	at org.apache.poi.benchmark.suite.BuildBenchmarks.benchmarkCompileAll(BuildBenchmarks.java:16)
+	at org.apache.poi.benchmark.suite.jmh_generated.BuildBenchmarks_benchmarkCompileAll_jmhTest.benchmarkCompileAll_ss_jmhStub(BuildBenchmarks_benchmarkCompileAll_jmhTest.java:320)
+	at org.apache.poi.benchmark.suite.jmh_generated.BuildBenchmarks_benchmarkCompileAll_jmhTest.benchmarkCompileAll_SingleShotTime(BuildBenchmarks_benchmarkCompileAll_jmhTest.java:299)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:475)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:458)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); [bash, ./gradlew, compileJava] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:194)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 18 more
+
+
+# JMH version: 1.33
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.231.71.20211112-011812/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkHSSFPerformance
+
+# Run progress: 10.00% complete, ETA 01:25:44
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: [> Task :poi:compileTest9 UP-TO-DATE, > Task :poi:cacheTest9 UP-TO-DATE, > Task :poi:processTestResources UP-TO-DATE, > Task :poi:testClasses UP-TO-DATE, > Task :poi-ooxml:compileJava UP-TO-DATE, > Task :poi:testJar UP-TO-DATE, > Task :poi-ooxml:compileJava9 UP-TO-DATE, > Task :poi-ooxml:cacheJava9 UP-TO-DATE, > Task :poi-ooxml:classes UP-TO-DATE, > Task :poi-scratchpad:compileTestJava UP-TO-DATE, > Task :poi-ooxml:jar UP-TO-DATE, > Task :poi-scratchpad:compileTest9 UP-TO-DATE, > Task :poi-scratchpad:cacheTest9 UP-TO-DATE, > Task :poi-scratchpad:testClasses UP-TO-DATE, > Task :poi-ooxml:javadoc UP-TO-DATE, > Task :poi-excelant:compileJava UP-TO-DATE, > Task :poi-scratchpad:testJar UP-TO-DATE, > Task :poi-ooxml:javadocJar UP-TO-DATE, > Task :poi-ooxml:assemble UP-TO-DATE, > Task :poi-excelant:compileJava9 UP-TO-DATE, > Task :poi-examples:compileJava UP-TO-DATE, > Task :poi-ooxml:forbiddenApisMain UP-TO-DATE, > Task :poi-examples:compileJava9 UP-TO-DATE, > Task :poi-excelant:cacheJava9 UP-TO-DATE, > Task :poi-examples:cacheJava9 UP-TO-DATE, > Task :poi-excelant:classes UP-TO-DATE, > Task :poi-examples:classes UP-TO-DATE, > Task :poi-excelant:jar UP-TO-DATE, > Task :poi-excelant:javadoc UP-TO-DATE, > Task :poi-examples:jar UP-TO-DATE, > Task :poi-excelant:javadocJar UP-TO-DATE, > Task :poi-excelant:assemble UP-TO-DATE, > Task :poi-excelant:forbiddenApisMain UP-TO-DATE, > Task :poi-excelant:spotbugsMain UP-TO-DATE, > Task :poi-ooxml:compileTestJava UP-TO-DATE, > Task :poi-ooxml:compileTest9 UP-TO-DATE, > Task :poi-ooxml:cacheTest9 UP-TO-DATE, > Task :poi-ooxml:testClasses UP-TO-DATE, > Task :poi-ooxml:testJar UP-TO-DATE, > Task :poi-ooxml:forbiddenApisTest UP-TO-DATE, > Task :poi-ooxml:forbiddenApis UP-TO-DATE, > Task :poi-integration:compileTestJava UP-TO-DATE, > Task :poi-integration:compileTest9 UP-TO-DATE, > Task :poi-excelant:compileTestJava UP-TO-DATE, > Task :poi-integration:cacheTest9 UP-TO-DATE, > Task :poi-integration:testClasses UP-TO-DATE, > Task :poi-excelant:compileTest9 UP-TO-DATE, > Task :poi-excelant:cacheTest9 UP-TO-DATE, > Task :poi-excelant:testClasses UP-TO-DATE, > Task :poi-integration:testJar UP-TO-DATE, > Task :poi-excelant:forbiddenApisTest UP-TO-DATE, > Task :poi-excelant:forbiddenApis UP-TO-DATE, > Task :poi-integration:forbiddenApisTest UP-TO-DATE, > Task :poi-integration:forbiddenApis UP-TO-DATE, > Task :poi-excelant:spotbugsTest UP-TO-DATE, > Task :poi-integration:spotbugsTest UP-TO-DATE, > Task :poi-excelant:testJar UP-TO-DATE, > Task :poi-excelant:test UP-TO-DATE, > Task :poi-excelant:check UP-TO-DATE, > Task :poi-excelant:build UP-TO-DATE, > Task :poi-ooxml:spotbugsTest UP-TO-DATE, > Task :poi-ooxml:test UP-TO-DATE, > Task :poi-integration:test, > Task :poi-integration:testSLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder"., SLF4J: Defaulting to no-operation (NOP) logger implementation, SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details., > Task :poi-ooxml:spotbugsMain, The message received from the daemon indicates that the daemon has disappeared., Build request sent: Build{id=fbc85262-b6df-45d2-ad8a-a8b8f7a0f132, currentDir=/opt/poi-benchmark/sources}, Attempting to read last messages from the daemon log..., Daemon pid: 2723288,   log file: /home/preis/.gradle/daemon/7.2/daemon-2723288.out.log, ----- Last  20 lines from daemon log file - daemon-2723288.out.log -----, 2021-11-14T01:11:31.844+0100 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Marking the daemon as busy, address: [73437958-8bb0-4904-8103-f907ac4a1c28 port:36835, addresses:[localhost/127.0.0.1]], 2021-11-14T01:11:31.844+0100 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [73437958-8bb0-4904-8103-f907ac4a1c28 port:36835, addresses:[localhost/127.0.0.1]], 2021-11-14T01:11:31.844+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry., 2021-11-14T01:11:31.845+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry., 2021-11-14T01:11:31.847+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry., 2021-11-14T01:11:31.847+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] resetting idle timer, 2021-11-14T01:11:31.847+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes., 2021-11-14T01:11:31.847+0100 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=fbc85262-b6df-45d2-ad8a-a8b8f7a0f132, currentDir=/opt/poi-benchmark/sources}. Dispatching build started information..., 2021-11-14T01:11:31.848+0100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 28: dispatching org.gradle.launcher.daemon.protocol.BuildStarted@46b044d1, 2021-11-14T01:11:31.848+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: [PWD, SHLVL], 2021-11-14T01:11:31.848+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection., 2021-11-14T01:11:31.848+0100 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 2723288). The daemon log file: /home/preis/.gradle/daemon/7.2/daemon-2723288.out.log, 2021-11-14T01:11:31.849+0100 [INFO] [org.gradle.launcher.daemon.server.exec.LogAndCheckHealth] Starting 3rd build in daemon [uptime: 9 mins 11.906 secs, performance: 99%], 2021-11-14T01:11:31.850+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build., 2021-11-14T01:11:31.850+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=66928809-bc9d-4443-81ff-4853570b71c7,javaHome=/usr/lib/jvm/java-11-openjdk-amd64,daemonRegistryDir=/home/preis/.gradle/daemon,pid=2723288,idleTimeout=10800000,priority=NORMAL,daemonOpts=-XX:MaxPermSize=512m,--add-opens,java.base/java.util=ALL-UNNAMED,--add-opens,java.base/java.lang=ALL-UNNAMED,--add-opens,java.base/java.lang.invoke=ALL-UNNAMED,--add-opens,java.base/java.util=ALL-UNNAMED,--add-opens,java.prefs/java.util.prefs=ALL-UNNAMED,--add-opens,java.prefs/java.util.prefs=ALL-UNNAMED,--add-opens,java.base/java.nio.charset=ALL-UNNAMED,--add-opens,java.base/java.net=ALL-UNNAMED,--add-opens,java.base/java.util.concurrent.atomic=ALL-UNNAMED,-Xmx2G,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant], Configuration on demand is an incubating feature., Trying to override old definition of datatype junit, SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder"., SLF4J: Defaulting to no-operation (NOP) logger implementation, SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details., ----- End of the daemon log -----, FAILURE: Build failed with an exception., * What went wrong:, Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed), * Try:, Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights., * Get more help at https://help.gradle.org]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:198)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:150)
+	at org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.setUp(SSPerformanceBenchmarks.java:12)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest._jmh_tryInit_f_ssperformancebenchmarks0_0(SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.benchmarkHSSFPerformance_SingleShotTime(SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.java:291)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:475)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:458)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); [bash, ./gradlew, compileJava] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:194)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 18 more
+
+
+# JMH version: 1.33
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.231.71.20211112-011812/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkSXSSFPerformance
+
+# Run progress: 20.00% complete, ETA 00:45:51
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: (benchmark timed out, interrupted 3 times) <failure>
+
+java.io.IOException: Log-Tail: [> Task :poi-integration:javadoc SKIPPED, > Task :poi-integration:javadocJar SKIPPED, > Task :poi-integration:sourcesJar SKIPPED, > Task :poi-integration:assemble UP-TO-DATE, > Task :poi-integration:forbiddenApisMain NO-SOURCE, > Task :poi-integration:spotbugsMain NO-SOURCE, > Task :poi-ooxml-lite-agent:jar UP-TO-DATE, > Task :poi-ooxml:sourcesJar UP-TO-DATE, > Task :poi-ooxml-lite-agent:compileTestJava NO-SOURCE, > Task :poi-ooxml-full:compileJava UP-TO-DATE, > Task :poi-ooxml-full:compileJava9 UP-TO-DATE, > Task :poi-ooxml-full:cacheJava9 UP-TO-DATE, > Task :poi-ooxml-full:processResources NO-SOURCE, > Task :poi-ooxml-full:classes UP-TO-DATE, > Task :poi:compileJava UP-TO-DATE, > Task :poi:compileJava9 UP-TO-DATE, > Task :poi:cacheJava9 UP-TO-DATE, > Task :poi:processResources UP-TO-DATE, > Task :poi:classes UP-TO-DATE, > Task :poi-ooxml-full:sourceJar UP-TO-DATE, > Task :poi-ooxml-full:jar UP-TO-DATE, > Task :poi-ooxml-full:compileTestJava NO-SOURCE, > Task :poi:compileTestJava UP-TO-DATE, > Task :poi:jar UP-TO-DATE, > Task :poi:compileTest9 UP-TO-DATE, > Task :poi:cacheTest9 UP-TO-DATE, > Task :poi:processTestResources UP-TO-DATE, > Task :poi:testClasses UP-TO-DATE, > Task :poi:testJar UP-TO-DATE, > Task :poi-scratchpad:compileJava UP-TO-DATE, > Task :poi-ooxml:compileJava UP-TO-DATE, > Task :poi-scratchpad:compileJava9 UP-TO-DATE, > Task :poi-scratchpad:cacheJava9 UP-TO-DATE, > Task :poi-scratchpad:classes UP-TO-DATE, > Task :poi-ooxml:compileJava9 UP-TO-DATE, > Task :poi-ooxml:cacheJava9 UP-TO-DATE, > Task :poi-ooxml:classes UP-TO-DATE, > Task :poi-scratchpad:jar UP-TO-DATE, > Task :poi-ooxml:jar UP-TO-DATE, > Task :poi-ooxml:javadoc UP-TO-DATE, > Task :poi-scratchpad:compileTestJava UP-TO-DATE, > Task :poi-scratchpad:compileTest9 UP-TO-DATE, > Task :poi-ooxml:javadocJar UP-TO-DATE, > Task :poi-ooxml:assemble UP-TO-DATE, > Task :poi-scratchpad:cacheTest9 UP-TO-DATE, > Task :poi-scratchpad:testClasses UP-TO-DATE, > Task :poi-examples:compileJava UP-TO-DATE, > Task :poi-scratchpad:testJar UP-TO-DATE, > Task :poi-examples:compileJava9 UP-TO-DATE, > Task :poi-examples:cacheJava9 UP-TO-DATE, > Task :poi-examples:classes UP-TO-DATE, > Task :poi-ooxml:forbiddenApisMain UP-TO-DATE, > Task :poi-examples:jar UP-TO-DATE, > Task :poi-excelant:compileJava UP-TO-DATE, > Task :poi-excelant:compileJava9 UP-TO-DATE, > Task :poi-excelant:cacheJava9 UP-TO-DATE, > Task :poi-excelant:classes UP-TO-DATE, > Task :poi-excelant:jar UP-TO-DATE, > Task :poi-excelant:javadoc UP-TO-DATE, > Task :poi-ooxml:compileTestJava UP-TO-DATE, > Task :poi-ooxml:compileTest9 UP-TO-DATE, > Task :poi-excelant:javadocJar UP-TO-DATE, > Task :poi-excelant:assemble UP-TO-DATE, > Task :poi-ooxml:cacheTest9 UP-TO-DATE, > Task :poi-ooxml:testClasses UP-TO-DATE, > Task :poi-ooxml:testJar UP-TO-DATE, > Task :poi-excelant:forbiddenApisMain UP-TO-DATE, > Task :poi-ooxml:forbiddenApisTest UP-TO-DATE, > Task :poi-ooxml:forbiddenApis UP-TO-DATE, > Task :poi-integration:compileTestJava UP-TO-DATE, > Task :poi-integration:compileTest9 UP-TO-DATE, > Task :poi-integration:cacheTest9 UP-TO-DATE, > Task :poi-integration:testClasses UP-TO-DATE, > Task :poi-excelant:compileTestJava UP-TO-DATE, > Task :poi-integration:testJar UP-TO-DATE, > Task :poi-excelant:compileTest9 UP-TO-DATE, > Task :poi-integration:forbiddenApisTest UP-TO-DATE, > Task :poi-integration:forbiddenApis UP-TO-DATE, > Task :poi-excelant:cacheTest9 UP-TO-DATE, > Task :poi-excelant:testClasses UP-TO-DATE, > Task :poi-excelant:forbiddenApisTest UP-TO-DATE, > Task :poi-excelant:forbiddenApis UP-TO-DATE, > Task :poi-integration:spotbugsTest UP-TO-DATE, > Task :poi-integration:test UP-TO-DATE, > Task :poi-integration:check UP-TO-DATE, > Task :poi-integration:build UP-TO-DATE, > Task :poi-excelant:spotbugsMain UP-TO-DATE, > Task :poi-excelant:spotbugsTest UP-TO-DATE, > Task :poi-excelant:testJar UP-TO-DATE, > Task :poi-ooxml:spotbugsMain UP-TO-DATE, > Task :poi-excelant:test UP-TO-DATE, > Task :poi-excelant:check UP-TO-DATE, > Task :poi-excelant:build UP-TO-DATE, > Task :poi-ooxml:spotbugsTest UP-TO-DATE, > Task :poi-ooxml:test UP-TO-DATE, > Task :poi-ooxml:check UP-TO-DATE, > Task :poi-ooxml:build UP-TO-DATE, > Task :poi-ooxml-lite:generateModuleInfo UP-TO-DATE, > Task :poi-examples:compileTestJava, > Task :poi-ooxml-lite:compileOoxmlLite]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:198)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:151)
+	at org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.setUp(SSPerformanceBenchmarks.java:12)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest._jmh_tryInit_f_ssperformancebenchmarks0_0(SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest.java:335)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest.benchmarkSXSSFPerformance_SingleShotTime(SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest.java:291)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:475)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:458)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); [bash, ./gradlew, compileTestJava] (Exit value: -559038737. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: -559038737 (Exit value: -559038737))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:194)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: -559038737 (Exit value: -559038737)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 18 more
+
+
+# JMH version: 1.33
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.231.71.20211112-011812/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkXSSFPerformance
+
+# Run progress: 30.00% complete, ETA 00:50:05
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: [Error: Could not find or load main class org.apache.poi.examples.ss.SSPerformanceTest, Caused by: java.lang.ClassNotFoundException: org.apache.poi.examples.ss.SSPerformanceTest]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runPOIApplication(BaseBenchmark.java:254)
+	at org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkXSSFPerformance(SSPerformanceBenchmarks.java:22)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest.benchmarkXSSFPerformance_ss_jmhStub(SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest.java:320)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest.benchmarkXSSFPerformance_SingleShotTime(SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest.java:299)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:475)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:458)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); [java, -cp, /opt/poi-benchmark/sources/lib/excelant/ant-launcher-1.10.9.jar:/opt/poi-benchmark/sources/lib/excelant/ant-1.10.9.jar:/opt/poi-benchmark/sources/lib/main/log4j-api-2.14.0.jar:/opt/poi-benchmark/sources/lib/main/commons-math3-3.6.1.jar:/opt/poi-benchmark/sources/lib/main/SparseBitSet-1.2.jar:/opt/poi-benchmark/sources/lib/main/commons-codec-1.15.jar:/opt/poi-benchmark/sources/lib/main/commons-io-2.11.0.jar:/opt/poi-benchmark/sources/lib/main/commons-collections4-4.4.jar:/opt/poi-benchmark/sources/lib/main-tests/jmh-core-1.27.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-jupiter-engine-5.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/objenesis-3.1.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-platform-launcher-1.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/mockito-core-3.6.28.jar:/opt/poi-benchmark/sources/lib/main-tests/apiguardian-api-1.1.0.jar:/opt/poi-benchmark/sources/lib/main-tests/byte-buddy-1.10.19.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-platform-engine-1.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/xmlunit-core-2.8.2.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-jupiter-api-5.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/hamcrest-2.2.jar:/opt/poi-benchmark/sources/lib/main-tests/byte-buddy-agent-1.10.19.jar:/opt/poi-benchmark/sources/lib/main-tests/log4j-core-2.14.0.jar:/opt/poi-benchmark/sources/lib/main-tests/commons-logging-1.2.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-jupiter-params-5.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/junit-platform-commons-1.7.1.jar:/opt/poi-benchmark/sources/lib/main-tests/jmh-generator-annprocess-1.27.jar:/opt/poi-benchmark/sources/lib/main-tests/opentest4j-1.2.0.jar:/opt/poi-benchmark/sources/lib/ooxml/commons-compress-1.21.jar:/opt/poi-benchmark/sources/lib/ooxml/xmlbeans-5.0.0.jar:/opt/poi-benchmark/sources/lib/ooxml/curvesapi-1.06.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/xml-apis-ext-1.3.04.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/bcutil-jdk15on-1.69.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/fontbox-2.0.24.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/pdfbox-2.0.24.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/bcprov-jdk15on-1.69.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/xmlgraphics-commons-2.4.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/xmlsec-2.2.2.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/graphics2d-0.32.jar:/opt/poi-benchmark/sources/lib/ooxml-provided/bcpkix-jdk15on-1.69.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/slf4j-api-1.7.32.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/log4j-1.2.17.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/ooxml-lite-agent.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/javassist-3.27.0-GA.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/guava-30.1-jre.jar:/opt/poi-benchmark/sources/lib/ooxml-tests/reflections-0.9.12.jar:/opt/poi-benchmark/sources/lib/util/asm-tree-9.0.jar:/opt/poi-benchmark/sources/lib/util/jacocoagent.jar:/opt/poi-benchmark/sources/lib/util/forbiddenapis-3.1.jar:/opt/poi-benchmark/sources/lib/util/asm-commons-9.0.jar:/opt/poi-benchmark/sources/lib/util/org.jacoco.core-0.8.6.202009150832.jar:/opt/poi-benchmark/sources/lib/util/org.jacoco.report-0.8.6.202009150832.jar:/opt/poi-benchmark/sources/lib/util/org.jacoco.agent-0.8.6.202009150832.jar:/opt/poi-benchmark/sources/lib/util/asm-9.0.jar:/opt/poi-benchmark/sources/lib/util/jacocoant.jar:/opt/poi-benchmark/sources/lib/util/org.jacoco.ant-0.8.6.202009150832.jar:/opt/poi-benchmark/sources/lib/util/jacococli.jar:/opt/poi-benchmark/sources/lib/util/apache-rat-0.13.jar:/opt/poi-benchmark/sources/poi/build/classes:/opt/poi-benchmark/sources/poi/build/classes/ant/java:/opt/poi-benchmark/sources/poi-examples/build/classes:/opt/poi-benchmark/sources/poi-examples/build/classes/ant/java:/opt/poi-benchmark/sources/poi-excelant/build/classes:/opt/poi-benchmark/sources/poi-excelant/build/classes/ant/java:/opt/poi-benchmark/sources/poi-integration/build/classes:/opt/poi-benchmark/sources/poi-integration/build/classes/ant/java:/opt/poi-benchmark/sources/poi-ooxml/build/classes:/opt/poi-benchmark/sources/poi-ooxml/build/classes/ant/java:/opt/poi-benchmark/sources/poi-ooxml-full/build/classes:/opt/poi-benchmark/sources/poi-ooxml-full/build/classes/ant/java:/opt/poi-benchmark/sources/poi-scratchpad/build/classes:/opt/poi-benchmark/sources/poi-scratchpad/build/classes/ant/java, org.apache.poi.examples.ss.SSPerformanceTest, XSSF, 30000, 20, 0] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runPOIApplication(BaseBenchmark.java:250)
+	... 15 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 17 more
+
+
+# JMH version: 1.33
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.231.71.20211112-011812/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestExcelant
+
+# Run progress: 40.00% complete, ETA 00:36:12
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 3856.540 ms/op
+
+
+# JMH version: 1.33
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.231.71.20211112-011812/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 3 hr per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestIntegration
+
+# Run progress: 50.00% complete, ETA 00:25:56
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 6324.181 ms/op
+
+
+# JMH version: 1.33
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.231.71.20211112-011812/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestMain
+
+# Run progress: 60.00% complete, ETA 00:18:30
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: [Configuration on demand is an incubating feature., > Configure project :, Trying to override old definition of datatype junit, > Task :poi:generateVersionJava UP-TO-DATE, > Task :poi:compileJava UP-TO-DATE, > Task :poi:compileJava9 UP-TO-DATE, > Task :poi:cacheJava9 UP-TO-DATE, > Task :poi:processResources UP-TO-DATE, > Task :poi:classes UP-TO-DATE, > Task :poi:forbiddenApisMain, > Task :poi:compileTestJava UP-TO-DATE, > Task :poi:compileTest9 UP-TO-DATE, > Task :poi:cacheTest9 UP-TO-DATE, > Task :poi:processTestResources UP-TO-DATE, > Task :poi:testClasses UP-TO-DATE, > Task :poi:forbiddenApisTest, > Task :poi:forbiddenApis, > Task :poi:testJar UP-TO-DATE, > Task :poi:test, WARNING: Unknown module: org.junit.platform.commons specified to --add-exports, WARNING: Unknown module: org.junit.platform.commons specified to --add-exports, > Task :poi:spotbugsMain, > Task :poi:spotbugsTest, > Task :poi:spotbugsMain FAILED, > Task :poi:test FAILED, > Task :poi:spotbugsTest, 448 SpotBugs violations were found. See the report at: file:///opt/poi-benchmark/sources/poi/build/reports/spotbugs/test.xml, FAILURE: Build completed with 2 failures., 1: Task failed with an exception., -----------, * What went wrong:, Execution failed for task ':poi:spotbugsMain'., > A failure occurred while executing com.github.spotbugs.snom.internal.SpotBugsRunnerForWorker$SpotBugsExecutor,    > Failed to run Gradle Worker Daemon,       > Process 'Gradle Worker Daemon 1' finished with non-zero exit value 137, * Try:, Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights., ==============================================================================, 2: Task failed with an exception., -----------, * What went wrong:, Execution failed for task ':poi:test'., > Process 'Gradle Test Executor 3' finished with non-zero exit value 137,   This problem might be caused by incorrect test process configuration.,   Please refer to the test execution section in the User Manual at https://docs.gradle.org/7.2/userguide/java_testing.html#sec:test_execution, * Try:, Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights., ==============================================================================, * Get more help at https://help.gradle.org, BUILD FAILED in 1m 37s, 15 actionable tasks: 5 executed, 10 up-to-date]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:198)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.testMain(BaseBenchmark.java:155)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestMain(TestBenchmarks.java:18)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestMain_jmhTest.benchmarkTestMain_ss_jmhStub(TestBenchmarks_benchmarkTestMain_jmhTest.java:320)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestMain_jmhTest.benchmarkTestMain_SingleShotTime(TestBenchmarks_benchmarkTestMain_jmhTest.java:299)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:475)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:458)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); [bash, ./gradlew, :poi:check] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:194)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 18 more
+
+
+# JMH version: 1.33
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.231.71.20211112-011812/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestOOXML
+
+# Run progress: 70.00% complete, ETA 00:13:22
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 4852.183 ms/op
+
+
+# JMH version: 1.33
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.231.71.20211112-011812/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestOOXMLLite
+
+# Run progress: 80.00% complete, ETA 00:08:17
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 54065.113 ms/op
+
+
+# JMH version: 1.33
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9-Ubuntu-0ubuntu2.20.04
+# VM invoker: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# VM options: -Xmx8m -agentpath:/opt/dynatrace/oneagent/agent/bin/1.231.71.20211112-011812/linux-x86-64/liboneagentloader.so=loglevelcon=none,datastorage=/var/lib/dynatrace/oneagent/datastorage,logdir=/var/log/dynatrace/oneagent
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestScratchpad
+
+# Run progress: 90.00% complete, ETA 00:03:58
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: [Configuration on demand is an incubating feature., > Configure project :, Trying to override old definition of datatype junit, > Task :poi:generateVersionJava UP-TO-DATE, > Task :poi-scratchpad:processResources UP-TO-DATE, > Task :poi-scratchpad:processTestResources NO-SOURCE, > Task :poi:compileJava UP-TO-DATE, > Task :poi:compileJava9 UP-TO-DATE, > Task :poi:cacheJava9 UP-TO-DATE, > Task :poi:processResources UP-TO-DATE, > Task :poi:classes UP-TO-DATE, > Task :poi:jar UP-TO-DATE, > Task :poi-scratchpad:compileJava UP-TO-DATE, > Task :poi-scratchpad:compileJava9 UP-TO-DATE, > Task :poi-scratchpad:cacheJava9 UP-TO-DATE, > Task :poi-scratchpad:classes UP-TO-DATE, > Task :poi:compileTestJava UP-TO-DATE, > Task :poi:compileTest9 UP-TO-DATE, > Task :poi:cacheTest9 UP-TO-DATE, > Task :poi:processTestResources UP-TO-DATE, > Task :poi:testClasses UP-TO-DATE, > Task :poi:testJar UP-TO-DATE, > Task :poi-scratchpad:forbiddenApisMain, > Task :poi-scratchpad:compileTestJava UP-TO-DATE, > Task :poi-scratchpad:compileTest9 UP-TO-DATE, > Task :poi-scratchpad:cacheTest9 UP-TO-DATE, > Task :poi-scratchpad:testClasses UP-TO-DATE, > Task :poi-scratchpad:forbiddenApisTest, > Task :poi-scratchpad:forbiddenApis, > Task :poi-scratchpad:testJar UP-TO-DATE, > Task :poi-scratchpad:spotbugsMain, > Task :poi-scratchpad:spotbugsTest, > Task :poi-scratchpad:test, The message received from the daemon indicates that the daemon has disappeared., Build request sent: Build{id=53b3dd7f-4f08-439e-88b5-1f7e593493ac, currentDir=/opt/poi-benchmark/sources}, Attempting to read last messages from the daemon log..., Daemon pid: 2727646,   log file: /home/preis/.gradle/daemon/7.2/daemon-2727646.out.log, ----- Last  20 lines from daemon log file - daemon-2727646.out.log -----, 2021-11-14T01:39:28.860+0100 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=53b3dd7f-4f08-439e-88b5-1f7e593493ac, currentDir=/opt/poi-benchmark/sources}., 2021-11-14T01:39:28.860+0100 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=53b3dd7f-4f08-439e-88b5-1f7e593493ac, currentDir=/opt/poi-benchmark/sources} with connection: socket connection from /127.0.0.1:37385 to /127.0.0.1:38706., 2021-11-14T01:39:28.862+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=53b3dd7f-4f08-439e-88b5-1f7e593493ac, currentDir=/opt/poi-benchmark/sources}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:37385 to /127.0.0.1:38706] after 0.0 minutes of idle, 2021-11-14T01:39:28.862+0100 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Marking the daemon as busy, address: [f8f82ba5-91f1-4464-a1bf-80318aa777e6 port:37385, addresses:[localhost/127.0.0.1]], 2021-11-14T01:39:28.862+0100 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [f8f82ba5-91f1-4464-a1bf-80318aa777e6 port:37385, addresses:[localhost/127.0.0.1]], 2021-11-14T01:39:28.862+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry., 2021-11-14T01:39:28.862+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry., 2021-11-14T01:39:28.864+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry., 2021-11-14T01:39:28.864+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] resetting idle timer, 2021-11-14T01:39:28.864+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes., 2021-11-14T01:39:28.864+0100 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=53b3dd7f-4f08-439e-88b5-1f7e593493ac, currentDir=/opt/poi-benchmark/sources}. Dispatching build started information..., 2021-11-14T01:39:28.864+0100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 28: dispatching org.gradle.launcher.daemon.protocol.BuildStarted@9a058cb, 2021-11-14T01:39:28.864+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: [PWD, SHLVL], 2021-11-14T01:39:28.864+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection., 2021-11-14T01:39:28.865+0100 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 2727646). The daemon log file: /home/preis/.gradle/daemon/7.2/daemon-2727646.out.log, 2021-11-14T01:39:28.865+0100 [INFO] [org.gradle.launcher.daemon.server.exec.LogAndCheckHealth] Starting 20th build in daemon [uptime: 15 mins 49.773 secs, performance: 95%], 2021-11-14T01:39:28.865+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build., 2021-11-14T01:39:28.865+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=71c06691-6c92-486c-bc04-a50e36dda541,javaHome=/usr/lib/jvm/java-11-openjdk-amd64,daemonRegistryDir=/home/preis/.gradle/daemon,pid=2727646,idleTimeout=10800000,priority=NORMAL,daemonOpts=-XX:MaxPermSize=512m,--add-opens,java.base/java.util=ALL-UNNAMED,--add-opens,java.base/java.lang=ALL-UNNAMED,--add-opens,java.base/java.lang.invoke=ALL-UNNAMED,--add-opens,java.base/java.util=ALL-UNNAMED,--add-opens,java.prefs/java.util.prefs=ALL-UNNAMED,--add-opens,java.prefs/java.util.prefs=ALL-UNNAMED,--add-opens,java.base/java.nio.charset=ALL-UNNAMED,--add-opens,java.base/java.net=ALL-UNNAMED,--add-opens,java.base/java.util.concurrent.atomic=ALL-UNNAMED,-Xmx2G,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant], Configuration on demand is an incubating feature., Trying to override old definition of datatype junit, ----- End of the daemon log -----, FAILURE: Build failed with an exception., * What went wrong:, Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed), * Try:, Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights., * Get more help at https://help.gradle.org]
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:198)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.testScratchpad(BaseBenchmark.java:159)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestScratchpad(TestBenchmarks.java:23)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestScratchpad_jmhTest.benchmarkTestScratchpad_ss_jmhStub(TestBenchmarks_benchmarkTestScratchpad_jmhTest.java:320)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestScratchpad_jmhTest.benchmarkTestScratchpad_SingleShotTime(TestBenchmarks_benchmarkTestScratchpad_jmhTest.java:299)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:475)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:458)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); [bash, ./gradlew, :poi-scratchpad:check] (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:153)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:127)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:194)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:148)
+	... 18 more
+
+
+# Run complete. Total time: 00:39:24
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                Mode  Cnt      Score   Error  Units
+TestBenchmarks.benchmarkTestExcelant       ss        3856.540          ms/op
+TestBenchmarks.benchmarkTestIntegration    ss        6324.181          ms/op
+TestBenchmarks.benchmarkTestOOXML          ss        4852.183          ms/op
+TestBenchmarks.benchmarkTestOOXMLLite      ss       54065.113          ms/op
+
+Benchmark result is saved to build/reports/jmh/results.json
