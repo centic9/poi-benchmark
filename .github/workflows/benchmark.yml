@@ -4,9 +4,11 @@
 
 name: Benchmark
 
-#on:
+# https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/
+on:
+    workflow_dispatch:
 #  schedule:
-    # * is a special character in YAML so you have to quote this string
+#    # * is a special character in YAML so you have to quote this string
 #    - cron:  '30 5,17 * * *'
 
 jobs:
@@ -53,10 +55,7 @@ jobs:
       run: mkdir -p build/reports/jmh/
       
     - name: Create report
-      run: java -Xmx8m -jar build/libs/poi-benchmark-jmh.jar \
-  -o build/reports/jmh/human.txt \
-  -rf JSON \
-  -rff build/reports/jmh/results.json
+      run: java -Xmx8m -jar build/libs/poi-benchmark-jmh.jar -o build/reports/jmh/human.txt -rf JSON -rff build/reports/jmh/results.json
 
     - name: Publish results
       run: java -Xmx8m -jar build/libs/poi-benchmark-jmh.jar ./gradlew publishResults processResults
