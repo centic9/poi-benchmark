@@ -1,0 +1,92 @@
+# This workflow will build the project and run the benchmark-tests
+
+# https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
+
+name: Benchmark
+
+#on:
+#  schedule:
+    # * is a special character in YAML so you have to quote this string
+#    - cron:  '30 5,17 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '11'
+        check-latest: true
+
+    - name: Cache Gradle wrapper and dependencies
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+          ~/source
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
+
+    - name: Verify Gradle wrapper
+      uses: gradle/wrapper-validation-action@v1
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+
+    - name: Clean fully
+      run: rm -rf build
+
+    - name: Clean with Gradle
+      run: ./gradlew clean
+
+    - name: Build with Gradle
+      run: ./gradlew jmhJar
+
+    - name: Prepare for report
+      run: mkdir -p build/reports/jmh/
+      
+    - name: Create report
+      run: java -Xmx8m -jar build/libs/poi-benchmark-jmh.jar \
+  -o build/reports/jmh/human.txt \
+  -rf JSON \
+  -rff build/reports/jmh/results.json
+
+    - name: Publish results
+      run: java -Xmx8m -jar build/libs/poi-benchmark-jmh.jar ./gradlew publishResults processResults
+
+    # https://stackoverflow.com/questions/57921401/push-to-origin-from-github-action/58393457#58393457
+    - name: Commit report
+      run: |
+        git config --global user.name 'Dominik Stadler'
+        git config --global user.email 'dominik.stadler@gmx.at'
+        git add results
+        git commit -m "[ci skip] Add daily results"
+        git push
+
+#env:
+#          FIRST_NAME: Mona
+
+# limit memory-usage of Gradle process
+#export GRADLE_OPTS="-Xmx64m -Dorg.gradle.jvmargs=-Xmx64m"
+
+# use a newer Apache Ant if it is available at this location
+# make sure to also adjust these values in BaseBenchmark.java
+#export ANT_HOME=/opt/apache-ant-1.10.11
+#export PATH=${ANT_HOME}/bin:${PATH}
+#export ANT_OPTS="-Xmx512m"
+
+#export GRADLE_CMD="--console=plain --no-parallel --no-daemon"
+
+#grep -Ri tenant results >> benchmark.log
+#RET=$?
+#if [ ${RET} -ne 1 ]; then
+#  echo "Found invalid text 'tenanttoken' in the result-files, not committing changes"
+#  exit 2
+#fi
