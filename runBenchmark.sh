@@ -43,5 +43,5 @@ if [ ${RET} -ne 1 ]; then
   exit 2
 fi
 
-git add results && git ci -m "[ci skip] Add daily results" >> benchmark.log && \
+git add results && git commit -m "[ci skip] Add daily results" >> benchmark.log && \
 git push >> benchmark.log
