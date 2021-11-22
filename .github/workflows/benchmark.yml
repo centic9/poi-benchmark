@@ -69,6 +69,56 @@ jobs:
         git commit -m "[ci skip] Add daily results"
         git push
 
+  testmemory:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '11'
+        check-latest: true
+
+    - name: Cache Gradle wrapper and dependencies
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+          ~/source
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
+
+    - name: Verify Gradle wrapper
+      uses: gradle/wrapper-validation-action@v1
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+
+    - name: Clean fully
+      run: rm -rf build
+
+    - name: Clean with Gradle
+      run: ./gradlew clean
+
+    - name: Checkout SVN sources
+      run: svn co https://svn.apache.org/repos/asf/poi/trunk sources
+
+    - name: Print out environment
+      run: bash -c set
+      
+    - name: Clean SVN Sources
+      working-directory: sources
+      run: bash ./gradlew clean
+
+    - name: Compile SVN Sources
+      working-directory: sources
+      run: bash ./gradlew compileJava
+
 #env:
 #          FIRST_NAME: Mona
 
