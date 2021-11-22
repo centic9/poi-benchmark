@@ -58,3 +58,11 @@ jobs:
     - name: Compile SVN Sources
       working-directory: sources
       run: bash ./gradlew compileJava
+
+    - name: Compile SVN Sources
+      working-directory: sources
+      run: bash ./gradlew compileTestJava
+
+    - name: Compile SVN Sources
+      working-directory: sources
+      run: bash ./gradlew check
