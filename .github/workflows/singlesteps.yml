@@ -1,0 +1,60 @@
+# This workflow is used to verify the single steps that are done during benchmark-runs
+
+# https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
+
+name: Perform single benchmark steps
+
+# https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/
+on:
+    workflow_dispatch:
+
+jobs:
+  testmemory:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '11'
+        check-latest: true
+
+    - name: Cache Gradle wrapper and dependencies
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+          ~/source
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
+
+    - name: Verify Gradle wrapper
+      uses: gradle/wrapper-validation-action@v1
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+
+    - name: Clean fully
+      run: rm -rf build
+
+    - name: Clean with Gradle
+      run: ./gradlew clean
+
+    - name: Checkout SVN sources
+      run: svn co https://svn.apache.org/repos/asf/poi/trunk sources
+
+    - name: Print out environment
+      run: bash -c set
+      
+    - name: Clean SVN Sources
+      working-directory: sources
+      run: bash ./gradlew clean
+
+    - name: Compile SVN Sources
+      working-directory: sources
+      run: bash ./gradlew compileJava
