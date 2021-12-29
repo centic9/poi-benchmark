@@ -6,6 +6,10 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+	all*.exclude group: 'javax.mail'	// avoid duplicate between com.sun.mail in commons-email and javax.mail in commons-test
+}
+
 dependencies {
     compile 'org.dstadler:commons-dost:1.0.0.36'
 	compile 'commons-io:commons-io:2.11.0'
