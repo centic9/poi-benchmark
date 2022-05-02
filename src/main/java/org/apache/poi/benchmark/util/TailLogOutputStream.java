@@ -26,7 +26,7 @@ public class TailLogOutputStream extends BufferingLogOutputStream {
         synchronized (lastLines) {
             // silently ignore null and empty lines here as the queue does not accept this value
             if (StringUtils.isNotEmpty(line)) {
-                lastLines.add(line);
+                lastLines.add("Log: " + line);
             }
         }
 
