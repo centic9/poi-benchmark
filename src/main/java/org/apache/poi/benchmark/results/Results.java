@@ -30,27 +30,31 @@ public class Results {
         for(File file : files) {
             String date = file.getName().replace("-results.json", "");
 
-            //noinspection unchecked
-            Map<String,Object>[] userData = mapper.readValue(file, Map[].class);
-            for(Map<String,Object> data : userData) {
-                //noinspection unchecked
-                Map<String, Object> primaryMetric = (Map<String, Object>) data.get("primaryMetric");
+			try {
+				//noinspection unchecked
+				Map<String, Object>[] userData = mapper.readValue(file, Map[].class);
+				for (Map<String, Object> data : userData) {
+					//noinspection unchecked
+					Map<String, Object> primaryMetric = (Map<String, Object>) data.get("primaryMetric");
 
-                String benchmark = data.get("benchmark").toString();
-                double value = Double.parseDouble(primaryMetric.get("score").toString());
-                //System.out.println("File " + file + ": Found: " + benchmark + ": " + value);
+					String benchmark = data.get("benchmark").toString();
+					double value = Double.parseDouble(primaryMetric.get("score").toString());
+					//System.out.println("File " + file + ": Found: " + benchmark + ": " + value);
 
-                Map<String,Double> benchmarkValues = values.get(benchmark);
-                if(benchmarkValues == null) {
-                    benchmarkValues = new HashMap<>();
-                }
-                benchmarkValues.put(date, value);
-                values.put(benchmark, benchmarkValues);
+					Map<String, Double> benchmarkValues = values.get(benchmark);
+					if (benchmarkValues == null) {
+						benchmarkValues = new HashMap<>();
+					}
+					benchmarkValues.put(date, value);
+					values.put(benchmark, benchmarkValues);
 
-                if(maxDateStr == null || maxDateStr.compareTo(date) <= 0) {
-                    maxDateStr = date;
-                }
-            }
+					if (maxDateStr == null || maxDateStr.compareTo(date) <= 0) {
+						maxDateStr = date;
+					}
+				}
+			} catch (IOException e) {
+				throw new IOException("While handling file: " + file, e);
+			}
         }
 
         Preconditions.checkNotNull(maxDateStr, "Should have a max date now!");
