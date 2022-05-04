@@ -129,7 +129,23 @@ public abstract class BaseBenchmark {
     }
 
     protected void clean() throws IOException {
-        runGradleTarget("clean", TEN_MINUTES);
+		// these files are modified locally, we want to avoid conflicts
+		runSVN("revert",
+				"poi-examples/src/main/java9/module-info.class",
+				"poi-excelant/src/main/java9/module-info.class",
+				"poi-excelant/src/test/java9/module-info.class",
+				"poi-integration/src/test/java9/module-info.class",
+				"poi-ooxml-full/src/main/java9/module-info.class",
+				"poi-ooxml-lite-agent/src/main/java9/module-info.class",
+				"poi-ooxml-lite/src/main/java9/module-info.class",
+				"poi-ooxml/src/main/java9/module-info.class",
+				"poi-ooxml/src/test/java9/module-info.class",
+				"poi-scratchpad/src/main/java9/module-info.class",
+				"poi-scratchpad/src/test/java9/module-info.class",
+				"poi/src/main/java9/module-info.class",
+				"poi/src/test/java9/module-info.class");
+
+		runGradleTarget("clean", TEN_MINUTES);
     }
 
     private void printEnvironment() throws IOException {
