@@ -163,8 +163,9 @@ public abstract class BaseBenchmark {
     }
 
     protected void compileAll() throws IOException {
-        runGradleTarget("compileJava", ONE_HOUR);
-        runGradleTarget("compileTestJava", ONE_HOUR);
+        runGradleTarget("compileJava", ONE_HOUR,
+				// let's run more than one target in one go
+				"compileTestJava",  "getDeps");
     }
 
     protected void testMain() throws IOException {
@@ -234,7 +235,16 @@ public abstract class BaseBenchmark {
     protected void runPOIApplication(@SuppressWarnings("SameParameterValue") String clazz, long timeout, String... args) throws IOException {
         List<String> jars = new ArrayList<>();
 
-        // Collect third-party jar-files
+		addJarsFromDir(jars, "poi/build/runtime");
+		addJarsFromDir(jars, "poi-examples/build/runtime");
+		//addJarsFromDir(jars, "poi-excelant/build/runtime");
+		addJarsFromDir(jars, "poi-ooxml/build/runtime");
+		//addJarsFromDir(jars, "poi-ooxml-full/build/runtime");
+		//addJarsFromDir(jars, "poi-ooxml-lite-agent/build/runtime");
+		//addJarsFromDir(jars, "poi-ooxml-lite/build/runtime");
+		addJarsFromDir(jars, "poi-scratchpad/build/runtime");
+
+        // Collect third-party jar-files (only available after running Ant, replaced by "build/runtime" above)
         addJarsFromDir(jars, "lib/excelant");
         addJarsFromDir(jars, "lib/main");
         addJarsFromDir(jars, "lib/main-tests");
