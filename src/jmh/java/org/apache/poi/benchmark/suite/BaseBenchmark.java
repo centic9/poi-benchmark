@@ -281,7 +281,12 @@ public abstract class BaseBenchmark {
                 dir, srcDir.getAbsolutePath());
         for(File file : files) {
             jars.add(file.getAbsolutePath());
-            jars.add(file.getAbsolutePath() + "/ant/java");
+			if (new File(file.getAbsolutePath(), "java/main").exists()) {
+				jars.add(file.getAbsolutePath() + "/java/main");
+			}
+			if (new File(file.getAbsolutePath(), "ant/java").exists()) {
+				jars.add(file.getAbsolutePath() + "/ant/java");
+			}
         }
     }
 
