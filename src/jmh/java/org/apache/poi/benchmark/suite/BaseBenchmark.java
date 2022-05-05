@@ -261,13 +261,13 @@ public abstract class BaseBenchmark {
 		addJarsFromDir(jars, "poi-scratchpad/build/runtime");
 
         // Collect third-party jar-files (only available after running Ant, replaced by "build/runtime" above)
-        addJarsFromDir(jars, "lib/excelant");
+        /*addJarsFromDir(jars, "lib/excelant");
         addJarsFromDir(jars, "lib/main");
         addJarsFromDir(jars, "lib/main-tests");
         addJarsFromDir(jars, "lib/ooxml");
         addJarsFromDir(jars, "lib/ooxml-provided");
         addJarsFromDir(jars, "lib/ooxml-tests");
-        addJarsFromDir(jars, "lib/util");
+        addJarsFromDir(jars, "lib/util");*/
 
         // Collect complied classes for Apache POI itself
         addClassesDir(jars, "build");
