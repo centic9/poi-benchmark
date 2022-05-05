@@ -85,7 +85,7 @@ public class EmailSender {
 
 			email.send();
 		} catch (EmailException e) {
-			throw new IOException("Sending the email caused an exception", e);
+			throw new IOException("Sending the email caused an exception for config: " + mailserverConfig, e);
 		}
 	}
 
