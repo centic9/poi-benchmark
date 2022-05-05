@@ -3,6 +3,7 @@ package org.apache.poi.benchmark.suite;
 import com.google.common.base.Preconditions;
 import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.ExecuteException;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.AndFileFilter;
 import org.apache.commons.io.filefilter.NotFileFilter;
 import org.apache.commons.io.filefilter.SuffixFileFilter;
@@ -95,11 +96,12 @@ public abstract class BaseBenchmark {
         }
 
         svnCheckout();
-        svnStatus();
+		patchTestExecution();
+		svnStatus();
         printEnvironment();
     }
 
-    private void svnCleanup() throws IOException {
+	private void svnCleanup() throws IOException {
         runSVN("cleanup");
     }
 
@@ -123,6 +125,20 @@ public abstract class BaseBenchmark {
             }
         }
     }
+
+	private void patchTestExecution() throws IOException {
+		String content = FileUtils.readFileToString(new File(srcDir, "build.gradle"), "UTF-8");
+
+		// use the "Marlin" rendering engine as the default "pisces" causes endless loops for some integration-test-files
+		if (!content.contains("Xbootclasspath")) {
+			content = content.replace("strategy=dynamic',",
+					"strategy=dynamic',"
+							+ "'-Xbootclasspath/p:" + srcDir.getAbsoluteFile().getParentFile().getAbsolutePath() + "/marlin-0.9.4.5-Unsafe.jar',"
+							+ "'-Dsun.java2d.renderer=sun.java2d.marlin.DMarlinRenderingEngine',");
+
+			FileUtils.writeStringToFile(new File(srcDir, "build.gradle"), content, "UTF-8");
+		}
+	}
 
     private void svnStatus() throws IOException {
         runSVN("status");
