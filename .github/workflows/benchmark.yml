@@ -66,7 +66,7 @@ jobs:
       run: java -Xmx8m -jar build/libs/poi-benchmark-jmh.jar -o build/reports/jmh/human.txt -rf JSON -rff build/reports/jmh/results.json
 
     - name: Prepare credentials
-      uses: DamianReeves/write-file-action@1
+      uses: DamianReeves/write-file-action@v1.0
       with:
         path: src/jmh/resources/benchmark.properties
         # secrets taken from Dstadler/Webmail
