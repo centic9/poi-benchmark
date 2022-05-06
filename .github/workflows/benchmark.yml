@@ -65,6 +65,22 @@ jobs:
     - name: Run benchmark
       run: java -Xmx8m -jar build/libs/poi-benchmark-jmh.jar -o build/reports/jmh/human.txt -rf JSON -rff build/reports/jmh/results.json
 
+    - name: Prepare credentials
+      uses: DamianReeves/write-file-action@1
+      with:
+        path: src/jmh/resources/benchmark.properties
+        # secrets taken from Dstadler/Webmail
+        contents: |
+          mail.to=${{ secrets.EMAIL_TO }}
+          mail.bounce=${{ secrets.EMAIL_BOUNCE }}
+          mail.debug=false
+          mail.user=${{ secrets.EMAIL_USER }}
+          mail.password=${{ secrets.EMAIL_PASSWORD }}
+          mail.server=${{ secrets.SMTP_HOST }}
+          mail.port=${{ secrets.SMTP_PORT }}
+          mail.ssl=true
+        write-mode: append
+
     - name: Publish results
       run: ./gradlew --console=plain --no-parallel --no-daemon publishResults processResults
 
