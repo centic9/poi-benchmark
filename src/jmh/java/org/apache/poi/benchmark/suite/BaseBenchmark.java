@@ -283,6 +283,7 @@ public abstract class BaseBenchmark {
 
         try (TailLogOutputStream out = new TailLogOutputStream(TAIL_LINES)) {
             CommandLine cmd = new CommandLine("java");
+			cmd.addArgument("-Djava.io.tmpdir=build");
             cmd.addArgument("-cp");
             cmd.addArgument(ArrayUtils.toString(jars.toArray(), ":", "", ""));
             cmd.addArgument(clazz);
