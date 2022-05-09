@@ -121,7 +121,7 @@ public abstract class BaseBenchmark {
                             out, ENVIRONMENT);
                 }
             } catch (IOException e) {
-                throw new IOException("Log-Tail: " + out.getLines(), e);
+                throw new IOException("Log-Tail: \n" + String.join("\n    ", out.getLines()), e);
             }
         }
     }
@@ -173,7 +173,7 @@ public abstract class BaseBenchmark {
                 ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, ONE_MINUTE, out, ENVIRONMENT);
             } catch (ExecuteException e) {
                 log.log(Level.WARNING, "Failed to print the environment variables", e);
-                throw new IOException("Log-Tail: " + out.getLines(), e);
+                throw new IOException("Log-Tail: \n" + String.join("\n    ", out.getLines()), e);
             }
         }
     }
@@ -228,7 +228,7 @@ public abstract class BaseBenchmark {
             } catch (ExecuteException e) {
                 log.log(Level.WARNING, "Failed to run Gradle with target: '" + target + "' and args: " +
                         ArrayUtils.toString(args, " ", "", ""), e);
-                throw new IOException("Log-Tail: " + out.getLines(), e);
+                throw new IOException("Log-Tail: \n" + String.join("\n    ", out.getLines()), e);
             }
         }
     }
@@ -243,7 +243,7 @@ public abstract class BaseBenchmark {
             } catch (ExecuteException e) {
                 log.log(Level.WARNING, "Failed to run SVN with command " + command +
                         " and args: " + Arrays.toString(args), e);
-                throw new IOException("Log-Tail: " + out.getLines(), e);
+                throw new IOException("Log-Tail: \n" + String.join("\n    ", out.getLines()), e);
             }
         }
     }
@@ -293,7 +293,7 @@ public abstract class BaseBenchmark {
             } catch (ExecuteException e) {
                 log.log(Level.WARNING, "Failed to run POI application " + clazz + "" +
                         " and args: " + Arrays.toString(args), e);
-                throw new IOException("Log-Tail: " + out.getLines(), e);
+                throw new IOException("Log-Tail: \n" + String.join("\n    ", out.getLines()), e);
             }
         }
     }
