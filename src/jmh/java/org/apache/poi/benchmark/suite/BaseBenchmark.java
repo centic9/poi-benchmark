@@ -136,6 +136,11 @@ public abstract class BaseBenchmark {
 							+ "'-Xbootclasspath/p:" + srcDir.getAbsoluteFile().getParentFile().getAbsolutePath() + "/marlin-0.9.4.5-Unsafe.jar',"
 							+ "'-Dsun.java2d.renderer=sun.java2d.marlin.DMarlinRenderingEngine',");
 
+            // this can be removed again as soon as the file in POI itself is updated with a bit more memory
+            content = content.replace(
+                    "maxHeapSize = \"1G\"",
+                    "maxHeapSize = \"1536m\"");
+
 			FileUtils.writeStringToFile(new File(srcDir, "build.gradle"), content, "UTF-8");
 		}
 	}
