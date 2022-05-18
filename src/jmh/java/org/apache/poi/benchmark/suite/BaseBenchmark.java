@@ -48,6 +48,12 @@ public abstract class BaseBenchmark {
     private static final long TWO_HOURS = TimeUnit.HOURS.toMillis(2);
 
     private static final Map<String, String> ENVIRONMENT = new HashMap<>();
+    static {
+        // we had some strange failures on one of the test-vms, so let's try
+        // to run with less parallelism when running tests
+        ENVIRONMENT.put("CI_BUILD", "TRUE");
+    }
+
     private static final int TAIL_LINES = 100;
 
     static {
