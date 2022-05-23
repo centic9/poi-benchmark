@@ -136,17 +136,35 @@ public abstract class BaseBenchmark {
 		String content = FileUtils.readFileToString(new File(srcDir, "build.gradle"), "UTF-8");
 
 		// use the "Marlin" rendering engine as the default "pisces" causes endless loops for some integration-test-files
-		if (!content.contains("Xbootclasspath")) {
-			content = content.replace("strategy=dynamic',",
-					"strategy=dynamic',"
-							+ "'-Xbootclasspath/p:" + srcDir.getAbsoluteFile().getParentFile().getAbsolutePath() + "/marlin-0.9.4.5-Unsafe.jar',"
-							+ "'-Dsun.java2d.renderer=sun.java2d.marlin.DMarlinRenderingEngine',");
+        boolean changed = false;
+		if (!content.contains("strategy=dynamic','-Xbootclasspath")) {
+            content = content.replace("strategy=dynamic',",
+                    "strategy=dynamic',"
+                            + "'-Xbootclasspath/p:" + srcDir.getAbsoluteFile().getParentFile().getAbsolutePath() + "/marlin-0.9.4.5-Unsafe.jar',"
+                            + "'-Dsun.java2d.renderer=sun.java2d.marlin.DMarlinRenderingEngine',");
 
+            changed = true;
+        }
+
+        if (!content.contains("strategy=fixed','-Xbootclasspath")) {
+            content = content.replace("strategy=fixed',",
+                    "strategy=fixed',"
+                            + "'-Xbootclasspath/p:" + srcDir.getAbsoluteFile().getParentFile().getAbsolutePath() + "/marlin-0.9.4.5-Unsafe.jar',"
+                            + "'-Dsun.java2d.renderer=sun.java2d.marlin.DMarlinRenderingEngine',");
+
+            changed = true;
+        }
+
+        if (!content.contains("1536m")) {
             // this can be removed again as soon as the file in POI itself is updated with a bit more memory
             content = content.replace(
                     "maxHeapSize = \"1G\"",
                     "maxHeapSize = \"1536m\"");
 
+            changed = true;
+        }
+
+        if (changed) {
 			FileUtils.writeStringToFile(new File(srcDir, "build.gradle"), content, "UTF-8");
 		}
 	}
