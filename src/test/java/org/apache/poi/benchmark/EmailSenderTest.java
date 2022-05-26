@@ -157,7 +157,7 @@ class EmailSenderTest {
     private EmailConfig getEmailConfig() {
         EmailConfig email = new EmailConfig();
         email.setTo(Collections.singletonList(PropertyAccess.getProperty("mail.to")));
-        email.setFrom("benchmark@poi.apache.org");
+        email.setFrom(PropertyAccess.getProperty("mail.from"));
         email.setSubject("Apache POI benchmark results - Test Email");
         return email;
     }

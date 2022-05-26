@@ -70,7 +70,7 @@ public class PublishResults {
 
         EmailConfig email = new EmailConfig();
         email.setTo(Collections.singletonList(PropertyAccess.getProperty("mail.to")));
-        email.setFrom("benchmark@poi.apache.org");
+        email.setFrom(PropertyAccess.getProperty("mail.from"));
         email.setSubject("Apache POI benchmark results");
 
         List<String> lines = FileUtils.readLines(new File(REPORTS_DIR, "human.txt"), "UTF-8");
@@ -109,7 +109,7 @@ public class PublishResults {
 
         EmailConfig email = new EmailConfig();
         email.setTo(Collections.singletonList(PropertyAccess.getProperty("mail.to")));
-        email.setFrom("benchmark@poi.apache.org");
+        email.setFrom(PropertyAccess.getProperty("mail.from"));
         email.setSubject("No JMH reports found");
 
         sender.sendAttachmentEmail(Collections.emptyList(), config, email,
