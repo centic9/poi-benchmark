@@ -188,7 +188,24 @@ public abstract class BaseBenchmark {
 				"poi-scratchpad/src/main/java9/module-info.class",
 				"poi-scratchpad/src/test/java9/module-info.class",
 				"poi/src/main/java9/module-info.class",
-				"poi/src/test/java9/module-info.class");
+				"poi/src/test/java9/module-info.class",
+
+				"poi-examples/src/main/java9/module-info.java",
+				"poi-excelant/src/main/java9/module-info.java",
+				"poi-excelant/src/test/java9/module-info.java",
+				"poi-integration/src/test/java9/module-info.java",
+				"poi-ooxml-full/src/main/java9/module-info.java",
+				"poi-ooxml-lite-agent/src/main/java9/module-info.java",
+				"poi-ooxml-lite/src/main/java9/module-info.java",
+				"poi-ooxml/src/main/java9/module-info.java",
+				"poi-ooxml/src/test/java9/module-info.java",
+				"poi-scratchpad/src/main/java9/module-info.java",
+				"poi-scratchpad/src/test/java9/module-info.java",
+				"poi/src/main/java9/module-info.java",
+				"poi/src/test/java9/module-info.java",
+
+                "src/resources/ooxml-lite-report.clazz",
+                "src/resources/ooxml-lite-report.xsb");
 
 		runGradleTarget("clean", TEN_MINUTES);
     }
