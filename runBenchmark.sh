@@ -15,7 +15,7 @@ wget --timestamping https://github.com/bourgesl/marlin-renderer/releases/downloa
 wget --timestamping https://github.com/bourgesl/marlin-renderer/releases/download/v0_9_4_5/marlin-0.9.4.5-Unsafe.jar >> benchmark.log 2>&1
 
 git fetch >> benchmark.log 2>&1 && \
-git checkout >> results >> benchmark.log 2>&1 && \
+git checkout results >> benchmark.log 2>&1 && \
 git rebase origin/master >> benchmark.log 2>&1 && \
 rm -rf build >> benchmark.log 2>&1 && \
 \
