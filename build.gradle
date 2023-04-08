@@ -49,22 +49,8 @@ jmh {
 tasks.getByName('jmhJar').doFirst() {duplicatesStrategy(DuplicatesStrategy.EXCLUDE)}
 
 wrapper {
-    gradleVersion= '7.6'
+    gradleVersion = '7.6.1'
 }
-
-task adjustWrapperPropertiesFile {
-    doLast {
-        ant.replaceregexp(match: '^#.*', replace: '', flags: 'g', byline: true) {
-            fileset(dir: project.projectDir, includes: 'gradle/wrapper/gradle-wrapper.properties')
-        }
-        new File(project.projectDir, 'gradle/wrapper/gradle-wrapper.properties').with {
-            it.text = it.readLines().findAll { it }.sort().join('\n')
-        }
-        ant.fixcrlf(file: 'gradle/wrapper/gradle-wrapper.properties', eol: 'lf')
-    }
-}
-wrapper.finalizedBy adjustWrapperPropertiesFile
-
 
 task publishResults(type:JavaExec) {
     description = 'Publishes results after the benchmark runs, stores results in a directory and sends out an email'
