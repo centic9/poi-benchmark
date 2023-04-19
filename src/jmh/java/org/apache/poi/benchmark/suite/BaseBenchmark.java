@@ -205,7 +205,8 @@ public abstract class BaseBenchmark {
 				"poi/src/test/java9/module-info.java",
 
                 "src/resources/ooxml-lite-report.clazz",
-                "src/resources/ooxml-lite-report.xsb");
+                "src/resources/ooxml-lite-report.xsb",
+				"build.gradle");
 
 		runGradleTarget("clean", TEN_MINUTES);
     }
@@ -338,7 +339,7 @@ public abstract class BaseBenchmark {
             try {
                 ExecutionHelper.getCommandResultIntoStream(cmd, srcDir, 0, timeout, out, ENVIRONMENT);
             } catch (ExecuteException e) {
-                log.log(Level.WARNING, "Failed to run POI application " + clazz + "" +
+                log.log(Level.WARNING, "Failed to run POI application " + clazz +
                         " and args: " + Arrays.toString(args), e);
                 throw new IOException("Log-Tail: \n" + String.join("\n    ", out.getLines()), e);
             }
