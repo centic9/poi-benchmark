@@ -268,6 +268,9 @@ public abstract class BaseBenchmark {
         try (TailLogOutputStream out = new TailLogOutputStream(TAIL_LINES)) {
             CommandLine cmd = new CommandLine("bash");
             cmd.addArgument("./gradlew");
+            cmd.addArgument("--no-daemon");
+            cmd.addArgument("--console");
+            cmd.addArgument("plain");
             cmd.addArgument(target);
             cmd.addArguments(args);
             try {
