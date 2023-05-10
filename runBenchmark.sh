@@ -19,7 +19,7 @@ git checkout results >> benchmark.log 2>&1 && \
 git rebase origin/master >> benchmark.log 2>&1 && \
 rm -rf build >> benchmark.log 2>&1 && \
 \
-set >> benchmark.log && \
+set | grep -v LS_COLORS | grep -v LESS_TERMCAP >> benchmark.log && \
 ./gradlew ${GRADLE_CMD} clean >> benchmark.log 2>&1 && \
 ./gradlew ${GRADLE_CMD} jmhJar >> benchmark.log 2>&1 && \
 mkdir -p build/reports/jmh/ && \
