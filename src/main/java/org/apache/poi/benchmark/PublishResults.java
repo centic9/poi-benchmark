@@ -123,11 +123,14 @@ public class PublishResults {
         config.setUserId(PropertyAccess.getProperty("mail.user"));
         config.setPassword(PropertyAccess.getProperty("mail.password"));
         config.setServerAddress(PropertyAccess.getProperty("mail.server"));
-        try {
-            config.setServerPort(Integer.parseInt(PropertyAccess.getProperty("mail.port")));
+		final String port = PropertyAccess.getProperty("mail.port");
+		if (port == null) {
+			throw new IllegalArgumentException("Could not read property 'mail.port' from properties");
+		}
+		try {
+            config.setServerPort(Integer.parseInt(port));
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("Failed parsing integer from '" +
-                    PropertyAccess.getProperty("mail.port") + "'", e);
+            throw new IllegalArgumentException("Failed parsing integer from '" + port + "'", e);
         }
         config.setSSLEnabled(Boolean.parseBoolean(PropertyAccess.getProperty("mail.ssl")));
         config.setSubjectPrefix("[POI-Benchmark] ");
