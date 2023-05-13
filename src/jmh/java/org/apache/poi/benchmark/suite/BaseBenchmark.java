@@ -102,7 +102,7 @@ public abstract class BaseBenchmark {
         }
 
         svnCheckout();
-		patchTestExecution();
+		//patchTestExecution();
 		svnStatus();
         printEnvironment();
     }

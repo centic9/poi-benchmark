@@ -2,6 +2,13 @@
 
 cd `dirname $0`
 
+if [ -f /etc/apache2/sites-available/corpora.conf ];then
+  # TikaVM only has AdoptOpenJDK, unfortunately the hostname is not set properly
+  # thus we resort to a check on existence of a specific file...
+  export JAVA_HOME=/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64
+  export PATH=$JAVA_HOME/bin:$PATH
+fi
+
 # limit memory-usage of Gradle process
 export GRADLE_OPTS="-Xmx64m -Dorg.gradle.jvmargs=-Xmx64m"
 
