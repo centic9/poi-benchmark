@@ -1,0 +1,1491 @@
+# JMH version: 1.37
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /usr/lib/jvm/adoptopenjdk-11-hotspot-amd64/bin/java
+# VM options: -Xmx8m
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.BuildBenchmarks.benchmarkCompileAll
+
+# Run progress: 0.00% complete, ETA 00:00:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: 
+Log:                           ^
+    Log: /home/centic/poi-benchmark/sources/poi-scratchpad/src/test/java/org/apache/poi/hwpf/usermodel/TestHWPFOldDocument.java:240: warning: [deprecation] getParagraphText() in org.apache.poi.hwpf.extractor.Word6Extractor has been deprecated
+    Log:         for (String p : ex.getParagraphText()) {
+    Log:                           ^
+    Log: /home/centic/poi-benchmark/sources/poi-scratchpad/src/test/java/org/apache/poi/hwpf/usermodel/TestBug49820.java:64: warning: [deprecation] getParagraphStyle(int) in org.apache.poi.hwpf.model.StyleSheet has been deprecated
+    Log:     assertEquals(expectedStyleLvl, styleSheet.getParagraphStyle(par.getStyleIndex()).getLvl());
+    Log:                                              ^
+    Log: 15 warnings
+    Log: > Task :poi-scratchpad:compileTest9
+    Log: > Task :poi-scratchpad:testClasses
+    Log: > Task :poi-scratchpad:testJar
+    Log: > Task :poi-ooxml-full:compileJava
+    Log: > Task :poi-ooxml-full:compileJava9
+    Log: > Task :poi-ooxml-full:processResources NO-SOURCE
+    Log: > Task :poi-ooxml-full:classes
+    Log: > Task :poi-ooxml-full:sourceJar
+    Log: > Task :poi-ooxml-full:jar
+    Log: > Task :poi-ooxml-full:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-lite:compileOoxmlLite
+    Log: > Task :poi-ooxml-full:getDeps
+    Log: > Task :poi-ooxml:compileJava
+    Log: /home/centic/poi-benchmark/sources/poi-ooxml/src/main/java/org/apache/poi/xssf/usermodel/BaseXSSFEvaluationWorkbook.java:170: warning: [deprecation] getNameAt(int) in org.apache.poi.xssf.usermodel.XSSFWorkbook has been deprecated
+    Log:             XSSFName nm = _uBook.getNameAt(i);
+    Log:                                 ^
+    Log: /home/centic/poi-benchmark/sources/poi-ooxml/src/main/java/org/apache/poi/xssf/usermodel/BaseXSSFEvaluationWorkbook.java:214: warning: [deprecation] getNameIndex(java.lang.String) in org.apache.poi.xssf.usermodel.XSSFWorkbook has been deprecated
+    Log:             int nameIdx = _uBook.getNameIndex(nameName);
+    Log:                                 ^
+    Log: /home/centic/poi-benchmark/sources/poi-ooxml/src/main/java/org/apache/poi/xssf/usermodel/BaseXSSFEvaluationWorkbook.java:285: warning: [deprecation] getNameAt(int) in org.apache.poi.xssf.usermodel.XSSFWorkbook has been deprecated
+    Log:         XSSFName xname = _uBook.getNameAt(idx);
+    Log:                                ^
+    Log: /home/centic/poi-benchmark/sources/poi-ooxml/src/main/java/org/apache/poi/xssf/usermodel/BaseXSSFEvaluationWorkbook.java:340: warning: [deprecation] getNameAt(int) in org.apache.poi.xssf.usermodel.XSSFWorkbook has been deprecated
+    Log:         return _uBook.getNameAt(namePtg.getIndex()).getNameName();
+    Log:                      ^
+    Log: /home/centic/poi-benchmark/sources/poi-ooxml/src/main/java/org/apache/poi/xssf/usermodel/BaseXSSFEvaluationWorkbook.java:345: warning: [deprecation] getNameAt(int) in org.apache.poi.xssf.usermodel.XSSFWorkbook has been deprecated
+    Log:         return new Name(_uBook.getNameAt(ix), ix, this);
+    Log:                               ^
+    Log: /home/centic/poi-benchmark/sources/poi-ooxml/src/main/java/org/apache/poi/xssf/usermodel/BaseXSSFFormulaEvaluator.java:157: warning: [deprecation] setCellType(org.apache.poi.ss.usermodel.CellType) in org.apache.poi.ss.usermodel.Cell has been deprecated
+    Log:             cell.setCellType(cellType);
+    Log:                 ^
+    Log: /home/centic/poi-benchmark/sources/poi-ooxml/src/main/java/org/apache/poi/xssf/streaming/StreamingSheetWriter.java:53: warning: [deprecation] createTempFile() in org.apache.poi.xssf.streaming.SheetDataWriter has been deprecated
+    Log:     public File createTempFile() throws IOException {
+    Log:                 ^
+    Log: /home/centic/poi-benchmark/sources/poi-ooxml/src/main/java/org/apache/poi/xssf/streaming/StreamingSheetWriter.java:58: warning: [deprecation] createWriter(java.io.File) in org.apache.poi.xssf.streaming.SheetDataWriter has been deprecated
+    Log:     public Writer createWriter(File fd) throws IOException {
+    Log:                   ^
+    Log: 8 warnings
+    Log: > Task :poi-ooxml:compileJava9 FAILED
+    Log: > Task :poi-ooxml:compileJava9 FAILEDerror: the unnamed module reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.pdfbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xmlgraphics.commons reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.xml reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.transcoder reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svgrasterizer reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svggen reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svg.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.shared.resources reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.script reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.parser reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.i18n reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.gvt reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.css reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.constants reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.bridge reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.awt.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.anim reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.santuario.xmlsec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module SparseBitSet reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.math3 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.compress reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module poi.ooxml.full reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module com.github.virtuald.curvesapi reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.pdfbox.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.logging reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xml.apis.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.fontbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module de.rototor.pdfbox.graphics2d reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.collections4 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.poi.poi reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: /home/centic/poi-benchmark/sources/poi-ooxml/src/main/java9/module-info.java:18: error: module org.apache.poi.ooxml reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: module org.apache.poi.ooxml {
+    Log: ^
+    Log: 38 errors
+    Log: > Task :poi-ooxml-lite:compileJava
+    Log: FAILURE: Build failed with an exception.
+    Log: * What went wrong:
+    Log: Execution failed for task ':poi-ooxml:compileJava9'.
+    Log: > Compilation failed; see the compiler error output for details.
+    Log: * Try:
+    Log: > Run with --info option to get more log output.
+    Log: > Run with --scan to get full insights.
+    Log: Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+    Log: You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+    Log: For more on this, please refer to https://docs.gradle.org/8.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+    Log: BUILD FAILED in 46s
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:280)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:228)
+	at org.apache.poi.benchmark.suite.BuildBenchmarks.benchmarkCompileAll(BuildBenchmarks.java:16)
+	at org.apache.poi.benchmark.suite.jmh_generated.BuildBenchmarks_benchmarkCompileAll_jmhTest.benchmarkCompileAll_ss_jmhStub(BuildBenchmarks_benchmarkCompileAll_jmhTest.java:326)
+	at org.apache.poi.benchmark.suite.jmh_generated.BuildBenchmarks_benchmarkCompileAll_jmhTest.benchmarkCompileAll_SingleShotTime(BuildBenchmarks_benchmarkCompileAll_jmhTest.java:305)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); bash ./gradlew --no-daemon --console plain compileJava compileTestJava getDeps (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:156)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:130)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:276)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:151)
+	... 18 more
+
+
+# JMH version: 1.37
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /usr/lib/jvm/adoptopenjdk-11-hotspot-amd64/bin/java
+# VM options: -Xmx8m
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkHSSFPerformance
+
+# Run progress: 10.00% complete, ETA 00:09:19
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: 
+Log: > Task :poi-ooxml-full:copy_xsds UP-TO-DATE
+    Log: > Task :poi:generateVersionJava UP-TO-DATE
+    Log: > Task :poi-scratchpad:processTestResources NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml:fixBatik UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:processResources NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:classes UP-TO-DATE
+    Log: > Task :poi-ooxml:processResources UP-TO-DATE
+    Log: > Task :poi-ooxml:processTestResources UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:jar UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:getDeps UP-TO-DATE
+    Log: > Task :poi:compileJava UP-TO-DATE
+    Log: > Task :poi:compileJava9 UP-TO-DATE
+    Log: > Task :poi:processResources UP-TO-DATE
+    Log: > Task :poi:classes UP-TO-DATE
+    Log: > Task :poi:jar UP-TO-DATE
+    Log: > Task :poi:compileTestJava UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileJava UP-TO-DATE
+    Log: > Task :poi:compileTest9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileJava9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:classes UP-TO-DATE
+    Log: > Task :poi:processTestResources UP-TO-DATE
+    Log: > Task :poi:testClasses UP-TO-DATE
+    Log: > Task :poi-scratchpad:jar UP-TO-DATE
+    Log: > Task :poi:testJar UP-TO-DATE
+    Log: > Task :poi-scratchpad:getDeps UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileTestJava UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileTest9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:testClasses UP-TO-DATE
+    Log: > Task :poi:getDeps UP-TO-DATE
+    Log: > Task :poi-scratchpad:testJar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:generate_beans UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml-full:processResources NO-SOURCE
+    Log: > Task :poi-ooxml-full:classes UP-TO-DATE
+    Log: > Task :poi-ooxml-full:sourceJar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:jar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-full:getDeps UP-TO-DATE
+    Log: > Task :poi-ooxml:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml-lite:compileOoxmlLite UP-TO-DATE
+    Log: > Task :poi-ooxml-lite:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml:compileJava9 FAILED
+    Log: error: the unnamed module reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.pdfbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xmlgraphics.commons reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.xml reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.transcoder reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svgrasterizer reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svggen reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svg.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.shared.resources reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.script reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.parser reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.i18n reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.gvt reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.css reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.constants reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.bridge reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.awt.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.anim reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.santuario.xmlsec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module SparseBitSet reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.math3 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.compress reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module poi.ooxml.full reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module com.github.virtuald.curvesapi reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.pdfbox.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.logging reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xml.apis.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.fontbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module de.rototor.pdfbox.graphics2d reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.collections4 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.poi.poi reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: /home/centic/poi-benchmark/sources/poi-ooxml/src/main/java9/module-info.java:18: error: module org.apache.poi.ooxml reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: module org.apache.poi.ooxml {
+    Log: ^
+    Log: 38 errors
+    Log: FAILURE: Build failed with an exception.
+    Log: * What went wrong:
+    Log: Execution failed for task ':poi-ooxml:compileJava9'.
+    Log: > Compilation failed; see the compiler error output for details.
+    Log: * Try:
+    Log: > Run with --info option to get more log output.
+    Log: > Run with --scan to get full insights.
+    Log: BUILD FAILED in 9s
+    Log: > Task :poi-ooxml-lite:compileJava9
+    Log: Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+    Log: You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+    Log: For more on this, please refer to https://docs.gradle.org/8.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+    Log: 40 actionable tasks: 2 executed, 38 up-to-date
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:280)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:228)
+	at org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.setUp(SSPerformanceBenchmarks.java:12)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest._jmh_tryInit_f_ssperformancebenchmarks0_0(SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.java:341)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.benchmarkHSSFPerformance_SingleShotTime(SSPerformanceBenchmarks_benchmarkHSSFPerformance_jmhTest.java:297)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); bash ./gradlew --no-daemon --console plain compileJava compileTestJava getDeps (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:156)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:130)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:276)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:151)
+	... 18 more
+
+
+# JMH version: 1.37
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /usr/lib/jvm/adoptopenjdk-11-hotspot-amd64/bin/java
+# VM options: -Xmx8m
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkSXSSFPerformance
+
+# Run progress: 20.00% complete, ETA 00:04:55
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: 
+Log: > Task :poi-ooxml-full:copy_xsds UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml:fixBatik UP-TO-DATE
+    Log: > Task :poi-scratchpad:processTestResources NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:processResources NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:classes UP-TO-DATE
+    Log: > Task :poi-ooxml:processResources UP-TO-DATE
+    Log: > Task :poi-ooxml:processTestResources UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:jar UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:getDeps UP-TO-DATE
+    Log: > Task :poi:compileJava UP-TO-DATE
+    Log: > Task :poi:compileJava9 UP-TO-DATE
+    Log: > Task :poi:processResources UP-TO-DATE
+    Log: > Task :poi:classes UP-TO-DATE
+    Log: > Task :poi:jar UP-TO-DATE
+    Log: > Task :poi:compileTestJava UP-TO-DATE
+    Log: > Task :poi:compileTest9 UP-TO-DATE
+    Log: > Task :poi:processTestResources UP-TO-DATE
+    Log: > Task :poi:testClasses UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileJava UP-TO-DATE
+    Log: > Task :poi:testJar UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileJava9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:classes UP-TO-DATE
+    Log: > Task :poi-scratchpad:jar UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileTestJava UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileTest9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:testClasses UP-TO-DATE
+    Log: > Task :poi-scratchpad:testJar UP-TO-DATE
+    Log: > Task :poi:getDeps UP-TO-DATE
+    Log: > Task :poi-scratchpad:getDeps UP-TO-DATE
+    Log: > Task :poi-ooxml-full:generate_beans UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml-full:processResources NO-SOURCE
+    Log: > Task :poi-ooxml-full:classes UP-TO-DATE
+    Log: > Task :poi-ooxml-full:sourceJar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:jar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-full:getDeps UP-TO-DATE
+    Log: > Task :poi-ooxml:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml-lite:compileOoxmlLite UP-TO-DATE
+    Log: > Task :poi-ooxml-lite:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml-lite:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml:compileJava9 FAILED
+    Log: error: the unnamed module reads package org.apache.pdfbox.multipdf from both org.apache.pdfbox and de.rototor.pdfbox.graphics2d
+    Log: error: module org.apache.pdfbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xmlgraphics.commons reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.xml reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.transcoder reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svgrasterizer reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svggen reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svg.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.shared.resources reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.script reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.parser reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.i18n reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.gvt reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.css reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.constants reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.bridge reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.awt.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.anim reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.santuario.xmlsec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module SparseBitSet reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.math3 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.compress reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module poi.ooxml.full reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module com.github.virtuald.curvesapi reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.pdfbox.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.logging reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xml.apis.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.fontbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module de.rototor.pdfbox.graphics2d reads package org.apache.pdfbox.multipdf from both org.apache.pdfbox and de.rototor.pdfbox.graphics2d
+    Log: error: module org.apache.commons.collections4 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.poi.poi reads package org.apache.pdfbox.multipdf from both org.apache.pdfbox and de.rototor.pdfbox.graphics2d
+    Log: /home/centic/poi-benchmark/sources/poi-ooxml/src/main/java9/module-info.java:18: error: module org.apache.poi.ooxml reads package org.apache.pdfbox.multipdf from both org.apache.pdfbox and de.rototor.pdfbox.graphics2d
+    Log: module org.apache.poi.ooxml {
+    Log: ^
+    Log: 38 errors
+    Log: > Task :poi-ooxml-lite:processResources
+    Log: FAILURE: Build failed with an exception.
+    Log: * What went wrong:
+    Log: Execution failed for task ':poi-ooxml:compileJava9'.
+    Log: > Compilation failed; see the compiler error output for details.
+    Log: * Try:
+    Log: > Run with --info option to get more log output.
+    Log: > Run with --scan to get full insights.
+    Log: Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+    Log: You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+    Log: For more on this, please refer to https://docs.gradle.org/8.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+    Log: BUILD FAILED in 9s
+    Log: 41 actionable tasks: 2 executed, 39 up-to-date
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:280)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:228)
+	at org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.setUp(SSPerformanceBenchmarks.java:12)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest._jmh_tryInit_f_ssperformancebenchmarks0_0(SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest.java:341)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest.benchmarkSXSSFPerformance_SingleShotTime(SSPerformanceBenchmarks_benchmarkSXSSFPerformance_jmhTest.java:297)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); bash ./gradlew --no-daemon --console plain compileJava compileTestJava getDeps (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:156)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:130)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:276)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:151)
+	... 18 more
+
+
+# JMH version: 1.37
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /usr/lib/jvm/adoptopenjdk-11-hotspot-amd64/bin/java
+# VM options: -Xmx8m
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.benchmarkXSSFPerformance
+
+# Run progress: 30.00% complete, ETA 00:03:20
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: 
+Log: > Task :poi-scratchpad:processResources UP-TO-DATE
+    Log: > Task :poi-excelant:processResources UP-TO-DATE
+    Log: > Task :poi-ooxml-lite:generateModuleInfo UP-TO-DATE
+    Log: > Task :poi-ooxml-full:copy_xsds UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml:fixBatik UP-TO-DATE
+    Log: > Task :poi-scratchpad:processTestResources NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:processResources NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:classes UP-TO-DATE
+    Log: > Task :poi-ooxml:processResources UP-TO-DATE
+    Log: > Task :poi-ooxml:processTestResources UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:jar UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:getDeps UP-TO-DATE
+    Log: > Task :poi:compileJava UP-TO-DATE
+    Log: > Task :poi:compileJava9 UP-TO-DATE
+    Log: > Task :poi:processResources UP-TO-DATE
+    Log: > Task :poi:classes UP-TO-DATE
+    Log: > Task :poi:jar UP-TO-DATE
+    Log: > Task :poi:compileTestJava UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileJava UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileJava9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:classes UP-TO-DATE
+    Log: > Task :poi:compileTest9 UP-TO-DATE
+    Log: > Task :poi:processTestResources UP-TO-DATE
+    Log: > Task :poi:testClasses UP-TO-DATE
+    Log: > Task :poi-scratchpad:jar UP-TO-DATE
+    Log: > Task :poi:testJar UP-TO-DATE
+    Log: > Task :poi-scratchpad:getDeps UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileTestJava UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileTest9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:testClasses UP-TO-DATE
+    Log: > Task :poi-scratchpad:testJar UP-TO-DATE
+    Log: > Task :poi:getDeps UP-TO-DATE
+    Log: > Task :poi-ooxml-full:generate_beans UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml-full:processResources NO-SOURCE
+    Log: > Task :poi-ooxml-full:classes UP-TO-DATE
+    Log: > Task :poi-ooxml-full:sourceJar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:jar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-full:getDeps UP-TO-DATE
+    Log: > Task :poi-ooxml:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml:compileJava9 FAILED
+    Log: error: the unnamed module reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.pdfbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xmlgraphics.commons reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.xml reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.transcoder reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svgrasterizer reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svggen reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svg.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.shared.resources reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.script reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.parser reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.i18n reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.gvt reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.css reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.constants reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.bridge reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.awt.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.anim reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.santuario.xmlsec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module SparseBitSet reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.math3 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.compress reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module poi.ooxml.full reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module com.github.virtuald.curvesapi reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.pdfbox.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.logging reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xml.apis.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.fontbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module de.rototor.pdfbox.graphics2d reads package org.apache.pdfbox.multipdf from both org.apache.pdfbox and de.rototor.pdfbox.graphics2d
+    Log: error: module org.apache.commons.collections4 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.poi.poi reads package org.apache.pdfbox.multipdf from both org.apache.pdfbox and de.rototor.pdfbox.graphics2d
+    Log: /home/centic/poi-benchmark/sources/poi-ooxml/src/main/java9/module-info.java:18: error: module org.apache.poi.ooxml reads package org.apache.pdfbox.multipdf from both org.apache.pdfbox and de.rototor.pdfbox.graphics2d
+    Log: module org.apache.poi.ooxml {
+    Log: ^
+    Log: 38 errors
+    Log: > Task :poi-ooxml-lite:compileOoxmlLite UP-TO-DATE
+    Log: FAILURE: Build failed with an exception.
+    Log: * What went wrong:
+    Log: Execution failed for task ':poi-ooxml:compileJava9'.
+    Log: > Compilation failed; see the compiler error output for details.
+    Log: * Try:
+    Log: > Run with --info option to get more log output.
+    Log: > Run with --scan to get full insights.
+    Log: Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+    Log: You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+    Log: For more on this, please refer to https://docs.gradle.org/8.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+    Log: BUILD FAILED in 8s
+    Log: 38 actionable tasks: 1 executed, 37 up-to-date
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:280)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:228)
+	at org.apache.poi.benchmark.suite.SSPerformanceBenchmarks.setUp(SSPerformanceBenchmarks.java:12)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest._jmh_tryInit_f_ssperformancebenchmarks0_0(SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest.java:341)
+	at org.apache.poi.benchmark.suite.jmh_generated.SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest.benchmarkXSSFPerformance_SingleShotTime(SSPerformanceBenchmarks_benchmarkXSSFPerformance_jmhTest.java:297)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); bash ./gradlew --no-daemon --console plain compileJava compileTestJava getDeps (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:156)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:130)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:276)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:151)
+	... 18 more
+
+
+# JMH version: 1.37
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /usr/lib/jvm/adoptopenjdk-11-hotspot-amd64/bin/java
+# VM options: -Xmx8m
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestExcelant
+
+# Run progress: 40.00% complete, ETA 00:02:25
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: 
+Log: > Task :poi-ooxml-lite:generateModuleInfo UP-TO-DATE
+    Log: > Task :poi-excelant:processResources UP-TO-DATE
+    Log: > Task :poi-scratchpad:processResources UP-TO-DATE
+    Log: > Task :poi-ooxml-full:copy_xsds UP-TO-DATE
+    Log: > Task :poi-scratchpad:processTestResources NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml:fixBatik UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:processResources NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:classes UP-TO-DATE
+    Log: > Task :poi-ooxml:processResources UP-TO-DATE
+    Log: > Task :poi-ooxml:processTestResources UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:jar UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:getDeps UP-TO-DATE
+    Log: > Task :poi:compileJava UP-TO-DATE
+    Log: > Task :poi:compileJava9 UP-TO-DATE
+    Log: > Task :poi:processResources UP-TO-DATE
+    Log: > Task :poi:classes UP-TO-DATE
+    Log: > Task :poi:jar UP-TO-DATE
+    Log: > Task :poi:compileTestJava UP-TO-DATE
+    Log: > Task :poi:compileTest9 UP-TO-DATE
+    Log: > Task :poi:processTestResources UP-TO-DATE
+    Log: > Task :poi:testClasses UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileJava UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileJava9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:classes UP-TO-DATE
+    Log: > Task :poi:testJar UP-TO-DATE
+    Log: > Task :poi-scratchpad:jar UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileTestJava UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileTest9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:testClasses UP-TO-DATE
+    Log: > Task :poi-scratchpad:testJar UP-TO-DATE
+    Log: > Task :poi:getDeps UP-TO-DATE
+    Log: > Task :poi-scratchpad:getDeps UP-TO-DATE
+    Log: > Task :poi-ooxml-full:generate_beans UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml-full:processResources NO-SOURCE
+    Log: > Task :poi-ooxml-full:classes UP-TO-DATE
+    Log: > Task :poi-ooxml-full:sourceJar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:jar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-full:getDeps UP-TO-DATE
+    Log: > Task :poi-ooxml:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml:compileJava9 FAILED
+    Log: error: the unnamed module reads package org.apache.pdfbox.multipdf from both org.apache.pdfbox and de.rototor.pdfbox.graphics2d
+    Log: error: module org.apache.pdfbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xmlgraphics.commons reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.xml reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.transcoder reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svgrasterizer reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svggen reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svg.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.shared.resources reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.script reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.parser reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.i18n reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.gvt reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.css reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.constants reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.bridge reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.awt.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.anim reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.santuario.xmlsec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module SparseBitSet reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.math3 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.compress reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module poi.ooxml.full reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module com.github.virtuald.curvesapi reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.pdfbox.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.logging reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xml.apis.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.fontbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module de.rototor.pdfbox.graphics2d reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.collections4 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.poi.poi reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: /home/centic/poi-benchmark/sources/poi-ooxml/src/main/java9/module-info.java:18: error: module org.apache.poi.ooxml reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: module org.apache.poi.ooxml {
+    Log: ^
+    Log: 38 errors
+    Log: > Task :poi-ooxml-lite:compileOoxmlLite UP-TO-DATE
+    Log: FAILURE: Build failed with an exception.
+    Log: * What went wrong:
+    Log: Execution failed for task ':poi-ooxml:compileJava9'.
+    Log: > Compilation failed; see the compiler error output for details.
+    Log: * Try:
+    Log: > Run with --info option to get more log output.
+    Log: > Run with --scan to get full insights.
+    Log: Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+    Log: You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+    Log: For more on this, please refer to https://docs.gradle.org/8.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+    Log: BUILD FAILED in 8s
+    Log: 38 actionable tasks: 1 executed, 37 up-to-date
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:280)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:228)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.setUp(TestBenchmarks.java:13)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestExcelant_jmhTest._jmh_tryInit_f_testbenchmarks0_0(TestBenchmarks_benchmarkTestExcelant_jmhTest.java:341)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestExcelant_jmhTest.benchmarkTestExcelant_SingleShotTime(TestBenchmarks_benchmarkTestExcelant_jmhTest.java:297)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); bash ./gradlew --no-daemon --console plain compileJava compileTestJava getDeps (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:156)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:130)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:276)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:151)
+	... 18 more
+
+
+# JMH version: 1.37
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /usr/lib/jvm/adoptopenjdk-11-hotspot-amd64/bin/java
+# VM options: -Xmx8m
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 3 hr per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestIntegration
+
+# Run progress: 50.00% complete, ETA 00:01:47
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: 
+Log: > Task :poi-ooxml-lite:generateModuleInfo UP-TO-DATE
+    Log: > Task :poi-excelant:processResources UP-TO-DATE
+    Log: > Task :poi-ooxml-full:copy_xsds UP-TO-DATE
+    Log: > Task :poi-scratchpad:processResources UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml:fixBatik UP-TO-DATE
+    Log: > Task :poi-scratchpad:processTestResources NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:processResources NO-SOURCE
+    Log: > Task :poi-ooxml:processResources UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:classes UP-TO-DATE
+    Log: > Task :poi-ooxml:processTestResources UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:jar UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:getDeps UP-TO-DATE
+    Log: > Task :poi:compileJava UP-TO-DATE
+    Log: > Task :poi:compileJava9 UP-TO-DATE
+    Log: > Task :poi:processResources UP-TO-DATE
+    Log: > Task :poi:classes UP-TO-DATE
+    Log: > Task :poi:jar UP-TO-DATE
+    Log: > Task :poi:compileTestJava UP-TO-DATE
+    Log: > Task :poi:compileTest9 UP-TO-DATE
+    Log: > Task :poi:processTestResources UP-TO-DATE
+    Log: > Task :poi:testClasses UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileJava UP-TO-DATE
+    Log: > Task :poi:testJar UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileJava9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:classes UP-TO-DATE
+    Log: > Task :poi-scratchpad:jar UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileTestJava UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileTest9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:testClasses UP-TO-DATE
+    Log: > Task :poi-scratchpad:testJar UP-TO-DATE
+    Log: > Task :poi:getDeps UP-TO-DATE
+    Log: > Task :poi-scratchpad:getDeps UP-TO-DATE
+    Log: > Task :poi-ooxml-full:generate_beans UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml-full:processResources NO-SOURCE
+    Log: > Task :poi-ooxml-full:classes UP-TO-DATE
+    Log: > Task :poi-ooxml-full:sourceJar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:jar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-full:getDeps UP-TO-DATE
+    Log: > Task :poi-ooxml:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml:compileJava9 FAILED
+    Log: error: the unnamed module reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.pdfbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xmlgraphics.commons reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.xml reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.transcoder reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svgrasterizer reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svggen reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svg.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.shared.resources reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.script reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.parser reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.i18n reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.gvt reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.css reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.constants reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.bridge reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.awt.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.anim reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.santuario.xmlsec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module SparseBitSet reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.math3 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.compress reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module poi.ooxml.full reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module com.github.virtuald.curvesapi reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.pdfbox.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.logging reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xml.apis.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.fontbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module de.rototor.pdfbox.graphics2d reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.collections4 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.poi.poi reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: /home/centic/poi-benchmark/sources/poi-ooxml/src/main/java9/module-info.java:18: error: module org.apache.poi.ooxml reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: module org.apache.poi.ooxml {
+    Log: ^
+    Log: 38 errors
+    Log: > Task :poi-ooxml-lite:compileOoxmlLite UP-TO-DATE
+    Log: FAILURE: Build failed with an exception.
+    Log: * What went wrong:
+    Log: Execution failed for task ':poi-ooxml:compileJava9'.
+    Log: > Compilation failed; see the compiler error output for details.
+    Log: * Try:
+    Log: > Run with --info option to get more log output.
+    Log: > Run with --scan to get full insights.
+    Log: Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+    Log: You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+    Log: For more on this, please refer to https://docs.gradle.org/8.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+    Log: BUILD FAILED in 8s
+    Log: 38 actionable tasks: 1 executed, 37 up-to-date
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:280)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:228)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.setUp(TestBenchmarks.java:13)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestIntegration_jmhTest._jmh_tryInit_f_testbenchmarks0_0(TestBenchmarks_benchmarkTestIntegration_jmhTest.java:341)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestIntegration_jmhTest.benchmarkTestIntegration_SingleShotTime(TestBenchmarks_benchmarkTestIntegration_jmhTest.java:297)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); bash ./gradlew --no-daemon --console plain compileJava compileTestJava getDeps (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:156)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:130)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:276)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:151)
+	... 18 more
+
+
+# JMH version: 1.37
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /usr/lib/jvm/adoptopenjdk-11-hotspot-amd64/bin/java
+# VM options: -Xmx8m
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestMain
+
+# Run progress: 60.00% complete, ETA 00:01:19
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: 
+Log: > Task :poi-ooxml-lite:generateModuleInfo UP-TO-DATE
+    Log: > Task :poi-scratchpad:processResources UP-TO-DATE
+    Log: > Task :poi-excelant:processResources UP-TO-DATE
+    Log: > Task :poi-scratchpad:processTestResources NO-SOURCE
+    Log: > Task :poi-ooxml-full:copy_xsds UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml:fixBatik UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:processResources NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:classes UP-TO-DATE
+    Log: > Task :poi-ooxml:processResources UP-TO-DATE
+    Log: > Task :poi-ooxml:processTestResources UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:jar UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:getDeps UP-TO-DATE
+    Log: > Task :poi:compileJava UP-TO-DATE
+    Log: > Task :poi:compileJava9 UP-TO-DATE
+    Log: > Task :poi:processResources UP-TO-DATE
+    Log: > Task :poi:classes UP-TO-DATE
+    Log: > Task :poi:jar UP-TO-DATE
+    Log: > Task :poi:compileTestJava UP-TO-DATE
+    Log: > Task :poi:compileTest9 UP-TO-DATE
+    Log: > Task :poi:processTestResources UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileJava UP-TO-DATE
+    Log: > Task :poi:testClasses UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileJava9 UP-TO-DATE
+    Log: > Task :poi:testJar UP-TO-DATE
+    Log: > Task :poi-scratchpad:classes UP-TO-DATE
+    Log: > Task :poi-scratchpad:jar UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileTestJava UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileTest9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:testClasses UP-TO-DATE
+    Log: > Task :poi-scratchpad:testJar UP-TO-DATE
+    Log: > Task :poi:getDeps UP-TO-DATE
+    Log: > Task :poi-scratchpad:getDeps UP-TO-DATE
+    Log: > Task :poi-ooxml-full:generate_beans UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml-full:processResources NO-SOURCE
+    Log: > Task :poi-ooxml-full:classes UP-TO-DATE
+    Log: > Task :poi-ooxml-full:sourceJar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:jar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-full:getDeps UP-TO-DATE
+    Log: > Task :poi-ooxml:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml:compileJava9 FAILED
+    Log: error: the unnamed module reads package org.apache.pdfbox.multipdf from both org.apache.pdfbox and de.rototor.pdfbox.graphics2d
+    Log: error: module org.apache.pdfbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xmlgraphics.commons reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.xml reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.transcoder reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svgrasterizer reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svggen reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svg.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.shared.resources reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.script reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.parser reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.i18n reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.gvt reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.css reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.constants reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.bridge reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.awt.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.anim reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.santuario.xmlsec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module SparseBitSet reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.math3 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.compress reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module poi.ooxml.full reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module com.github.virtuald.curvesapi reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.pdfbox.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.logging reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xml.apis.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.fontbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module de.rototor.pdfbox.graphics2d reads package org.apache.pdfbox.multipdf from both org.apache.pdfbox and de.rototor.pdfbox.graphics2d
+    Log: error: module org.apache.commons.collections4 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.poi.poi reads package org.apache.pdfbox.multipdf from both org.apache.pdfbox and de.rototor.pdfbox.graphics2d
+    Log: /home/centic/poi-benchmark/sources/poi-ooxml/src/main/java9/module-info.java:18: error: module org.apache.poi.ooxml reads package org.apache.pdfbox.multipdf from both org.apache.pdfbox and de.rototor.pdfbox.graphics2d
+    Log: module org.apache.poi.ooxml {
+    Log: ^
+    Log: 38 errors
+    Log: > Task :poi-ooxml-lite:compileOoxmlLite UP-TO-DATE
+    Log: FAILURE: Build failed with an exception.
+    Log: * What went wrong:
+    Log: Execution failed for task ':poi-ooxml:compileJava9'.
+    Log: > Compilation failed; see the compiler error output for details.
+    Log: * Try:
+    Log: > Run with --info option to get more log output.
+    Log: > Run with --scan to get full insights.
+    Log: Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+    Log: You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+    Log: For more on this, please refer to https://docs.gradle.org/8.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+    Log: BUILD FAILED in 10s
+    Log: 38 actionable tasks: 1 executed, 37 up-to-date
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:280)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:228)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.setUp(TestBenchmarks.java:13)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestMain_jmhTest._jmh_tryInit_f_testbenchmarks0_0(TestBenchmarks_benchmarkTestMain_jmhTest.java:341)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestMain_jmhTest.benchmarkTestMain_SingleShotTime(TestBenchmarks_benchmarkTestMain_jmhTest.java:297)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); bash ./gradlew --no-daemon --console plain compileJava compileTestJava getDeps (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:156)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:130)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:276)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:151)
+	... 18 more
+
+
+# JMH version: 1.37
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /usr/lib/jvm/adoptopenjdk-11-hotspot-amd64/bin/java
+# VM options: -Xmx8m
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestOOXML
+
+# Run progress: 70.00% complete, ETA 00:00:56
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: 
+Log: > Task :poi-ooxml-lite:generateModuleInfo UP-TO-DATE
+    Log: > Task :poi:generateVersionJava UP-TO-DATE
+    Log: > Task :poi-ooxml-full:copy_xsds UP-TO-DATE
+    Log: > Task :poi-excelant:processResources UP-TO-DATE
+    Log: > Task :poi-scratchpad:processTestResources NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml:fixBatik UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:processResources NO-SOURCE
+    Log: > Task :poi-ooxml:processResources UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:classes UP-TO-DATE
+    Log: > Task :poi-ooxml:processTestResources UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:jar UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:getDeps UP-TO-DATE
+    Log: > Task :poi:compileJava UP-TO-DATE
+    Log: > Task :poi:compileJava9 UP-TO-DATE
+    Log: > Task :poi:processResources UP-TO-DATE
+    Log: > Task :poi:classes UP-TO-DATE
+    Log: > Task :poi:jar UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileJava UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileJava9 UP-TO-DATE
+    Log: > Task :poi:compileTestJava UP-TO-DATE
+    Log: > Task :poi-scratchpad:classes UP-TO-DATE
+    Log: > Task :poi:compileTest9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:jar UP-TO-DATE
+    Log: > Task :poi:processTestResources UP-TO-DATE
+    Log: > Task :poi:testClasses UP-TO-DATE
+    Log: > Task :poi:testJar UP-TO-DATE
+    Log: > Task :poi-scratchpad:getDeps UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileTestJava UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileTest9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:testClasses UP-TO-DATE
+    Log: > Task :poi-scratchpad:testJar UP-TO-DATE
+    Log: > Task :poi:getDeps UP-TO-DATE
+    Log: > Task :poi-ooxml-full:generate_beans UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml-full:processResources NO-SOURCE
+    Log: > Task :poi-ooxml-full:classes UP-TO-DATE
+    Log: > Task :poi-ooxml-full:sourceJar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:jar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-full:getDeps UP-TO-DATE
+    Log: > Task :poi-ooxml:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml:compileJava9 FAILED
+    Log: error: the unnamed module reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.pdfbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xmlgraphics.commons reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.xml reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.transcoder reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svgrasterizer reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svggen reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svg.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.shared.resources reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.script reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.parser reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.i18n reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.gvt reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.css reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.constants reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.bridge reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.awt.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.anim reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.santuario.xmlsec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module SparseBitSet reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.math3 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.compress reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module poi.ooxml.full reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module com.github.virtuald.curvesapi reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.pdfbox.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.logging reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xml.apis.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.fontbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module de.rototor.pdfbox.graphics2d reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.collections4 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.poi.poi reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: /home/centic/poi-benchmark/sources/poi-ooxml/src/main/java9/module-info.java:18: error: module org.apache.poi.ooxml reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: module org.apache.poi.ooxml {
+    Log: ^
+    Log: 38 errors
+    Log: > Task :poi-ooxml-lite:compileOoxmlLite UP-TO-DATE
+    Log: Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+    Log: You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+    Log: For more on this, please refer to https://docs.gradle.org/8.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+    Log: 38 actionable tasks: 1 executed, 37 up-to-date
+    Log: FAILURE: Build failed with an exception.
+    Log: * What went wrong:
+    Log: Execution failed for task ':poi-ooxml:compileJava9'.
+    Log: > Compilation failed; see the compiler error output for details.
+    Log: * Try:
+    Log: > Run with --info option to get more log output.
+    Log: > Run with --scan to get full insights.
+    Log: BUILD FAILED in 8s
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:280)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:228)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.setUp(TestBenchmarks.java:13)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestOOXML_jmhTest._jmh_tryInit_f_testbenchmarks0_0(TestBenchmarks_benchmarkTestOOXML_jmhTest.java:341)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestOOXML_jmhTest.benchmarkTestOOXML_SingleShotTime(TestBenchmarks_benchmarkTestOOXML_jmhTest.java:297)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); bash ./gradlew --no-daemon --console plain compileJava compileTestJava getDeps (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:156)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:130)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:276)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:151)
+	... 18 more
+
+
+# JMH version: 1.37
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /usr/lib/jvm/adoptopenjdk-11-hotspot-amd64/bin/java
+# VM options: -Xmx8m
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestOOXMLLite
+
+# Run progress: 80.00% complete, ETA 00:00:35
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: 
+Log: > Task :poi-excelant:processResources UP-TO-DATE
+    Log: > Task :poi-ooxml-full:copy_xsds UP-TO-DATE
+    Log: > Task :poi-scratchpad:processResources UP-TO-DATE
+    Log: > Task :poi:generateVersionJava UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml:fixBatik UP-TO-DATE
+    Log: > Task :poi-scratchpad:processTestResources NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:processResources NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:classes UP-TO-DATE
+    Log: > Task :poi-ooxml:processResources UP-TO-DATE
+    Log: > Task :poi-ooxml:processTestResources UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:jar UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:getDeps UP-TO-DATE
+    Log: > Task :poi:compileJava UP-TO-DATE
+    Log: > Task :poi:compileJava9 UP-TO-DATE
+    Log: > Task :poi:processResources UP-TO-DATE
+    Log: > Task :poi:classes UP-TO-DATE
+    Log: > Task :poi:jar UP-TO-DATE
+    Log: > Task :poi:compileTestJava UP-TO-DATE
+    Log: > Task :poi:compileTest9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileJava UP-TO-DATE
+    Log: > Task :poi:processTestResources UP-TO-DATE
+    Log: > Task :poi:testClasses UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileJava9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:classes UP-TO-DATE
+    Log: > Task :poi-scratchpad:jar UP-TO-DATE
+    Log: > Task :poi:testJar UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileTestJava UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileTest9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:testClasses UP-TO-DATE
+    Log: > Task :poi-scratchpad:testJar UP-TO-DATE
+    Log: > Task :poi:getDeps UP-TO-DATE
+    Log: > Task :poi-scratchpad:getDeps UP-TO-DATE
+    Log: > Task :poi-ooxml-full:generate_beans UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml-full:processResources NO-SOURCE
+    Log: > Task :poi-ooxml-full:classes UP-TO-DATE
+    Log: > Task :poi-ooxml-full:sourceJar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:jar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-full:getDeps UP-TO-DATE
+    Log: > Task :poi-ooxml:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml:compileJava9 FAILED
+    Log: error: the unnamed module reads package org.apache.pdfbox.multipdf from both org.apache.pdfbox and de.rototor.pdfbox.graphics2d
+    Log: error: module org.apache.pdfbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xmlgraphics.commons reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.xml reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.transcoder reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svgrasterizer reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svggen reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svg.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.shared.resources reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.script reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.parser reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.i18n reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.gvt reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.css reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.constants reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.bridge reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.awt.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.anim reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.santuario.xmlsec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module SparseBitSet reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.math3 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.compress reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module poi.ooxml.full reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module com.github.virtuald.curvesapi reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.pdfbox.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.logging reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xml.apis.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.fontbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module de.rototor.pdfbox.graphics2d reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.collections4 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.poi.poi reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: /home/centic/poi-benchmark/sources/poi-ooxml/src/main/java9/module-info.java:18: error: module org.apache.poi.ooxml reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: module org.apache.poi.ooxml {
+    Log: ^
+    Log: 38 errors
+    Log: > Task :poi-ooxml-lite:compileOoxmlLite UP-TO-DATE
+    Log: FAILURE: Build failed with an exception.
+    Log: * What went wrong:
+    Log: Execution failed for task ':poi-ooxml:compileJava9'.
+    Log: > Compilation failed; see the compiler error output for details.
+    Log: * Try:
+    Log: > Run with --info option to get more log output.
+    Log: > Run with --scan to get full insights.
+    Log: Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+    Log: You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+    Log: For more on this, please refer to https://docs.gradle.org/8.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+    Log: BUILD FAILED in 8s
+    Log: 38 actionable tasks: 1 executed, 37 up-to-date
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:280)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:228)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.setUp(TestBenchmarks.java:13)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestOOXMLLite_jmhTest._jmh_tryInit_f_testbenchmarks0_0(TestBenchmarks_benchmarkTestOOXMLLite_jmhTest.java:341)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestOOXMLLite_jmhTest.benchmarkTestOOXMLLite_SingleShotTime(TestBenchmarks_benchmarkTestOOXMLLite_jmhTest.java:297)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); bash ./gradlew --no-daemon --console plain compileJava compileTestJava getDeps (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:156)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:130)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:276)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:151)
+	... 18 more
+
+
+# JMH version: 1.37
+# VM version: JDK 11.0.11, OpenJDK 64-Bit Server VM, 11.0.11+9
+# VM invoker: /usr/lib/jvm/adoptopenjdk-11-hotspot-amd64/bin/java
+# VM options: -Xmx8m
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.apache.poi.benchmark.suite.TestBenchmarks.benchmarkTestScratchpad
+
+# Run progress: 90.00% complete, ETA 00:00:17
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: <failure>
+
+java.io.IOException: Log-Tail: 
+Log: > Task :poi-scratchpad:processResources UP-TO-DATE
+    Log: > Task :poi-excelant:processResources UP-TO-DATE
+    Log: > Task :poi-ooxml-full:copy_xsds UP-TO-DATE
+    Log: > Task :poi-ooxml-lite:generateModuleInfo UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml:fixBatik UP-TO-DATE
+    Log: > Task :poi-scratchpad:processTestResources NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:processResources NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:classes UP-TO-DATE
+    Log: > Task :poi-ooxml:processResources UP-TO-DATE
+    Log: > Task :poi-ooxml:processTestResources UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:jar UP-TO-DATE
+    Log: > Task :poi-ooxml-lite-agent:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-lite-agent:getDeps UP-TO-DATE
+    Log: > Task :poi:compileJava UP-TO-DATE
+    Log: > Task :poi:compileJava9 UP-TO-DATE
+    Log: > Task :poi:processResources UP-TO-DATE
+    Log: > Task :poi:classes UP-TO-DATE
+    Log: > Task :poi:jar UP-TO-DATE
+    Log: > Task :poi:compileTestJava UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileJava UP-TO-DATE
+    Log: > Task :poi:compileTest9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileJava9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:classes UP-TO-DATE
+    Log: > Task :poi:processTestResources UP-TO-DATE
+    Log: > Task :poi:testClasses UP-TO-DATE
+    Log: > Task :poi-scratchpad:jar UP-TO-DATE
+    Log: > Task :poi:testJar UP-TO-DATE
+    Log: > Task :poi-scratchpad:getDeps UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileTestJava UP-TO-DATE
+    Log: > Task :poi:getDeps UP-TO-DATE
+    Log: > Task :poi-scratchpad:compileTest9 UP-TO-DATE
+    Log: > Task :poi-scratchpad:testClasses UP-TO-DATE
+    Log: > Task :poi-scratchpad:testJar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:generate_beans UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileJava9 UP-TO-DATE
+    Log: > Task :poi-ooxml-full:processResources NO-SOURCE
+    Log: > Task :poi-ooxml-full:classes UP-TO-DATE
+    Log: > Task :poi-ooxml-full:sourceJar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:jar UP-TO-DATE
+    Log: > Task :poi-ooxml-full:compileTestJava NO-SOURCE
+    Log: > Task :poi-ooxml-full:getDeps UP-TO-DATE
+    Log: > Task :poi-ooxml:compileJava UP-TO-DATE
+    Log: > Task :poi-ooxml:compileJava9 FAILED
+    Log: error: the unnamed module reads package org.apache.pdfbox.multipdf from both org.apache.pdfbox and de.rototor.pdfbox.graphics2d
+    Log: error: module org.apache.pdfbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xmlgraphics.commons reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.xml reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.transcoder reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svgrasterizer reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svggen reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.svg.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.shared.resources reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.script reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.parser reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.i18n reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.gvt reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.dom reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.css reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.constants reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.bridge reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.awt.util reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module batik.anim reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.santuario.xmlsec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module SparseBitSet reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.math3 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.compress reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.codec reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module poi.ooxml.full reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module com.github.virtuald.curvesapi reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.pdfbox.io reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module commons.logging reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module xml.apis.ext reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.fontbox reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module de.rototor.pdfbox.graphics2d reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.commons.collections4 reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: error: module org.apache.poi.poi reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: /home/centic/poi-benchmark/sources/poi-ooxml/src/main/java9/module-info.java:18: error: module org.apache.poi.ooxml reads package org.apache.pdfbox.multipdf from both de.rototor.pdfbox.graphics2d and org.apache.pdfbox
+    Log: module org.apache.poi.ooxml {
+    Log: ^
+    Log: 38 errors
+    Log: > Task :poi-ooxml-lite:compileOoxmlLite UP-TO-DATE
+    Log: FAILURE: Build failed with an exception.
+    Log: * What went wrong:
+    Log: Execution failed for task ':poi-ooxml:compileJava9'.
+    Log: > Compilation failed; see the compiler error output for details.
+    Log: * Try:
+    Log: > Run with --info option to get more log output.
+    Log: > Run with --scan to get full insights.
+    Log: Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+    Log: You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+    Log: For more on this, please refer to https://docs.gradle.org/8.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+    Log: BUILD FAILED in 8s
+    Log: 38 actionable tasks: 1 executed, 37 up-to-date
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:280)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.compileAll(BaseBenchmark.java:228)
+	at org.apache.poi.benchmark.suite.TestBenchmarks.setUp(TestBenchmarks.java:13)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestScratchpad_jmhTest._jmh_tryInit_f_testbenchmarks0_0(TestBenchmarks_benchmarkTestScratchpad_jmhTest.java:341)
+	at org.apache.poi.benchmark.suite.jmh_generated.TestBenchmarks_benchmarkTestScratchpad_jmhTest.benchmarkTestScratchpad_SingleShotTime(TestBenchmarks_benchmarkTestScratchpad_jmhTest.java:297)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.commons.exec.ExecuteException: While executing (sources); bash ./gradlew --no-daemon --console plain compileJava compileTestJava getDeps (Exit value: 1. Caused by org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1))
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:156)
+	at org.dstadler.commons.exec.ExecutionHelper.getCommandResultIntoStream(ExecutionHelper.java:130)
+	at org.apache.poi.benchmark.suite.BaseBenchmark.runGradleTarget(BaseBenchmark.java:276)
+	... 16 more
+Caused by: org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.dstadler.commons.exec.ExecutionHelper.execute(ExecutionHelper.java:151)
+	... 18 more
+
+
+# Run complete. Total time: 00:02:44
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark  Mode  Cnt  Score   Error  Units
+
+Benchmark result is saved to build/reports/jmh/results.json
