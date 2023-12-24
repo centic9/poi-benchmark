@@ -12,11 +12,11 @@ configurations {
 
 dependencies {
     implementation 'org.dstadler:commons-dost:1.2.0.3'
-	implementation 'commons-io:commons-io:2.15.0'
+	implementation 'commons-io:commons-io:2.15.1'
 	implementation 'org.apache.commons:commons-lang3:3.14.0'
     implementation 'org.apache.commons:commons-email:1.5'
 	implementation 'org.apache.commons:commons-exec:1.3'
-    implementation 'com.google.guava:guava:32.1.3-jre'
+    implementation 'com.google.guava:guava:33.0.0-jre'
 
     implementation 'com.fasterxml.jackson.core:jackson-core:2.15.2'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
@@ -49,7 +49,7 @@ jmh {
 tasks.getByName('jmhJar').doFirst() {duplicatesStrategy(DuplicatesStrategy.EXCLUDE)}
 
 wrapper {
-    gradleVersion = '7.6.1'
+    gradleVersion = '8.5'
 }
 
 task publishResults(type:JavaExec) {
