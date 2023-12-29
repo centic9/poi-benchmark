@@ -1,5 +1,5 @@
 plugins {
-  id 'me.champeau.gradle.jmh' version '0.5.2'
+  id "me.champeau.jmh" version "0.7.2"
 }
 
 repositories {
@@ -42,7 +42,7 @@ jmh {
     resultFormat = 'JSON'
 
     // newer JMH-Gradle plugin reported a duplicate file...
-    duplicateClassesStrategy = 'warn'
+    duplicateClassesStrategy = DuplicatesStrategy.WARN
 }
 
 // see https://github.com/melix/jmh-gradle-plugin/issues/6
