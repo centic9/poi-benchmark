@@ -11,15 +11,15 @@ configurations {
 }
 
 dependencies {
-    implementation 'org.dstadler:commons-dost:1.3.0'
+    implementation 'org.dstadler:commons-dost:1.3.1'
 	implementation 'commons-io:commons-io:2.15.1'
 	implementation 'org.apache.commons:commons-lang3:3.14.0'
     implementation 'org.apache.commons:commons-email:1.5'
-	implementation 'org.apache.commons:commons-exec:1.3'
+	implementation 'org.apache.commons:commons-exec:1.4.0'
     implementation 'com.google.guava:guava:33.0.0-jre'
 
-    implementation 'com.fasterxml.jackson.core:jackson-core:2.15.2'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.16.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
 
     // for IntelliJ JMH support
     jmh 'org.openjdk.jmh:jmh-core:1.37'
@@ -30,8 +30,8 @@ dependencies {
         exclude group: 'junit', module: 'junit'
     }
 
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.1'
-    testImplementation 'org.junit.jupiter:junit-jupiter-migrationsupport:5.10.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-migrationsupport:5.10.2'
 }
 
 jmh {
