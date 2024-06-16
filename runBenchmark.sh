@@ -10,7 +10,7 @@ if [ -f /etc/apache2/sites-available/corpora.conf ];then
 fi
 
 # limit memory-usage of Gradle process
-export GRADLE_OPTS="-Xmx64m -Dorg.gradle.jvmargs=-Xmx64m"
+export GRADLE_OPTS="-Xmx80m -Dorg.gradle.jvmargs=-Xmx80m"
 
 export GRADLE_CMD="--console=plain --no-parallel --no-daemon"
 
