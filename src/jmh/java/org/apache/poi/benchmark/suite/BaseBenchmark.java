@@ -140,7 +140,7 @@ public abstract class BaseBenchmark {
 		if (!content.contains("strategy=dynamic','-Xbootclasspath")) {
             content = content.replace("strategy=dynamic',",
                     "strategy=dynamic',"
-                            + "'-Xbootclasspath/p:" + srcDir.getAbsoluteFile().getParentFile().getAbsolutePath() + "/marlin-0.9.4.5-Unsafe.jar',"
+                            + "'-Xbootclasspath/p:" + srcDir.getAbsoluteFile().getParentFile().getAbsolutePath() + "/marlin-0.9.4.7-Unsafe.jar',"
                             + "'-Dsun.java2d.renderer=sun.java2d.marlin.DMarlinRenderingEngine',");
 
             changed = true;
@@ -149,7 +149,7 @@ public abstract class BaseBenchmark {
         if (!content.contains("strategy=fixed','-Xbootclasspath")) {
             content = content.replace("strategy=fixed',",
                     "strategy=fixed',"
-                            + "'-Xbootclasspath/p:" + srcDir.getAbsoluteFile().getParentFile().getAbsolutePath() + "/marlin-0.9.4.5-Unsafe.jar',"
+                            + "'-Xbootclasspath/p:" + srcDir.getAbsoluteFile().getParentFile().getAbsolutePath() + "/marlin-0.9.4.7-Unsafe.jar',"
                             + "'-Dsun.java2d.renderer=sun.java2d.marlin.DMarlinRenderingEngine',");
 
             changed = true;
@@ -157,7 +157,7 @@ public abstract class BaseBenchmark {
 
         if (content.contains("// Strictly serial")) {
             content = content.replace("// Strictly serial",
-                            "'-Xbootclasspath/p:" + srcDir.getAbsoluteFile().getParentFile().getAbsolutePath() + "/marlin-0.9.4.5-Unsafe.jar',"
+                            "'-Xbootclasspath/p:" + srcDir.getAbsoluteFile().getParentFile().getAbsolutePath() + "/marlin-0.9.4.7-Unsafe.jar',"
                             + "'-Dsun.java2d.renderer=sun.java2d.marlin.DMarlinRenderingEngine',");
 
             changed = true;

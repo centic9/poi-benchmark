@@ -17,9 +17,9 @@ export GRADLE_CMD="--console=plain --no-parallel --no-daemon"
 echo `which javac` > benchmark.log 2>&1
 javac -version >> benchmark.log 2>&1
 
-wget --timestamping https://github.com/bourgesl/marlin-renderer/releases/download/v0_9_4_5_jdk11/marlin-0.9.4.5-Unsafe-OpenJDK11.jar >> benchmark.log 2>&1
-
-wget --timestamping https://github.com/bourgesl/marlin-renderer/releases/download/v0_9_4_5/marlin-0.9.4.5-Unsafe.jar >> benchmark.log 2>&1
+# https://github.com/bourgesl/marlin-renderer
+wget --timestamping https://github.com/bourgesl/marlin-renderer/releases/download/v0_9_4_8/marlin-0.9.4.8-Unsafe-OpenJDK11.jar >> benchmark.log 2>&1
+wget --timestamping https://github.com/bourgesl/marlin-renderer/releases/download/v0_9_4_7_jdk8/marlin-0.9.4.7-Unsafe.jar >> benchmark.log 2>&1
 
 git fetch >> benchmark.log 2>&1 && \
 git checkout results >> benchmark.log 2>&1 && \

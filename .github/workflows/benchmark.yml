@@ -30,8 +30,8 @@ jobs:
 
     - name: Download Marlin rendering engine
       run: |
-        wget --timestamping https://github.com/bourgesl/marlin-renderer/releases/download/v0_9_4_5_jdk11/marlin-0.9.4.5-Unsafe-OpenJDK11.jar >> benchmark.log 2>&1
-        wget --timestamping https://github.com/bourgesl/marlin-renderer/releases/download/v0_9_4_5/marlin-0.9.4.5-Unsafe.jar >> benchmark.log 2>&1
+        wget --timestamping https://github.com/bourgesl/marlin-renderer/releases/download/v0_9_4_8/marlin-0.9.4.8-Unsafe-OpenJDK11.jar >> benchmark.log 2>&1
+        wget --timestamping https://github.com/bourgesl/marlin-renderer/releases/download/v0_9_4_7_jdk8/marlin-0.9.4.7-Unsafe.jar >> benchmark.log 2>&1
 
     - name: Cache Gradle wrapper and dependencies
       uses: actions/cache@v2
