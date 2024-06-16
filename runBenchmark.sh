@@ -30,7 +30,7 @@ set | grep -v LS_COLORS | grep -v LESS_TERMCAP >> benchmark.log && \
 ./gradlew ${GRADLE_CMD} clean >> benchmark.log 2>&1 && \
 ./gradlew ${GRADLE_CMD} jmhJar >> benchmark.log 2>&1 && \
 mkdir -p build/reports/jmh/ && \
-java -Xmx8m \
+java -Xmx16m \
   -jar build/libs/poi-benchmark-jmh.jar \
   -o build/reports/jmh/human.txt \
   -rf JSON \
