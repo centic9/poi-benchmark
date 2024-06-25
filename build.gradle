@@ -25,13 +25,8 @@ dependencies {
     jmh 'org.openjdk.jmh:jmh-core:1.37'
     jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.37'
 
-    testImplementation('org.dstadler:commons-test:1.0.0.21') {
-        // don't drag in JUnit 4
-        exclude group: 'junit', module: 'junit'
-    }
-
+    testImplementation('org.dstadler:commons-test:1.0.0.21')
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
-    testImplementation 'org.junit.jupiter:junit-jupiter-migrationsupport:5.10.2'
 }
 
 jmh {
@@ -52,18 +47,18 @@ wrapper {
     gradleVersion = '8.5'
 }
 
-task publishResults(type:JavaExec) {
-    description = 'Publishes results after the benchmark runs, stores results in a directory and sends out an email'
+tasks.register('publishResults', JavaExec) {
+	description = 'Publishes results after the benchmark runs, stores results in a directory and sends out an email'
 
-    mainClass = 'org.apache.poi.benchmark.PublishResults'
-    classpath = sourceSets.jmh.runtimeClasspath
+	mainClass = 'org.apache.poi.benchmark.PublishResults'
+	classpath = sourceSets.jmh.runtimeClasspath
 }
 
-task processResults(type:JavaExec) {
-    description = 'Post-processes results to charts'
+tasks.register('processResults', JavaExec) {
+	description = 'Post-processes results to charts'
 
-    mainClass = 'org.apache.poi.benchmark.ProcessResults'
-    classpath = sourceSets.jmh.runtimeClasspath
+	mainClass = 'org.apache.poi.benchmark.ProcessResults'
+	classpath = sourceSets.jmh.runtimeClasspath
 }
 
 processResults.mustRunAfter publishResults
