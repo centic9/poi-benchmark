@@ -11,13 +11,12 @@ import java.util.Queue;
  * An extension to {@link BufferingLogOutputStream} which additionally
  * keeps the last few lines of output in a buffer so they can be retrieved
  * even when all the lines were sent to the logging system already and thus
- * cannot be retrieved any more.
+ * cannot be retrieved anymore.
  */
 public class TailLogOutputStream extends BufferingLogOutputStream {
     private final Queue<String> lastLines;
 
     public TailLogOutputStream(int capacity) {
-        //noinspection UnstableApiUsage
         lastLines = EvictingQueue.create(capacity);
     }
 
