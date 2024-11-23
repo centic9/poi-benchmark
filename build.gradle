@@ -12,21 +12,21 @@ configurations {
 
 dependencies {
     implementation 'org.dstadler:commons-dost:1.3.4'
-	implementation 'commons-io:commons-io:2.17.0'
+	implementation 'commons-io:commons-io:2.18.0'
 	implementation 'org.apache.commons:commons-lang3:3.17.0'
     implementation 'org.apache.commons:commons-email:1.5'
 	implementation 'org.apache.commons:commons-exec:1.4.0'
     implementation 'com.google.guava:guava:33.3.1-jre'
 
-    implementation 'com.fasterxml.jackson.core:jackson-core:2.17.2'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.2'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.18.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.1'
 
     // for IntelliJ JMH support
     jmh 'org.openjdk.jmh:jmh-core:1.37'
     jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.37'
 
     testImplementation('org.dstadler:commons-test:1.0.0.21')
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.11.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.11.3'
 }
 
 jmh {
