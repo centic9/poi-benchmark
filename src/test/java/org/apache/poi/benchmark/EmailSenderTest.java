@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class EmailSenderTest {
     @Test
-    public void testMissingConfig() {
+    void testMissingConfig() {
         EmailSender sender = new EmailSender();
         assertThrows(IOException.class, () ->
                 sender.sendAttachmentEmail(Collections.emptyList(), null, null, null));
@@ -42,7 +42,7 @@ class EmailSenderTest {
     }
 
     @Test
-    public void testSending() throws IOException {
+    void testSending() throws IOException {
         MockSMTPServer server = new MockSMTPServer();
 
         server.start();
@@ -59,7 +59,7 @@ class EmailSenderTest {
     }
 
     @Test
-    public void testSendingWithAuth() throws IOException {
+    void testSendingWithAuth() throws IOException {
         MockSMTPServer server = new MockSMTPServer();
 
         server.start();
@@ -78,7 +78,7 @@ class EmailSenderTest {
     }
 
     @Test
-    public void testSendingWithAttachments() throws IOException {
+    void testSendingWithAttachments() throws IOException {
         MockSMTPServer server = new MockSMTPServer();
 
         server.start();
@@ -95,7 +95,7 @@ class EmailSenderTest {
     }
 
     @Test
-    public void testSendingWithInvalidHostname() throws IOException {
+    void testSendingWithInvalidHostname() throws IOException {
         MockSMTPServer server = new MockSMTPServer();
 
         server.start();
@@ -114,7 +114,7 @@ class EmailSenderTest {
 
     @Disabled("Cannot send SSL mail to MockSMTPServer")
     @Test
-    public void testWithSSL() throws IOException {
+    void testWithSSL() throws IOException {
         MockSMTPServer server = new MockSMTPServer();
 
         server.start();
@@ -133,7 +133,7 @@ class EmailSenderTest {
 
     @Disabled("Just used for local testing")
     @Test
-    public void sendEmail() throws IOException {
+    void sendEmail() throws IOException {
         // read mail-config
         MailserverConfig config = PublishResults.getMailserverConfig();
 

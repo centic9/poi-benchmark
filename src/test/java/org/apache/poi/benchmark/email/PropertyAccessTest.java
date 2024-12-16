@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 class PropertyAccessTest {
     @Test
-    public void testGetProperty() {
+    void testGetProperty() {
         assertNull(PropertyAccess.getProperty("not.found"));
 
         // this one might be found

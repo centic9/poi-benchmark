@@ -9,9 +9,10 @@ import java.io.IOException;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 class ResultsTest {
     @Test
-    public void testOneFile() throws IOException {
+    void testOneFile() throws IOException {
         Results results = new Results();
 
         File resultsDir = new File("results");

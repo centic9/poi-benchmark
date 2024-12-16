@@ -19,7 +19,7 @@ class TailLogOutputStreamTest {
     private static final int NUMBER_OF_TESTS = 1000;
 
     @Test
-    public void test() throws IOException {
+    void test() throws IOException {
         try (TailLogOutputStream stream = new TailLogOutputStream(10)) {
 
             // sends everything to Level.INFO
@@ -40,7 +40,7 @@ class TailLogOutputStreamTest {
     }
 
     @Test
-    public void testLargeData() {
+    void testLargeData() {
         TestHelpers.runTestWithDifferentLogLevel(() -> {
             try (TailLogOutputStream stream = new TailLogOutputStream(10)) {
 
@@ -64,7 +64,7 @@ class TailLogOutputStreamTest {
     }
 
     @Test
-    public void testMultipleThreads() {
+    void testMultipleThreads() {
         TestHelpers.runTestWithDifferentLogLevel(() -> {
             try {
                 ThreadTestHelper helper =
@@ -97,7 +97,7 @@ class TailLogOutputStreamTest {
     }
 
     @Test
-    public void testOverride() throws IOException {
+    void testOverride() throws IOException {
         final AtomicBoolean seen = new AtomicBoolean();
         try (TailLogOutputStream stream = new TailLogOutputStream(10) {
             @Override
