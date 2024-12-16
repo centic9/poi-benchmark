@@ -27,6 +27,7 @@ dependencies {
 
     testImplementation('org.dstadler:commons-test:1.0.0.21')
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.11.3'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.11.3'
 }
 
 jmh {
@@ -38,6 +39,10 @@ jmh {
 
     // newer JMH-Gradle plugin reported a duplicate file...
     duplicateClassesStrategy = DuplicatesStrategy.WARN
+}
+
+test {
+    useJUnitPlatform()
 }
 
 // see https://github.com/melix/jmh-gradle-plugin/issues/6
