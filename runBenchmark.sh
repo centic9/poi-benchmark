@@ -9,6 +9,8 @@ if [ -f /etc/apache2/sites-available/corpora.conf ];then
   export PATH=$JAVA_HOME/bin:$PATH
 fi
 
+echo Watch file benchmark.log for output
+
 # limit memory-usage of Gradle process
 export GRADLE_OPTS="-Xmx80m -Dorg.gradle.jvmargs=-Xmx80m"
 
@@ -18,7 +20,7 @@ echo `which javac` > benchmark.log 2>&1
 javac -version >> benchmark.log 2>&1
 
 # https://github.com/bourgesl/marlin-renderer
-echo Downloading marlin renderer
+echo Downloading marlin renderer >> benchmark.log 2>&1
 wget --timestamping https://github.com/bourgesl/marlin-renderer/releases/download/v0_9_4_8/marlin-0.9.4.8-Unsafe-OpenJDK11.jar >> benchmark.log 2>&1
 wget --timestamping https://github.com/bourgesl/marlin-renderer/releases/download/v0_9_4_7_jdk8/marlin-0.9.4.7-Unsafe.jar >> benchmark.log 2>&1
 
