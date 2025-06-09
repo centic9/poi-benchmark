@@ -102,6 +102,7 @@ public class PublishResults {
                 "<pre>" + report + "</pre>";
         System.out.println("Sending email to " + email + " with content: " + msg + " and config " + config);
         sender.sendAttachmentEmail(files, config, email, msg);
+        System.out.println("Sent email to " + email.getTo());
     }
 
     private static void sendReportNotFound(MailserverConfig config) throws IOException {

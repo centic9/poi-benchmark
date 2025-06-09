@@ -18,9 +18,11 @@ echo `which javac` > benchmark.log 2>&1
 javac -version >> benchmark.log 2>&1
 
 # https://github.com/bourgesl/marlin-renderer
+echo Downloading marlin renderer
 wget --timestamping https://github.com/bourgesl/marlin-renderer/releases/download/v0_9_4_8/marlin-0.9.4.8-Unsafe-OpenJDK11.jar >> benchmark.log 2>&1
 wget --timestamping https://github.com/bourgesl/marlin-renderer/releases/download/v0_9_4_7_jdk8/marlin-0.9.4.7-Unsafe.jar >> benchmark.log 2>&1
 
+echo Fetching latest from Git >> benchmark.log 2>&1
 git fetch >> benchmark.log 2>&1 && \
 git checkout results >> benchmark.log 2>&1 && \
 git rebase origin/master >> benchmark.log 2>&1 && \
@@ -42,6 +44,7 @@ if [ ${RET} -ne 0 ]; then
   exit 1
 fi
 
+echo Summarizing results >> benchmark.log 2>&1
 grep -Ri tenant results >> benchmark.log 2>&1
 RET=$?
 if [ ${RET} -ne 1 ]; then
@@ -49,5 +52,6 @@ if [ ${RET} -ne 1 ]; then
   exit 2
 fi
 
+echo Adding results to Git >> benchmark.log 2>&1
 git add results && git commit -m "[ci skip] Add daily results" >> benchmark.log 2>&1 && \
 git push >> benchmark.log 2>&1
