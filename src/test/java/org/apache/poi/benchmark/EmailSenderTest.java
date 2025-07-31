@@ -5,6 +5,8 @@ import org.apache.poi.benchmark.email.PropertyAccess;
 import org.dstadler.commons.email.EmailConfig;
 import org.dstadler.commons.email.MailserverConfig;
 import org.dstadler.commons.email.MockSMTPServer;
+import org.junit.jupiter.api.Assumptions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -18,6 +20,12 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class EmailSenderTest {
+    @BeforeAll
+    static void setUp() {
+        Assumptions.assumeTrue(new File("src/main/resources/benchmark.properties").exists(),
+                "Need 'benchmark.properties' to run this test");
+    }
+
     @Test
     void testMissingConfig() {
         EmailSender sender = new EmailSender();
